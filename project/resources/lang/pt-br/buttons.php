@@ -21,6 +21,8 @@ return [
     'auth' => [
         'send_password_reset' => 'Enviar link de recuperação',
         'reset_password' => 'Salvar nova senha',
+        'recover' => 'Enviar link de recuperação',
+        'sign_in' => 'Login'
     ],
 
     'attendance' => [

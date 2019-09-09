@@ -1,46 +1,48 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-md-center mt-5">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Reset Password</div>
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <form role="form" method="POST" action="{{ url('/password/email') }}">
-                        {!! csrf_field() !!}
-
-                        <div class="form-group row">
-                            <label class="col-lg-4 col-form-label text-lg-right">E-Mail Address</label>
-
-                            <div class="col-lg-6">
-                                <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}">
-
-                                @if ($errors->has('email'))
-                                    <div class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </div>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-lg-6 offset-lg-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Send Password Reset Link
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+    <div class="card card-signin my-5">
+        <div class="card-body">
+            <div class="card-title text-center">
+                @lang('headings.auth.reset_password')
             </div>
+
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
+
+            <form class="form-signin" method="POST" action="{{ url('/password/email') }}">
+                @csrf
+
+                <div class="form-label-group">
+                    <label for="email">Email address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        class="form-control {{ has_error_class('email') }}"
+                        name="email"
+                        value="{{ old('email') }}"
+                        placeholder="@lang('placeholders.auth.email')"
+                        autofocus>
+                    @errorblock('email')
+                </div>
+
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">
+                    @lang('buttons.auth.recover')
+                </button>
+
+                <hr class="mt-3">
+
+                <div class="text-center mt-3">
+                    <a class="small text-muted" href="{{ route('login') }}">
+                        <i class="fas fa-arrow-left mr-1 "></i>
+                        @lang('links.auth.back_to_login_page')
+                    </a>
+                </div>
+
+            </form>
         </div>
     </div>
-</div>
 @endsection

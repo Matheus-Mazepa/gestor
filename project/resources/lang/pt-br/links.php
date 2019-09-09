@@ -4,14 +4,9 @@
      */
 
     return [
-        '_new' => 'Novo',
-        '_show' => 'Ver',
-        '_edit' => 'Editar',
-        '_update' => 'Salvar',
-        '_destroy' => 'Apagar',
-        '_create' => 'Cadastrar',
-
-        'new' => [
-            'user' => 'Novo usuário',
+        'auth' => [
+            'forgot_password' => 'Esqueceu a senha?',
+            'back_to_login_page' => 'Retornar a tela de login',
+            'register' => 'Cadastre-se',
         ],
     ];

@@ -5,5 +5,10 @@
      */
 
     return [
-        //
+        'auth' => [
+            'email' => 'Email',
+            'password' => 'Senha',
+            'password_confirmation' => 'Confirmar senha',
+            'new_password' => 'Nova senha',
+        ]
     ];

@@ -4,5 +4,7 @@
      */
 
     return [
-        //
+        'auth' => [
+            'remember_me' => 'Lembrar senha',
+        ]
     ];
