@@ -1,0 +1,100 @@
+version: '3'
+
+volumes:
+  postgres-data:
+  pgadmin-data:
+  redis-data:
+
+services:
+   # PHP 7.3 (with Nginx)
+  app:
+    container_name: disdigital-app
+    build: ./devops/environments/development/dockerfiles/app
+    volumes:
+      - ./project:/var/www/app
+    ports:
+      - "80:8080"
+    depends_on:
+      - postgres
+      - redis
+      - queue
+
+  # Front NodeJS
+  front:
+    container_name: disdigital-front
+    build: ./devops/environments/development/dockerfiles/front
+    tty: true
+    volumes:
+      - ./project:/var/www/app
+    depends_on:
+      - app
+
+  # Database - Postgres (11)
+  postgres:
+    container_name: disdigital-postgres
+    build: ./devops/environments/development/dockerfiles/postgres
+    restart: always
+    command: postgres -c datestyle='iso, dmy'
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=rapadura
+      - POSTGRES_MULTIPLE_DATABASES=disdigital
+
+  # PgAdmin4
+  pgadmin:
+    container_name: disdigital-pgadmin
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@letsgrow.com.br
+      - PGADMIN_DEFAULT_PASSWORD=123456
+    ports:
+      - '5001:80'
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - postgres
+
+  # MailHog - Fake SMTP server.
+  mailhog:
+    container_name: disdigital-mailhog
+    image: mailhog/mailhog:latest
+    ports:
+      - '1025:1025'  # Port 1025 => SMTP.
+      - '8025:8025'  # Port 8025 => Web dashboard (http://127.0.0.1:8025).
+
+  # Queue Worker
+  queue:
+    image: ambientum/php:7.3
+    container_name: disdigital-queue
+    volumes:
+      - ./project:/var/www/app
+    command: php artisan horizon
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - redis
+
+  # Redis cache
+  redis:
+    container_name: disdigital-redis
+    image: redis:5.0
+    restart: always
+    volumes:
+      - 'redis-data:/data'
+    ports:
+      - 6379:6379
+
+  # Echo server
+  laravel-echo:
+    container_name: disdigital-echo
+    build: devops/environments/development/dockerfiles/real-time/.
+    ports:
+      - "6001:6001"
+    depends_on:
+      - redis
+    volumes:
+      - ./devops/environments/development/dockerfiles/real-time/laravel-echo-server.json:/app/laravel-echo-server.json

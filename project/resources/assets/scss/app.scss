@@ -1,0 +1,22 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// Libraries
+@import '~@fancyapps/fancybox/dist/jquery.fancybox.min.css';
+
+// Snotify
+@import "snotify/snotify-material";
+
+// Font Open Sans
+$fa-font-path: "/fonts";
+@import '~npm-font-open-sans/open-sans';
+
+// Font Montserrat
+@import '~typeface-montserrat';
+
+//App customizations
+@import "custom";
+@import "template/style";
