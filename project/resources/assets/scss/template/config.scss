@@ -9150,10 +9150,10 @@ Table-Jsgrid table
   background: transparent;
   font-size: 12px; }
 .page-breadcrumb .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
-  content: "\e649";
+  content: "►";
   font-family: themify;
   color: #ced4da;
-  font-size: 11px; }
+  font-size: 12px; }
 
 /*******************
 Main sidebar

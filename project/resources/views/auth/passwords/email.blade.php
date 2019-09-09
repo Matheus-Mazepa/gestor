@@ -37,7 +37,7 @@
 
                 <div class="text-center mt-3">
                     <a class="small text-muted" href="{{ route('login') }}">
-                        <i class="fas fa-arrow-left mr-1 "></i>
+                        <i class="fa fa-arrow-left mr-1 "></i>
                         @lang('links.auth.back_to_login_page')
                     </a>
                 </div>

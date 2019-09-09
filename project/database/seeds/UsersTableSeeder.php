@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
     private function createClientUser()
     {
         $user = User::create([
-            'name' => 'Client',
+            'name' => 'Cliente',
             'email' => 'client@letsgrow.com.br',
             'password' => \Hash::make('123456'),
         ]);
@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
         ]);
 
         $user->fill([
-            'name' => 'Administrador Letsgrow',
+            'name' => 'Administrador',
             'email' => 'admin@letsgrow.com.br',
             'password' => \Hash::make('123456'),
         ]);

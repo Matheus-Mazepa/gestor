@@ -4,15 +4,15 @@ class SortIcon {
     }
 
     getArrowUpClass() {
-        return 'fas fa-sort-up ml-2';
+        return 'fa fa-sort-up ml-2';
     }
 
     getArrowDownClass() {
-        return 'fas fa-sort-down ml-2';
+        return 'fa fa-sort-down ml-2';
     }
 
     getSortClass() {
-        return 'fas fa-sort ml-2';
+        return 'fa fa-sort ml-2';
     }
 
     getArrowClass() {

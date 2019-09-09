@@ -53,7 +53,7 @@
 
                 <div class="text-center">
                     <a class="small" href="{{ route('password.request') }}">
-                        <i class="fas fa-unlock-alt mr-1 text-muted"></i>
+                        <i class="fa fa-unlock-alt mr-1 text-muted"></i>
                         @lang('links.auth.forgot_password')
                     </a>
                 </div>
