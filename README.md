@@ -6,7 +6,7 @@
 
 ### Instalação
 ```sh
-git clone git@bitbucket.org:letsgrow/disdigital.git
+git clone https://github.com/Libertygeneration/DisDigitalApp.git
 cd disdigital/
 make setup
 ```
