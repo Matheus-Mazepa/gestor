@@ -1,6 +1,7 @@
 body {
   background: $primary;
   background: linear-gradient(to right, #0062E6, #33AEFF);
+  font-size: 0.875rem !important;
 }
 
 .card-signin {
@@ -80,12 +81,12 @@ body {
 }
 
 .custom-control {
-  padding-left: 0.5rem !important;
-}
-
-.custom-control {
   .custom-control-label {
-    padding-left: 20px !important;
+    //padding-left: 20px !important;
     padding-top: 2px !important;
   }
+}
+
+.form-control {
+  font-size: 0.875rem !important;
 }

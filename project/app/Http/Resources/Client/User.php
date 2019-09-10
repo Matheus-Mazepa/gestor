@@ -18,6 +18,7 @@ class User extends Resource
             'name' => $this->name,
             'email' => $this->email,
             'created_at' => format_date($this->created_at),
+            'updated_at' => format_date($this->updated_at),
 
             'links' => [
                 'edit' => $this->when(true, route('client.users.edit', $this->id)),

@@ -10,5 +10,11 @@
             'password' => 'Senha',
             'password_confirmation' => 'Confirmar senha',
             'new_password' => 'Nova senha',
+        ],
+
+        'common' => [
+            'name' => 'Nome',
+            'created_at' => 'Criado em',
+            'updated_at' => 'Atualizado em'
         ]
     ];

@@ -12,7 +12,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favicon.png') }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name') }}</title>
 
     <!-- Styles -->
     <link href="{{ mix('assets/css/app.css') }}" rel="stylesheet">
@@ -42,7 +42,7 @@
         @include('layouts._partials.sidebar.sidebar')
 
         <div class="page-wrapper">
-            @include('layouts.breadcrumb.breadcrumb')
+            @include('layouts._partials.breadcrumb.breadcrumb')
 
             <div class="container-fluid">
                 <vue-snotify></vue-snotify>
@@ -53,7 +53,7 @@
             <footer class="footer text-center">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Disdigital {{ date('Y') }}</span>
+                        <span>Copyright &copy; {{ config('app.name') }} {{ date('Y') }}</span>
                     </div>
                 </div>
             </footer>

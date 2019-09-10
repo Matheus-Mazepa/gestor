@@ -1,29 +1,28 @@
 <template>
   <div class="page-breadcrumb">
     <div class="row align-items-center">
-      <div class="col-5">
+      <div class="col-sm-9">
         <h4 class="page-title">{{ header }}</h4>
-        <div class="d-flex align-items-center">
+        <div class="align-items-center">
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
+            <ol class="breadcrumb col-12">
               <slot></slot>
             </ol>
           </nav>
         </div>
       </div>
-      <div class="col-7">
+
+      <div class="col-sm-3" v-if="urlBack">
         <div class="text-right upgrade-btn">
-          <a href="#" class="btn btn-danger text-white" target="_blank">
-            Upgrade to Pro
+          <a :href="urlBack" class="btn btn-danger text-white">
+            Voltar
           </a>
         </div>
       </div>
+
     </div>
   </div>
 </template>
-
-
-
 
 <script>
 export default {
@@ -34,10 +33,11 @@ export default {
       type: String,
       required: false
     },
-    icon: {
+
+    urlBack: {
       type: String,
       required: false
-    }
-  }
+    },
+  },
 };
 </script>

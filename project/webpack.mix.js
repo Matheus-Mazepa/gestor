@@ -18,6 +18,7 @@ mix.copyDirectory('resources/assets/img', 'public/assets/img');
 mix
     .js('resources/assets/js/app.js', 'public/assets/js')
     .sass('resources/assets/scss/app.scss', 'public/assets/css')
+    .sass('resources/assets/scss/auth.scss', 'public/assets/css')
     .options({
         processCssUrls: false
     })

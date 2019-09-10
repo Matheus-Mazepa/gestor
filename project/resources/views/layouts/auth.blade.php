@@ -12,10 +12,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favicon.png') }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name') }}</title>
 
     <!-- Styles -->
-    <link href="{{ mix('assets/css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('assets/css/auth.css') }}" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     @yield('header')
 </head>
@@ -43,7 +43,7 @@
     <footer class="footer text-center">
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
-                <span class="text-light">Copyright &copy; Disdigital {{ date('Y') }}</span>
+                <span class="text-light">Copyright &copy; {{ config('app.name') }} {{ date('Y') }}</span>
             </div>
         </div>
     </footer>

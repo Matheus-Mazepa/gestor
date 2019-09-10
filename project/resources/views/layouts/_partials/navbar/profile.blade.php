@@ -10,16 +10,15 @@
 
     <div class="dropdown-menu dropdown-menu-right user-dd animated">
         <a class="dropdown-item" href="javascript:void(0)">
-            <i class="ti-user mr-3 ml-2"></i>
-            My Profile
+            <i class="fa fa-user mr-3 ml-2"></i>
+            @lang('links.common.my_profile')
         </a>
         <a class="dropdown-item" href="{{ route('logout') }}"
            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
             <i class="fa fa-power-off mr-3 ml-2"></i>
-            Logout
+            @lang('links.auth.logout')
         </a>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-              style="display: none;">
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
     </div>

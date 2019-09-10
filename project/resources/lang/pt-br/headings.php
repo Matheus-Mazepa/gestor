@@ -12,6 +12,10 @@ return [
         'create_new_password' => 'Criar nova senha',
     ],
 
+    'common' => [
+        'home' => 'Home',
+    ],
+
     'users' => [
         'common' => [
             'index' => 'Usuários',

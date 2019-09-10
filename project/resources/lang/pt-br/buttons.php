@@ -1,9 +1,15 @@
 <?php
 return [
+    'auth' => [
+        'send_password_reset' => 'Enviar link de recuperação',
+        'reset_password' => 'Salvar nova senha',
+        'recover' => 'Enviar link de recuperação',
+        'sign_in' => 'Login'
+    ],
 
     'common' => [
         'back' => 'Voltar',
-        'edit' => 'Editar registro',
+        'edit' => 'Editar',
         'save_editions' => 'Salvar alterações',
         'show' => 'Visualizar',
         'document' => 'Documentos',
@@ -17,15 +23,4 @@ return [
         'edit' => 'Editar usuário',
         'create' => 'Cadastrar novo usuário',
     ],
-
-    'auth' => [
-        'send_password_reset' => 'Enviar link de recuperação',
-        'reset_password' => 'Salvar nova senha',
-        'recover' => 'Enviar link de recuperação',
-        'sign_in' => 'Login'
-    ],
-
-    'attendance' => [
-        'chat_details' => 'Detalhes da conversa',
-    ]
 ];
