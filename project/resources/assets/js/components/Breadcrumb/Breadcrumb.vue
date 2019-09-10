@@ -14,7 +14,7 @@
 
       <div class="col-sm-3" v-if="urlBack">
         <div class="text-right upgrade-btn">
-          <a :href="urlBack" class="btn btn-danger text-white">
+          <a :href="urlBack" class="btn btn-instagram text-white">
             Voltar
           </a>
         </div>

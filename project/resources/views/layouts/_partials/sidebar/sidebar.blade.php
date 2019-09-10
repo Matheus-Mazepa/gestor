@@ -3,8 +3,8 @@
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
                 <li class="p-3">
-                    <a href="javascript:void(0)"
-                       class="btn btn-block create-btn text-white no-block d-flex align-items-center">
+                    <a href="#"
+                       class="btn btn-block btn-primary text-white no-block d-flex align-items-center">
                         <i class="fa fa-plus-square"></i>
                         <span class="hide-menu ml-5">
                             @lang('links.common.create_new')

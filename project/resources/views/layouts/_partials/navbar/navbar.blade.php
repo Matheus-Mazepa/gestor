@@ -1,6 +1,6 @@
 <header class="topbar" data-navbarbg="skin5">
-    <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-        <div class="navbar-header" data-logobg="skin5">
+    <nav class="navbar top-navbar navbar-expand-md navbar-light bg-primary">
+        <div class="navbar-header">
            @include('layouts._partials.navbar.logo')
 
             <a class="nav-toggler waves-effect waves-light d-block d-md-none"

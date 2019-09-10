@@ -10,7 +10,8 @@
 
 /*Theme Colors*/
 
-$themecolor: #2962FF;
+$themecolor: #8e2de2;
+$themecolor2: #4a00e0;
 $themecolor-dark: #028ee1;
 $themecolor-alt: #26c6da;
 $theme-light:#fff;
@@ -20,7 +21,7 @@ $skin1:#2962FF;
 $skin2:#fe5419;
 $skin3:#00b0ff;
 $skin4:#6659f7;
-$skin5:#414755;
+$skin5: linear-gradient(to right, $themecolor2, $themecolor);
 $skin6:#fff;
 
 
@@ -148,8 +149,7 @@ $yellow: #ffbc34 !default;
 $green: #36bea6 !default;
 $teal: #20c997 !default;
 $cyan: #4fc3f7 !default;
-$primary: #7460ee !default;
-$text-muted: $gray-500 !default;
+$text-muted: #696969 !default;
 
 $colors: ( blue: $blue,
 indigo: $indigo,
@@ -165,17 +165,17 @@ white: $white,
 gray: $gray-600,
 gray-dark: $gray-800);
 
-$primary: $blue !default;
-$secondary: $gray-600 !default;
-$success: $green !default;
-$info: $blue !default;
-$warning: $yellow !default;
-$danger: $red !default;
-$light: $gray-100 !default;
-$dark: $gray-800 !default;
-$cyan: $cyan !default;
-$orange: $orange !default;
-$theme-colors: () !default;
+$primary: #5d1ae6;
+$secondary: #23f297;
+$success: $green;
+$info: #8e2de2;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-800;
+$cyan: $cyan;
+$orange: $orange;
+$theme-colors: ();
 $theme-colors: map-merge(( "primary": $primary,
 "secondary": $secondary,
 "success": $success,

@@ -1,6 +1,6 @@
 body {
-  background: $primary;
-  background: linear-gradient(to right, #0062E6, #33AEFF);
+  background: $themecolor;
+  background: linear-gradient(to right, $themecolor2, $themecolor);
   font-size: 0.875rem !important;
 }
 
@@ -28,9 +28,21 @@ body {
   font-size: 80%;
   border-radius: 5rem;
   letter-spacing: .1rem;
+  background-color: $info;
+  border-color: $info;
   font-weight: bold;
   padding: 1rem;
   transition: all 0.2s;
+}
+
+.form-signin .btn:hover {
+  background-color: $primary;
+  border-color: $primary;
+}
+
+.form-signin .btn:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(116, 96, 238, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(116, 96, 238, 0.5);
 }
 
 .form-label-group {
@@ -82,8 +94,13 @@ body {
 
 .custom-control {
   .custom-control-label {
-    //padding-left: 20px !important;
     padding-top: 2px !important;
+  }
+
+  .custom-control-input:checked ~ .custom-control-label::before {
+    color: $light;
+    background-color: $primary;
+    border-color: $primary;
   }
 }
 

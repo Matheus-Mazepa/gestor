@@ -20,7 +20,7 @@
                     <form class="form-horizontal" method="POST" action="{{ route('admin.users.update', $user->id) }}">
                         @method('PUT')
                         @include('admin.users.partials._form')
-                        <button class="btn btn-primary" type="submit">
+                        <button class="btn btn-warning" type="submit">
                             @lang('buttons.common.save_editions')
                         </button>
                     </form>
