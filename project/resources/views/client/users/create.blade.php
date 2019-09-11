@@ -1,25 +1,30 @@
 @extends('layouts.app')
 
 @section('breadcrumb')
-<breadcrumb header="Criar usuário">
-    <breadcrumb-item href="{{ route('home') }}">
-        @lang('headings._home')
-    </breadcrumb-item>
+    <breadcrumb header="@lang('headings.users.clients.create')" url-back="{{ route('client.users.index') }}">
+        <breadcrumb-item href="{{ route('home') }}">
+            @lang('headings.common.home')
+        </breadcrumb-item>
 
-    <breadcrumb-item active>
-        @lang('headings.users.create')
-    </breadcrumb-item>
-</breadcrumb>
+        <breadcrumb-item active>
+            @lang('headings.users.clients.create')
+        </breadcrumb-item>
+    </breadcrumb>
 @endsection
 
 @section('content')
-<div class="card">
-    <div class="card-header">@lang('headings.users.create')</div>
-    <div class="card-body">
-        <form class="form-horizontal" method="POST" action="{{ route('client.users.store') }}">
-            @include('client.users.partials._form')
-            <button class="btn btn-primary" type="submit">@lang('links._create')</button>
-        </form>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <form class="form-horizontal" method="POST" action="{{ route('client.users.store') }}">
+                        @include('client.users.partials._form')
+                        <button class="btn btn-success" type="submit">
+                            @lang('buttons.common.save')
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 @endsection

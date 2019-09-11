@@ -33,7 +33,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="@yield('content-size', 'col-sm-10 col-md-8 col-lg-6')  mt-4 mx-auto">
+            <div class="@yield('content-size', 'col-sm-9 col-md-7 col-lg-5')  mt-4 mx-auto">
                 <vue-snotify></vue-snotify>
                 @yield('content')
             </div>

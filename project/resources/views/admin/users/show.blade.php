@@ -17,8 +17,42 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    {{$user->name}} <br>
-                    {{$user->email}}
+
+                    <div class="form-row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="name">
+                                    @lang('labels.common.name')
+                                </label>
+                                <div class="input-group">
+                                    <input
+                                            type="text"
+                                            name="name"
+                                            id="name"
+                                            class="form-control"
+                                            value="{{ $user->name ?? '' }}"
+                                            disabled>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="email">
+                                    @lang('labels.auth.email')
+                                </label>
+                                <div class="input-group">
+                                    <input
+                                            type="email"
+                                            name="email"
+                                            id="email"
+                                            class="form-control"
+                                            value="{{ $user->email ?? ''}}"
+                                            disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,9 +1,9 @@
 @extends('layouts.auth')
 
-@section('content-size', 'col-sm-12 col-md-10 col-lg-8')
+@section('content-size', 'col-sm-10 col-md-8 col-lg-6')
 @section('content')
 
-    <div class="card card-signin my-2">
+    <div class="card card-signin mt-3 mb-5">
         <div class="card-body">
             <div class="card-title text-center">
                 @lang('headings.auth.create_new_password')
@@ -75,7 +75,6 @@
                         @lang('links.auth.back_to_login_page')
                     </a>
                 </div>
-
             </form>
         </div>
     </div>

@@ -32,7 +32,7 @@ class UserController extends Controller
     public function edit(UserRepository $userRepository, $id)
     {
         $user = $userRepository->find($id);
-        return view('users.edit', compact('user'));
+        return view('client.users.edit', compact('user'));
     }
 
     public function update(UserRequest $request, UserRepository $userRepository, $id)
