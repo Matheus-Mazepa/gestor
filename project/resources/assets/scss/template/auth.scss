@@ -1,0 +1,109 @@
+body {
+  background: $themecolor;
+  background: linear-gradient(to right, $themecolor2, $themecolor);
+  font-size: 0.875rem !important;
+}
+
+.card-signin {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-signin .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.card-signin .card-body {
+  padding: 2rem;
+}
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  background-color: $info;
+  border-color: $info;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.form-signin .btn:hover {
+  background-color: $primary;
+  border-color: $primary;
+}
+
+.form-signin .btn:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(116, 96, 238, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(116, 96, 238, 0.5);
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group input {
+  height: auto;
+  border-radius: 2rem;
+  padding: 0.5rem 0.75rem 0.75rem !important;
+}
+
+.form-label-group .invalid-feedback {
+  padding-left: 0.5rem;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.form-label-group>label {
+  display: block;
+  margin-bottom: 0;
+  padding: 0.5rem;
+  line-height: normal;
+  transition: all 0.1s ease-in-out;
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+
+@supports (-ms-ime-align: auto) {
+  .form-label-group>label {
+    display: none;
+  }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .form-label-group>label {
+    display: none;
+  }
+}
+
+.custom-control {
+  .custom-control-label {
+    padding-top: 2px !important;
+  }
+
+  .custom-control-input:checked ~ .custom-control-label::before {
+    color: $light;
+    background-color: $primary;
+    border-color: $primary;
+  }
+}
+
+.form-control {
+  font-size: 0.875rem !important;
+}
