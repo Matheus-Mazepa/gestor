@@ -16,5 +16,12 @@
             'name' => 'Nome',
             'created_at' => 'Criado em',
             'updated_at' => 'Atualizado em'
+        ],
+
+        'layouts' => [
+            'preview' => 'Preview',
+            'title' => 'Título',
+            'description' => 'Descrição',
+            'created_at' => 'Criado em'
         ]
     ];

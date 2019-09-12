@@ -12,20 +12,10 @@ class User extends Authenticatable
 {
     use Notifiable, HasRoles, SearchScope;
 
-    /**
-     * The attributes that are used to search.
-     *
-     * @var array
-     */
     protected $searchBy = [
         'name', 'email',
     ];
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -34,11 +24,6 @@ class User extends Authenticatable
         'name', 'email'
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password', 'remember_token',
     ];
