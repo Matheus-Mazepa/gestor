@@ -16,11 +16,9 @@ use App\Support\MoneyHelper;
  * @param array $array Array que será dividida.
  * @return string
  */
-function isUserType()
+function is_user_type($type)
 {
-    return (UserRolesEnum::ADMIN)
-        ? 'admin'
-        : 'client';
+    return current_user()->hasRole($type);
 }
 
 function separe_by_comma($array, $lastGlue = ', ')
