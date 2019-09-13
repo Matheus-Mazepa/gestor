@@ -7,7 +7,12 @@
 <th sortable @click="orderBy('description', $event)">
     @lang('labels.layouts.description')
 </th>
+<th sortable @click="orderBy('path_content', $event)">
+    @lang('labels.layouts.content')
+</th>
 <th sortable @click="orderBy('created_at', $event)">
     @lang('labels.layouts.created_at')
 </th>
-<th></th>
+<th>
+    @lang('labels.common.actions')
+</th>
