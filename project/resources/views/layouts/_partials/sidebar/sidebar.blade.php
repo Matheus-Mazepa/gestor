@@ -12,16 +12,13 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                       href="#Dasboard"
-                       aria-expanded="false">
-                        <i class="mdi mdi-view-dashboard"></i>
-                        <span class="hide-menu">
-                            @lang('links.common.dashboard')
-                        </span>
-                    </a>
-                </li>
+                @if (is_user_type('admin'))
+                    @include('layouts._partials.sidebar.sidebar-admin')
+                @endif
+
+                @if (is_user_type('client'))
+                    @include('layouts._partials.sidebar.sidebar-client')
+                @endif
 
                 <li class="collapse p-3 upgrade-btn" id="collapseLogout">
                     <a class="btn btn-block btn-danger text-white"

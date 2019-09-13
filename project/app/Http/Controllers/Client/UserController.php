@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Repositories\UserRepository;
 
 use App\Http\Requests\Client\UserRequest;
-use App\Http\Resources\Client\User as UserResource;
+use App\Http\Resources\Client\UserResource as UserResource;
 
 class UserController extends Controller
 {

@@ -35,7 +35,28 @@ return [
             'index' => 'Clientes',
             'show' => 'Detalhes do Cliente',
             'edit' => 'Editar Cliente',
-            'create' => 'Cadastrar Cliente'
+            'create' => 'Cadastrar Cliente',
         ],
     ],
+
+    'my_site' => [
+        'index' => 'Meu site',
+        'show' => 'Detalhes do site',
+        'edit' => 'Editar site',
+        'create' => 'Cadastrar site',
+    ],
+
+    'layouts' => [
+        'index' => 'Layouts',
+        'show' => 'Detalhes do loyout',
+        'edit' => 'Editar layout',
+        'create' => 'Cadastrar layout',
+    ],
+
+    'domains' => [
+        'index' => 'Domínios',
+        'show' => 'Detalhes do domínio',
+        'edit' => 'Editar domínio',
+        'create' => 'Cadastrar domínio',
+    ]
 ];
