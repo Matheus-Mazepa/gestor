@@ -1,4 +1,3 @@
-// Template
 import { Breadcrumb, BreadcrumbItem } from "./components/Breadcrumb";
 import { DataList } from "./components/DataList";
 

@@ -8,3 +8,4 @@
 Route::get('users', 'UserController@pagination')->name('pagination.users');
 
 Route::get('layouts', 'LayoutController@pagination')->name('pagination.layouts');
+

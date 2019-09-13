@@ -37,5 +37,6 @@
             'show' => 'Detalhes do domínio',
             'edit' => 'Editar domínio',
             'create' => 'Cadastrar domínio',
+            'create_new' => 'Criar novo'
         ]
     ];

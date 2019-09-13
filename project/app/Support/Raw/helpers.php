@@ -16,6 +16,7 @@ use App\Support\MoneyHelper;
  * @param array $array Array que será dividida.
  * @return string
  */
+
 function is_user_type($type)
 {
     return current_user()->hasRole($type);
