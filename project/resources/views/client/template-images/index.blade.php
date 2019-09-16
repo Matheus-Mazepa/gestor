@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('breadcrumb')
-    <breadcrumb header="@lang('headings.layouts.index')">
+    <breadcrumb header="@lang('headings.template_images.index')">
         <breadcrumb-item href="{{ route('home') }}">
             @lang('headings.common.home')
         </breadcrumb-item>
 
         <breadcrumb-item active>
-            @lang('headings.layouts.index')
+            @lang('headings.template_images.index')
         </breadcrumb-item>
     </breadcrumb>
 @endsection
@@ -15,7 +15,7 @@
 @section('content')
     <div class="row mt-3">
         <div class="col-md-12">
-            <data-list data-source="{{ route('client.pagination.layouts') }}"></data-list>
+            <data-list data-source="{{ route('client.pagination.template_images') }}"></data-list>
         </div>
     </div>
 @endsection
@@ -51,13 +51,16 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    @include('client.sites.layouts.partials._head')
+                                    @include('client.template-images.partials._head')
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr v-for="(item, index) in items" :key="index">
-                                    @include('client.sites.layouts.partials._body')
-                                    <td>@include('shared.partials._buttons_actions')</td>
+                                    @include('client.template-images.partials._body')
+                                    <td>
+                                        @include('client.template-images.partials.buttons-actions')
+                                        @include('shared.partials._buttons_actions')
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>

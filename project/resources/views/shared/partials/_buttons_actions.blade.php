@@ -1,5 +1,7 @@
 <div class="btn-group" v-if="item.links">
 
+    @yield('button-actions')
+
     <a v-if="item.links.show" :href="item.links.show"
        class="btn btn-sm btn-primary"
        title="@lang('buttons.common.show')"
@@ -26,7 +28,5 @@
        role="button">
         <i class="fa fa-trash text-white"></i>
     </a>
-
-    @yield('button-actions')
 </div>
 

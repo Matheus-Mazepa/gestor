@@ -19,11 +19,10 @@ return [
         'actions' => 'Ações'
     ],
 
-    'layouts' => [
-        'preview' => 'Preview',
-        'content' => 'Content',
+    'template_images' => [
+        'preview' => 'Visualizar',
         'title' => 'Título',
-        'description' => 'Descrição',
-        'created_at' => 'Criado em'
+        'created_at' => 'Criado em',
+        'updated_at' => 'Editado em'
     ]
 ];

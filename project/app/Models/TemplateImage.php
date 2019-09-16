@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notifiable;
 
 use App\Scopes\Search as SearchScope;
 
-class Layout extends Model
+class TemplateImage extends Model
 {
     use Notifiable, SearchScope;
 
@@ -16,6 +16,6 @@ class Layout extends Model
     ];
 
     protected $fillable = [
-        'title', 'description', 'url_preview', 'path_content',
+        'title', 'description', 'path_content',
     ];
 }

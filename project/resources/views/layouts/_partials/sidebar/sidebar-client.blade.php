@@ -16,9 +16,9 @@
     </a>
     <ul aria-expanded="false" class="collapse first-level ml-3">
         <li class="sidebar-item">
-            <a href="{{ route('client.layouts.index') }}" class="sidebar-link">
+            <a href="{{ route('client.template_images.index') }}" class="sidebar-link">
                 <i class="fa fa-newspaper"></i>
-                <span class="hide-menu">@lang('links.layouts.index')</span>
+                <span class="hide-menu">@lang('links.template_images.index')</span>
             </a>
         </li>
 
