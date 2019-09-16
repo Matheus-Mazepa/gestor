@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Admin;
+namespace App\Http\Resources\Users;
 
 use Illuminate\Http\Resources\Json\Resource;
 
-class User extends Resource
+class UserAdminResource extends Resource
 {
     /**
      * Transform the resource into an array.
@@ -21,9 +21,9 @@ class User extends Resource
             'updated_at' => format_date($this->updated_at),
 
             'links' => [
-                'edit' => $this->when(true, route('admin.users.edit', $this->id)),
-                'show' => $this->when(true, route('admin.users.show', $this->id)),
-                'destroy' => $this->when(true, route('admin.users.destroy', $this->id)),
+                'edit' => $this->when(true, route('admin.users.admin.edit', $this->id)),
+                'show' => $this->when(true, route('admin.users.admin.show', $this->id)),
+                'destroy' => $this->when(true, route('admin.users.admin.destroy', $this->id)),
             ],
         ];
     }

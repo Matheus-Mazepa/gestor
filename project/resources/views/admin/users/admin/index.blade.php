@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('breadcrumb')
-    <breadcrumb header="@lang('headings.layouts.index')">
+    <breadcrumb header="@lang('headings.users.admins.index')">
         <breadcrumb-item href="{{ route('home') }}">
             @lang('headings.common.home')
         </breadcrumb-item>
 
         <breadcrumb-item active>
-            @lang('headings.layouts.index')
+            @lang('headings.users.admins.index')
         </breadcrumb-item>
     </breadcrumb>
 @endsection
@@ -15,7 +15,12 @@
 @section('content')
     <div class="row mt-3">
         <div class="col-md-12">
-            <data-list data-source="{{ route('client.pagination.layouts') }}"></data-list>
+            <data-list
+                    data-source="{{ route('admin.pagination.admins') }}"
+                    delete-message="Tem certeza que deseja apagar este registro ?"
+                    url-create="{{ route('admin.users.admin.create') }}"
+                    label-create="Novo usuário"
+            ></data-list>
         </div>
     </div>
 @endsection
@@ -26,22 +31,20 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
+                        @include('admin.users._partials.tabs')
+                    </div>
+                    <div class="card-header">
                         <div class="row">
-                            <div class="col-md-12 mt-3">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text" id="btnGroupAddon2">
-                                            <i class="fa fa-search"></i>
-                                        </div>
-                                    </div>
-                                    <input
-                                            type="text"
-                                            id="search"
-                                            v-model="query"
-                                            class="form-control"
-                                            placeholder="Buscar ..."
-                                            aria-describedby="btnGroupAddon2">
-                                </div>
+                            <div class="col-md-6">
+                                <a v-if="urlCreate" :href="urlCreate">
+                                    <button class="btn btn-primary mb-2">@{{labelCreate}}</button>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text"
+                                       v-model="query"
+                                       class="form-control"
+                                       placeholder="Buscar ...">
                             </div>
                         </div>
                     </div>
@@ -51,12 +54,12 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    @include('client.sites.layouts.partials._head')
+                                    @include('admin.users.admin._partials._head')
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr v-for="(item, index) in items" :key="index">
-                                    @include('client.sites.layouts.partials._body')
+                                    @include('admin.users.admin._partials._body')
                                     <td>@include('shared.partials._buttons_actions')</td>
                                 </tr>
                                 </tbody>

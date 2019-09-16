@@ -5,7 +5,7 @@
  * Prefix pagination
  */
 
-Route::get('users', 'UserController@pagination')->name('pagination.users');
+Route::get('clients', 'Users\ClientController@pagination')->name('pagination.clients');
 
 Route::get('layouts', 'LayoutController@pagination')->name('pagination.layouts');
 

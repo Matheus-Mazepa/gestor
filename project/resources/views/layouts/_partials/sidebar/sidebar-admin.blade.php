@@ -11,7 +11,7 @@
 
 <li class="sidebar-item">
     <a class="sidebar-link waves-effect waves-dark sidebar-link"
-       href="{{ route('admin.users.index') }}"
+       href="{{ route('admin.users.admin.index') }}"
        aria-expanded="false">
         <i class="fa fa-user"></i>
         <span class="hide-menu">

@@ -2,9 +2,9 @@
 
 return [
     'users' => [
-        'index',
+        'view',
         'create',
-        'edit',
-        'destroy'
+        'update',
+        'delete',
     ],
 ];
