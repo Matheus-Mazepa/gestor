@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('header')
+    <link href="{{ mix('assets/css/editor.css') }}" rel="stylesheet">
+@endsection
+
 @section('breadcrumb')
     <breadcrumb header="@lang('headings.template_images.index')"
                 url-back="{{ route('admin.template_images.index') }}">
@@ -22,12 +26,13 @@
                           method="POST"
                           action="{{ route('admin.template_images.create') }}">
                         @include('admin.template-images.partials._form')
-                        <button class="btn btn-success" type="submit">
-                            @lang('buttons.common.save')
-                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+@endsection
+
+@section('footer')
+    <script src="{{ mix('assets/js/editor.js') }}"></script>
 @endsection
