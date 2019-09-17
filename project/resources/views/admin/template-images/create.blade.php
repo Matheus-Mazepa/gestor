@@ -22,11 +22,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <form class="form-horizontal"
-                          method="POST"
-                          action="{{ route('admin.template_images.create') }}">
-                        @include('admin.template-images.partials._form')
-                    </form>
+                    <editor></editor>
                 </div>
             </div>
         </div>

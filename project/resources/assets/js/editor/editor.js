@@ -4683,20 +4683,18 @@ PosterEditor.Behaviors.ComponentSelected = (function($, ajax) {
     };
 
     var componentFonts = function() {
-        var fonts = JSON.parse($('#fonts').val());
-
-        return fonts.map(function(item) {
-            return '<option value="' + item.name + '" >' + item.name + '</option>';
-        }).join('');
+        // var fonts = JSON.parse($('#fonts').val());
+        //
+        // return fonts.map(function(item) {
+        //     return '<option value="' + item.name + '" >' + item.name + '</option>';
+        // }).join('');
     };
 
     var componentProperties = function(isLine) {
         let result = '' +
-            '<div class="component-properties">' +
+            '<div class="component-properties text-center">' +
             '    <div class="input-group-btn">' +
-            '        <textarea type="text" name="html" class="form-control textarea-editor" value=""></textarea>' +
-            '        <select class="form-control" name="font-family" title="Fonte">' +
-            componentFonts() + '</select>' +
+            '        <textarea type="text" name="html" class="form-control textarea-editor p-0" value=""></textarea>' +
             '        <input type="text" class="form-control onlyNumber" name="font-size" title="Tamanho de fonte" />' +
             '        <button name="bold" type="button" class="btn btn-default btn-xs" aria-label="Bold" title="Bold">' +
             '            <span class="fa fa-bold"></span>' +
@@ -4754,18 +4752,6 @@ PosterEditor.Behaviors.ComponentSelected = (function($, ajax) {
             '        <span class="btn btn-warning btn-xs btn-close" title="Fechar caixa de ferramenta">' +
             '            <i class="fa fa-close"></i>' +
             '        </span>' +
-            '        <select class="form-control" name="dataroles-conditional" id="dataroles-conditional" title="Condição">' +
-            datarolesCampaign() + '</select>' +
-            '        <select class="form-control" name="operator-conditional" id="operator-conditional" title="Condição">' +
-            '           <option value="" disabled selected></option>' +
-            '           <option value="==">Igual a</option>' +
-            '           <option value="!=">Diferente de</option>' +
-            '           <option value="<">Menor que</option>' +
-            '           <option value=">">Maior que</option>' +
-            '           <option value=">=">Maior igual que</option>' +
-            '           <option value="<=">Menor igual que</option>' +
-            '        </select>' +
-            '        <input type="text" id="condition" name="condition" class="form-control" value="">' +
             '        <span class="btn btn-warning btn-xs btn-display-condition" title="Salvar condição de visualização">' +
             '            <i class="fa fa-plus"></i>' +
             '        </span>' +
@@ -5679,21 +5665,10 @@ PosterEditor.Behaviors.PosterScroll = (function($) {
 
     var scrolling = function() {
         var offset = $('.box-editor').offset().top;
-        var headerTop = $('.page-head').offset().top + 60;
 
-        var $menuEditor = $(
-            '.component-properties, .auxiliary-components, .component-attributes');
-        if (offset <= headerTop) {
-            $menuEditor.addClass('affix-menu ');
-        } else {
-            $menuEditor.removeClass('affix-menu ');
-        }
-
-        if (offset <= ($(window).scrollTop())) {
-            $menuEditor.addClass('affix-on-top ');
-        } else {
-            $menuEditor.removeClass('affix-on-top ');
-        }
+        var $menuEditor = $('.component-properties, .auxiliary-components, .component-attributes');
+        $menuEditor.removeClass('affix-menu ');
+        $menuEditor.removeClass('affix-on-top ');
 
         var componentAttributes = document.querySelector('.component-attributes');
         var componentProperties = $('.component-properties');
