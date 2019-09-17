@@ -10,5 +10,10 @@ return [
 
     'common' => [
         'name' => 'Insira seu nome'
+    ],
+
+    'template_images' => [
+        'title' => 'Insira um título',
+        'html' => 'Insira um template no formato HTML'
     ]
 ];

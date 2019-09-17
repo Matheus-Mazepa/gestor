@@ -17,9 +17,9 @@
         <div class="col-md-12">
             <data-list
                     data-source="{{ route('admin.pagination.users') }}"
-                    delete-message="Tem certeza que deseja apagar este registro ?"
+                    delete-message="@lang('phrases.common.delete')"
                     url-create="{{ route('admin.users.create') }}"
-                    label-create="Novo usuário"
+                    label-create="@lang('buttons.users.create')"
             ></data-list>
         </div>
     </div>

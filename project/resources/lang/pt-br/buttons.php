@@ -25,6 +25,6 @@ return [
     ],
 
     'template_images' => [
-        'create' => 'Criar landing page'
+        'create' => 'Criar template'
     ]
 ];

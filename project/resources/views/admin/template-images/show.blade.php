@@ -1,13 +1,14 @@
 @extends('layouts.app')
 
 @section('breadcrumb')
-    <breadcrumb header="@lang('headings.users.clients.show')" url-back="{{ route('client.users.index') }}">
+    <breadcrumb header="@lang('headings.template_images.index')"
+                url-back="{{ route('admin.template_images.index') }}">
         <breadcrumb-item href="{{ route('home') }}">
             @lang('headings.common.home')
         </breadcrumb-item>
 
         <breadcrumb-item active>
-            @lang('headings.users.clients.show')
+            @lang('headings.template_images.show')
         </breadcrumb-item>
     </breadcrumb>
 @endsection
@@ -22,7 +23,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="name">
-                                    @lang('labels.common.name')
+                                    @lang('labels.template_images.title')
                                 </label>
                                 <div class="input-group">
                                     <input
@@ -30,7 +31,7 @@
                                             name="name"
                                             id="name"
                                             class="form-control"
-                                            value="{{ $user->name ?? '' }}"
+                                            value="{{ $templateImages->title ?? '' }}"
                                             disabled>
                                 </div>
                             </div>
@@ -39,7 +40,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="email">
-                                    @lang('labels.auth.email')
+                                    @lang('labels.common.created_at')
                                 </label>
                                 <div class="input-group">
                                     <input
@@ -47,7 +48,7 @@
                                             name="email"
                                             id="email"
                                             class="form-control"
-                                            value="{{ $user->email ?? ''}}"
+                                            value="{{ $templateImages->created_at ?? ''}}"
                                             disabled>
                                 </div>
                             </div>

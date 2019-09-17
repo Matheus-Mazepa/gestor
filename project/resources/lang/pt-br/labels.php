@@ -22,6 +22,7 @@ return [
     'template_images' => [
         'preview' => 'Visualizar',
         'title' => 'Título',
+        'html' => 'Template HTML',
         'created_at' => 'Criado em',
         'updated_at' => 'Editado em'
     ]

@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('breadcrumb')
-    <breadcrumb header="@lang('headings.users.clients.index')">
+    <breadcrumb header="@lang('headings.template_images.index')">
         <breadcrumb-item href="{{ route('home') }}">
             @lang('headings.common.home')
         </breadcrumb-item>
 
         <breadcrumb-item active>
-            @lang('headings.users.clients.index')
+            @lang('headings.template_images.index')
         </breadcrumb-item>
     </breadcrumb>
 @endsection
@@ -16,10 +16,10 @@
     <div class="row mt-3">
         <div class="col-md-12">
             <data-list
-                    data-source="{{ route('client.pagination.users') }}"
-                    delete-message="Tem certeza que deseja apagar este registro ?"
-                    url-create="{{ route('client.users.create') }}"
-                    label-create="Novo usuário"
+                    data-source="{{ route('admin.pagination.template_images') }}"
+                    delete-message="@lang('phrases.common.delete')"
+                    url-create="{{ route('admin.template_images.create') }}"
+                    label-create="@lang('buttons.template_images.create')"
             ></data-list>
         </div>
     </div>
@@ -51,13 +51,15 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    @include('client.users.partials._head')
+                                    @include('admin.template-images.partials._head')
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr v-for="(item, index) in items" :key="index">
-                                    @include('client.users.partials._body')
-                                    <td>@include('shared.partials._buttons_actions')</td>
+                                    @include('admin.template-images.partials._body')
+                                    <td>
+                                        @include('shared.partials._buttons_actions')
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
