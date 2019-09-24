@@ -1,5 +1,5 @@
 (function($, undefined) {
-
+    var indexField = 0;
     $.widget('ui.rotatable', $.ui.mouse, {
         widgetEventPrefix: 'rotate',
 
@@ -3427,9 +3427,9 @@ PosterEditor.Components.spare = (function($) {
 })(jQuery);
 PosterEditor.Components.TextComponent = (function($) {
 
-    var make = function() {
-
-        var $new_element = $('<div class="relative-component text-component" data-role="text-component" style="width: 149px; height:24px;">' +
+    var make = function(index) {
+        indexField = index;
+        var $new_element = $('<div class="relative-component text-component" data-role="text-component-' + index + '" style="width: 149px; height:24px;">' +
             '<div class="component-content text-left vertical-top text-normal" style="font-family: Arial; font-size: 24px; color: rgb(0, 0, 0);">' +
             '<span>Texto editável</span>' +
             '</div>' +
@@ -4373,6 +4373,10 @@ PosterEditor.Behaviors.ComponentSelected = (function($, ajax) {
 
     var toggleComponentSelected = function(element) {
         if (hasClassComponentSelected(element)) {
+            let typeField = document.getElementById('type-field').value;
+            let component = $('#poster-editor [data-role="text-component-'+this.indexField+'"]')[0].classList.add('type-field-'+typeField);
+
+            $('#poster-editor').append(component);
             closeComponent(element);
         } else {
             initComponent(element);
@@ -4692,9 +4696,11 @@ PosterEditor.Behaviors.ComponentSelected = (function($, ajax) {
 
     var componentProperties = function(isLine) {
         let result = '' +
-            '<div class="component-properties text-center">' +
+            '<div class="component-properties">' +
             '    <div class="input-group-btn">' +
             '        <textarea type="text" name="html" class="form-control textarea-editor p-0" value=""></textarea>' +
+            '        <select class="form-control" name="font-family" title="Fonte">' +
+            componentFonts() + '</select>' +
             '        <input type="text" class="form-control onlyNumber" name="font-size" title="Tamanho de fonte" />' +
             '        <button name="bold" type="button" class="btn btn-default btn-xs" aria-label="Bold" title="Bold">' +
             '            <span class="fa fa-bold"></span>' +
@@ -4752,9 +4758,15 @@ PosterEditor.Behaviors.ComponentSelected = (function($, ajax) {
             '        <span class="btn btn-warning btn-xs btn-close" title="Fechar caixa de ferramenta">' +
             '            <i class="fa fa-close"></i>' +
             '        </span>' +
-            '        <span class="btn btn-warning btn-xs btn-display-condition" title="Salvar condição de visualização">' +
-            '            <i class="fa fa-plus"></i>' +
-            '        </span>' +
+            '        <select class="form-control" style="padding: 0px" name="type_field" id="type-field" title="Tipo do campo">' +
+            '           <option value="title" selected>Título</option>' +
+            '           <option value="description">Descrição</option>' +
+            '           <option value="name">Nome</option>' +
+            '           <option value="tel">Telefone</option>' +
+            '           <option value="instagram">Instagram</option>' +
+            '           <option value="facebbok">Facebook</option>' +
+            '           <option value="twitter">Twitter</option>' +
+            '        </select>' +
             '        <span class="btn btn-danger btn-xs btn-remove-condition" title="Remover condição de visualização">' +
             '            <i class="fa fa-close"></i>' +
             '        </span>' +
@@ -5161,6 +5173,7 @@ PosterEditor.Behaviors.DeleteComponent = (function($) {
             component_name = $component.data('role'),
             total_elements = $('#poster-editor [data-role="' + component_name +
                 '"]').length;
+
         bootbox.confirm({
             title: 'Excluir Registro',
             message: 'Você tem certeza que deseja excluir esse elemento?',
@@ -5664,11 +5677,10 @@ PosterEditor.Behaviors.VerticalAlign = (function($) {
 PosterEditor.Behaviors.PosterScroll = (function($) {
 
     var scrolling = function() {
-        var offset = $('.box-editor').offset().top;
 
         var $menuEditor = $('.component-properties, .auxiliary-components, .component-attributes');
-        $menuEditor.removeClass('affix-menu ');
-        $menuEditor.removeClass('affix-on-top ');
+            $menuEditor.removeClass('affix-menu ');
+            $menuEditor.removeClass('affix-on-top ');
 
         var componentAttributes = document.querySelector('.component-attributes');
         var componentProperties = $('.component-properties');
@@ -5760,8 +5772,9 @@ $(document).ready(function() {
         PosterEditor.GeometricComponentsFactory.make($(this));
     });
 
+    let index = 0;
     $('button[name="add-text"]').click(function() {
-        PosterEditor.Components.TextComponent.make();
+        PosterEditor.Components.TextComponent.make(index += 1);
     });
 
     $('button[name="add-marked-text"]').click(function() {
