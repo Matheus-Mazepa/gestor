@@ -46,11 +46,11 @@ return [
         'create' => 'Cadastrar site',
     ],
 
-    'layouts' => [
-        'index' => 'Layouts',
-        'show' => 'Detalhes do loyout',
-        'edit' => 'Editar layout',
-        'create' => 'Cadastrar layout',
+    'template_images' => [
+        'index' => 'Templates',
+        'show' => 'Detalhes do template',
+        'edit' => 'Editar template',
+        'create' => 'Cadastrar template',
     ],
 
     'domains' => [
@@ -58,5 +58,5 @@ return [
         'show' => 'Detalhes do domínio',
         'edit' => 'Editar domínio',
         'create' => 'Cadastrar domínio',
-    ]
+    ],
 ];

@@ -6,5 +6,9 @@
     return [
         'auth' => [
             'remember_me' => 'Lembrar senha',
+        ],
+
+        'common' => [
+            'delete' => 'Tem certeza que deseja apagar este registro ?'
         ]
     ];

@@ -23,4 +23,8 @@ return [
         'edit' => 'Editar usuário',
         'create' => 'Cadastrar novo usuário',
     ],
+
+    'template_images' => [
+        'create' => 'Criar template'
+    ]
 ];
