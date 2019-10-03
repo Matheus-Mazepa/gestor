@@ -1,17 +1,11 @@
 <?php
 
-namespace App\Http\Resources\Users;
+namespace App\Http\Resources\Admin;
 
 use Illuminate\Http\Resources\Json\Resource;
 
-class UserAdminResource extends Resource
+class AdminResource extends Resource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return array
-     */
     public function toArray($request)
     {
         return [

@@ -16,7 +16,7 @@
     <div class="row mt-3">
         <div class="col-md-12">
             <data-list
-                    data-source="{{ route('client.pagination.clients') }}"
+                    data-source="{{ route('admin.pagination.clients') }}"
                     delete-message="Tem certeza que deseja apagar este registro ?"
                     url-create="{{ route('admin.users.client.create') }}"
                     label-create="Novo usuário"
@@ -29,42 +29,42 @@
     <template id="data-list" slot-scope="modelScope">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        @include('admin.users._partials.tabs')
-                    </div>
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <a v-if="urlCreate" :href="urlCreate">
-                                    <button class="btn btn-primary mb-2">@{{labelCreate}}</button>
-                                </a>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text"
-                                       v-model="query"
-                                       class="form-control"
-                                       placeholder="Buscar ...">
+                @include('admin.users._partials._tabs')
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="card">
+                        <div class="card-header mt-3">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a v-if="urlCreate" :href="urlCreate">
+                                        <button class="btn btn-primary mb-2">@{{labelCreate}}</button>
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text"
+                                           v-model="query"
+                                           class="form-control"
+                                           placeholder="Buscar ...">
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                <tr>
-                                    @include('admin.users.client._partials._head')
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr v-for="(item, index) in items" :key="index">
-                                    @include('admin.users.client._partials._body')
-                                    <td>@include('shared.partials._buttons_actions')</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            @include('shared.partials._pagination')
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        @include('admin.users.client._partials._head')
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr v-for="(item, index) in items" :key="index">
+                                        @include('admin.users.client._partials._body')
+                                        <td>@include('shared.partials._buttons_actions')</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                @include('shared.partials._pagination')
+                            </div>
                         </div>
                     </div>
                 </div>

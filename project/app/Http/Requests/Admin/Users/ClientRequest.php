@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Client;
+namespace App\Http\Requests\Admin\Users;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Models\UserInfo;
 
-class UserRequest extends FormRequest
+class ClientRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -31,7 +31,7 @@ class UserRequest extends FormRequest
         ];
 
         if (in_array($this->method(), ['PUT', 'PATCH'])) {
-            $rules['email'] .= ",{$this->user}";
+            $rules['email'] .= ",{$this->client}";
             $rules['password'] = data_get($this, 'password', '') ? $rules['password'] : '';
         }
 

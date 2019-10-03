@@ -1,47 +1,49 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Users;
+namespace App\Http\Controllers\Client;
 
 use App\Builders\PaginationBuilder;
 use App\Enums\UserRolesEnum;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Users\AdminRequest;
-use App\Http\Resources\Admin\AdminResource;
+use App\Http\Requests\Client\UserRequest;
+use App\Http\Resources\Client\UserResource;
 use App\Repositories\Criterias\User\FilterByUsers;
 use App\Repositories\UserRepository;
 
-class AdminController extends Controller
+class UserController extends Controller
 {
+    private $userInfoRepository;
+
     public function __construct()
     {
         $this->repository = new UserRepository();
-        $this->resource = AdminResource::class;
+        $this->resource = UserResource::class;
 
-        $this->middleware('permission:admin create')->only(['create', 'store']);
-        $this->middleware('permission:admin update')->only(['edit', 'update']);
-        $this->middleware('permission:admin delete')->only(['destroy']);
+        $this->middleware('permission:client create')->only(['create', 'store']);
+        $this->middleware('permission:client update')->only(['edit', 'update']);
+        $this->middleware('permission:client delete')->only(['destroy']);
     }
 
     public function index()
     {
-        return view('admin.users.admin.index');
+        return view('client.users.index');
     }
 
     public function create()
     {
-        return view('admin.users.admin.create');
+        return view('client.users.create');
     }
 
-    public function store(AdminRequest $request)
+    public function store(UserRequest $request)
     {
         $data = $request->all();
         $user = $this->repository->createUser($data);
-        $user->assignRole(UserRolesEnum::ADMIN);
+        $user->assignRole(UserRolesEnum::CLIENT);
 
         return $this->chooseReturn(
             'success',
             _m('user.success.create'),
-            'admin.users.admin.index',
+            'client.users.index',
             $user->id
         );
     }
@@ -49,22 +51,22 @@ class AdminController extends Controller
     public function edit($id)
     {
         $user = $this->repository->findOrNew($id);
-        return view('admin.users.admin.edit', compact('user'));
+        return view('client.users.edit', compact('user'));
     }
 
-    public function update(AdminRequest $request, $id)
+    public function update(UserRequest $request, $id)
     {
         $userData = $request->validated();
         $this->repository->updateUser($id, $userData);
 
         $message = _m('user.success.update');
-        return $this->chooseReturn('success', $message, 'admin.users.admin.index', $id);
+        return $this->chooseReturn('success', $message, 'client.users.index', $id);
     }
 
     public function show($id)
     {
         $user = $this->repository->findOrNew($id);
-        return view('admin.users.admin.show', compact('user'));
+        return view('client.users.show', compact('user'));
     }
 
     public function destroy($id)
@@ -75,14 +77,14 @@ class AdminController extends Controller
             return $this->chooseReturn(
                 'success',
                 _m('user.success.destroy'),
-                'admin.users.admin.index'
+                'client.users.index'
             );
 
         } catch (\Exception $e) {
             return $this->chooseReturn(
                 'error',
                 _m('user.error.destroy'),
-                'admin.users.admin.index'
+                'client.users.index'
             );
         }
     }
@@ -93,7 +95,7 @@ class AdminController extends Controller
 
         $pagination->repository($this->repository)
             ->criterias([
-                new FilterByUsers(UserRolesEnum::ADMIN)
+                new FilterByUsers(UserRolesEnum::CLIENT)
             ])
             ->defaultOrderBy('name')
             ->resource($this->resource);

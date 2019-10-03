@@ -21,7 +21,7 @@
                     <form class="form-horizontal"
                           method="POST"
                           action="{{ route('admin.template_images.edit', $templateImages->id) }}">
-                        @include('admin.template-images.partials._form')
+
                         <button class="btn btn-warning" type="submit">
                             @lang('buttons.common.edit')
                         </button>

@@ -10,6 +10,16 @@
 </li>
 
 <li class="sidebar-item">
+    <a class="sidebar-link waves-effect {{ is_active('client.users.index') }}"
+       href="{{ route('client.users.index') }}">
+        <i class="fa fa-users"></i>
+        <span class="hide-menu">
+            @lang('links.common.users')
+        </span>
+    </a>
+</li>
+
+<li class="sidebar-item">
     <a class="sidebar-link has-arrow waves-effect" href="#" aria-expanded="false">
         <i class="fa fa-globe"></i>
         <span class="hide-menu">@lang('links.my_site.index')</span>

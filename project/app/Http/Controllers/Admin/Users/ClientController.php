@@ -5,17 +5,10 @@ namespace App\Http\Controllers\Admin\Users;
 use App\Builders\PaginationBuilder;
 use App\Enums\UserRolesEnum;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UserClientRequest;
-use App\Http\Resources\UserClientResource;
-use App\Models\Address;
-use App\Models\UserInfo;
-use App\Notifications\VerifyEmail;
-// use App\Repositories\BaseRepository;
-use App\Repositories\Criterias\Common\UserNameCriteria;
+use App\Http\Requests\Admin\Users\ClientRequest;
+use App\Http\Resources\Admin\ClientResource;
 use App\Repositories\Criterias\User\FilterByUsers;
-use App\Repositories\StatesRepository;
 use App\Repositories\UserRepository;
-use Illuminate\Http\Response;
 
 class ClientController extends Controller
 {
@@ -24,11 +17,11 @@ class ClientController extends Controller
     public function __construct()
     {
         $this->repository = new UserRepository();
-        $this->resource = UserAdminResource::class;
+        $this->resource = ClientResource::class;
 
-        $this->middleware('permission:users create')->only(['create', 'store']);
-        $this->middleware('permission:users update')->only(['edit', 'update']);
-        $this->middleware('permission:users delete')->only(['destroy']);
+        $this->middleware('permission:client create')->only(['create', 'store']);
+        $this->middleware('permission:client update')->only(['edit', 'update']);
+        $this->middleware('permission:client delete')->only(['destroy']);
     }
 
     public function index()
@@ -38,110 +31,33 @@ class ClientController extends Controller
 
     public function create()
     {
-        $states = (new StatesRepository())->getStatesToSelect()->toJson();
-        $user = collect([]);
-        $address = collect([]);
-
-        return view('admin.users.client.create', compact('states', 'user', 'address'));
+        return view('admin.users.client.create');
     }
 
-    public function store(UserClientRequest $request)
+    public function store(ClientRequest $request)
     {
-        $userData = $request->validated([
-            'email',
-            'password',
-            'clinic_id',
-        ]);
+        $data = $request->all();
+        $user = $this->repository->createUser($data);
+        $user->assignRole(UserRolesEnum::CLIENT);
 
-        $userInfoData = $request->validated([
-            'name',
-            'cpf',
-            'born_date',
-            'gender',
-            'crmv',
-            'phone',
-            'is_vet',
-        ]);
-
-        $userAddresData = data_get(
-            $request->validated([
-                'address.cep',
-                'address.district',
-                'address.street',
-                'address.state_id',
-                'address.city_id',
-                'address.complement',
-                'address.number',
-            ]),
-            'address'
+        return $this->chooseReturn(
+            'success',
+            _m('user.success.create'),
+            'admin.users.client.index',
+            $user->id
         );
-
-        \DB::transaction(function () use ($userData, $userInfoData, $userAddresData) {
-            $user = $this->repository->createUser($userData);
-            $userInfo = $user->userInfo()->create($userInfoData);
-            $userInfo->address()->create($userAddresData);
-
-            $user->assignRole(UserRolesEnum::CLIENT);
-        });
-
-        $message = _m('user.success.create');
-        return $this->chooseReturn('success', $message, 'admin.users.client.index');
     }
 
     public function edit($id)
     {
-        try {
-            $user = $this->repository->findOrFail($id);
-            $address = collect($user->userInfo->address)
-                ->merge(['state_id' => $user->userInfo->address->city->state_id]);
-
-            $states = (new StatesRepository())->getStatesToSelect()->toJson();
-
-            return view('admin.users.client.edit', compact('user', 'states', 'address'));
-        } catch (\Exception $e) {
-            flash()->error(__('flash.user.error.not_found'));
-            return redirect(route('admin.users.vet.index'), Response::HTTP_PERMANENTLY_REDIRECT);
-        }
+        $user = $this->repository->findOrNew($id);
+        return view('admin.users.client.edit', compact('user'));
     }
 
-    public function update(UserClientRequest $request, $id)
+    public function update(ClientRequest $request, $id)
     {
-        $userData = $request->validated([
-            'email',
-            'password',
-            'clinic_id',
-        ]);
-
-        $userInfoData = $request->validated([
-            'name',
-            'cpf',
-            'born_date',
-            'gender',
-            'crmv',
-            'phone',
-            'is_vet',
-        ]);
-
-        $userAddresData = data_get(
-            $request->validated([
-                'address.cep',
-                'address.district',
-                'address.street',
-                'address.state_id',
-                'address.city_id',
-                'address.complement',
-                'address.number',
-            ]),
-            'address'
-        );
-
-        \DB::transaction(function () use ($userData, $userInfoData, $userAddresData, $id) {
-            $user = $this->repository->updateUser($id, $userData);
-            $userInfo = $this->userInfoRepository->update($user->userInfo->id, $userInfoData);
-            $this->addressRepository->update($userInfo->address->id, $userAddresData);
-
-            $user->notify((new VerifyEmail()));
-        });
+        $userData = $request->validated();
+        $this->repository->updateUser($id, $userData);
 
         $message = _m('user.success.update');
         return $this->chooseReturn('success', $message, 'admin.users.client.index', $id);
@@ -149,23 +65,27 @@ class ClientController extends Controller
 
     public function show($id)
     {
-        try {
-            $user = $this->repository->findOrFail($id);
-
-            return view('admin.users.client.show', compact('user'));
-        } catch (\Exception $e) {
-            flash()->error(__('flash.user.error.not_found'));
-            return redirect(route('admin.users.vet.index'), Response::HTTP_PERMANENTLY_REDIRECT);
-        }
+        $user = $this->repository->findOrNew($id);
+        return view('admin.users.client.show', compact('user'));
     }
 
     public function destroy($id)
     {
         try {
             $this->repository->delete($id);
-            return $this->chooseReturn('success', _m('user.success.destroy'), 'admin.users.client.index');
+
+            return $this->chooseReturn(
+                'success',
+                _m('user.success.destroy'),
+                'admin.users.client.index'
+            );
+
         } catch (\Exception $e) {
-            return $this->chooseReturn('error', _m('user.error.destroy'), 'admin.users.client.index');
+            return $this->chooseReturn(
+                'error',
+                _m('user.error.destroy'),
+                'admin.users.client.index'
+            );
         }
     }
 
@@ -175,11 +95,10 @@ class ClientController extends Controller
 
         $pagination->repository($this->repository)
             ->criterias([
-                new FilterByUsers(UserRolesEnum::CLIENT),
-                new UserNameCriteria(),
+                new FilterByUsers(UserRolesEnum::CLIENT)
             ])
-            ->resource($this->resource)
-            ->defaultOrderBy('user_infos.name');
+            ->defaultOrderBy('name')
+            ->resource($this->resource);
 
         return $pagination->build();
     }

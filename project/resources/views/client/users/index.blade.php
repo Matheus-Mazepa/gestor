@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('breadcrumb')
-    <breadcrumb header="@lang('headings.template_images.index')">
+    <breadcrumb header="@lang('headings.users.clients.index')">
         <breadcrumb-item href="{{ route('home') }}">
             @lang('headings.common.home')
         </breadcrumb-item>
 
         <breadcrumb-item active>
-            @lang('headings.template_images.index')
+            @lang('headings.users.clients.index')
         </breadcrumb-item>
     </breadcrumb>
 @endsection
@@ -16,10 +16,10 @@
     <div class="row mt-3">
         <div class="col-md-12">
             <data-list
-                    data-source="{{ route('admin.pagination.template_images') }}"
-                    delete-message="@lang('phrases.common.delete')"
-                    url-create="{{ route('admin.template_images.create') }}"
-                    label-create="@lang('buttons.template_images.create')"
+                    data-source="{{ route('client.pagination.users') }}"
+                    delete-message="Tem certeza que deseja apagar este registro ?"
+                    url-create="{{ route('client.users.create') }}"
+                    label-create="Novo usuário"
             ></data-list>
         </div>
     </div>
@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header mt-3">
                         <div class="row">
                             <div class="col-md-6">
                                 <a v-if="urlCreate" :href="urlCreate">
@@ -51,15 +51,13 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    @include('admin.template-images._partials._head')
+                                    @include('client.users._partials._head')
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr v-for="(item, index) in items" :key="index">
-                                    @include('admin.template-images._partials._body')
-                                    <td>
-                                        @include('shared.partials._buttons_actions')
-                                    </td>
+                                    @include('client.users._partials._body')
+                                    <td>@include('shared.partials._buttons_actions')</td>
                                 </tr>
                                 </tbody>
                             </table>

@@ -1,7 +1,14 @@
 <?php
 
 return [
-    'users' => [
+    'admin' => [
+        'view',
+        'create',
+        'update',
+        'delete',
+    ],
+
+    'client' => [
         'view',
         'create',
         'update',
