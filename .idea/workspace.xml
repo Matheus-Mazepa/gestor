@@ -2,7 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05704da5-7936-4c5c-b6a0-e78b602ab279" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/project/app/Http/Controllers/Client/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/Http/Requests/Admin/Users/ClientRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/Http/Resources/Admin/ClientResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/resources/views/client/users/_partials/_body.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/resources/views/client/users/_partials/_form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/resources/views/client/users/_partials/_head.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/resources/views/client/users/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/resources/views/client/users/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/resources/views/client/users/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/resources/views/client/users/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/app/Http/Controllers/Admin/Users/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Http/Controllers/Admin/Users/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/app/Http/Controllers/Admin/Users/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Http/Controllers/Admin/Users/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/app/Http/Requests/Admin/UserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Http/Requests/Admin/Users/AdminRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/app/Http/Requests/Client/UserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Http/Requests/Client/UserRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/app/Http/Resources/Admin/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Http/Resources/Admin/AdminResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/app/Http/Resources/Client/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Http/Resources/Client/UserResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/config/permissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/config/permissions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/config/profile-permissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/config/profile-permissions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/template-images/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/admin/template-images/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/template-images/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/admin/template-images/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/_partials/_tabs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/admin/users/_partials/_tabs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/admin/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/admin/users/admin/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/client/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/admin/users/client/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/client/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/admin/users/client/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/client/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/admin/users/client/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/client/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/admin/users/client/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/layouts/_partials/sidebar/sidebar-admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/layouts/_partials/sidebar/sidebar-admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/layouts/_partials/sidebar/sidebar-client.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/layouts/_partials/sidebar/sidebar-client.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/routes/web/admin/pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/routes/web/admin/pagination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/routes/web/client/authenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/routes/web/client/authenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/routes/web/client/pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/routes/web/client/pagination.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +158,7 @@
   <component name="ProjectId" id="1QN56HxKOOQemKyM1zT9GRCJaxX" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -189,6 +220,7 @@
       <updated>1567598036901</updated>
       <workItem from="1567598038178" duration="7183000" />
       <workItem from="1568034252299" duration="1766000" />
+      <workItem from="1570122610700" duration="322000" />
     </task>
     <servers />
   </component>

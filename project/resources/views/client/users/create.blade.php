@@ -18,7 +18,7 @@
             <div class="card">
                 <div class="card-body">
                     <form class="form-horizontal" method="POST" action="{{ route('client.users.store') }}">
-                        @include('client.users.partials._form')
+                        @include('client.users._partials._form')
                         <button class="btn btn-success" type="submit">
                             @lang('buttons.common.save')
                         </button>

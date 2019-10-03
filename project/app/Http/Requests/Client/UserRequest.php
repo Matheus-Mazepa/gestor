@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Client;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Models\UserInfo;
 
 class UserRequest extends FormRequest
 {
@@ -26,11 +27,12 @@ class UserRequest extends FormRequest
         $rules = [
             'name' => 'required|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|confirmed',
+            'password' => 'required|confirmed|string|min:8|max:12',
         ];
 
         if (in_array($this->method(), ['PUT', 'PATCH'])) {
             $rules['email'] .= ",{$this->user}";
+            $rules['password'] = data_get($this, 'password', '') ? $rules['password'] : '';
         }
 
         return $rules;

@@ -1,10 +1,17 @@
 <?php
 
 return [
-    'users' => [
-        'index',
+    'admin' => [
+        'view',
         'create',
-        'edit',
-        'destroy'
+        'update',
+        'delete',
+    ],
+
+    'client' => [
+        'view',
+        'create',
+        'update',
+        'delete',
     ],
 ];

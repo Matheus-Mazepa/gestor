@@ -25,11 +25,11 @@
             'create' => 'Cadastrar site',
         ],
 
-        'layouts' => [
-            'index' => 'Layouts',
-            'show' => 'Detalhes do loyout',
-            'edit' => 'Editar layout',
-            'create' => 'Cadastrar layout',
+        'template_images' => [
+            'index' => 'Templates',
+            'show' => 'Detalhes do template',
+            'edit' => 'Editar template',
+            'create' => 'Cadastrar template',
         ],
 
         'domains' => [
@@ -38,5 +38,5 @@
             'edit' => 'Editar domínio',
             'create' => 'Cadastrar domínio',
             'create_new' => 'Criar novo'
-        ]
+        ],
     ];

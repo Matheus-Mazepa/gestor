@@ -107,6 +107,13 @@ abstract class Repository implements CriteriaContract
         return $this->model->findOrNew($id);
     }
 
+    public function findOrFail($id, $columns = ['*'])
+    {
+        $this->resetQuery();
+        $this->applyCriteria();
+        return $this->model->findOrFail($id);
+    }
+
     public function firstOrCreate($data)
     {
         $this->resetQuery();

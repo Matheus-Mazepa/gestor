@@ -22,7 +22,7 @@
                           action="{{ route('client.users.update', $user->id) }}">
 
                         @method('PUT')
-                        @include('client.users.partials._form')
+                        @include('client.users._partials._form')
 
                         <button class="btn btn-warning" type="submit">
                             @lang('buttons.common.save_editions')

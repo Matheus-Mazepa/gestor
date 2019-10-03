@@ -4,20 +4,11 @@ use App\Enums\UserRolesEnum;
 
 return [
     UserRolesEnum::ADMIN => [
-        'users' => [
-            'index',
-            'create',
-            'edit',
-            'destroy'
-        ],
+        'admin' => ['view', 'create', 'update', 'delete'],
+        'client' => ['view', 'create', 'update', 'delete'],
     ],
 
     UserRolesEnum::CLIENT => [
-        'users' => [
-            'index',
-            'create',
-            'edit',
-            'destroy'
-        ],
+        'client' => ['view', 'create', 'update', 'delete'],
     ],
 ];

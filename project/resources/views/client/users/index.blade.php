@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header mt-3">
                         <div class="row">
                             <div class="col-md-6">
                                 <a v-if="urlCreate" :href="urlCreate">
@@ -51,12 +51,12 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    @include('client.users.partials._head')
+                                    @include('client.users._partials._head')
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr v-for="(item, index) in items" :key="index">
-                                    @include('client.users.partials._body')
+                                    @include('client.users._partials._body')
                                     <td>@include('shared.partials._buttons_actions')</td>
                                 </tr>
                                 </tbody>
