@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'LetsGrow Base Laravel'),
+    'name' => env('APP_NAME', 'TCC'),
 
     /*
     |--------------------------------------------------------------------------

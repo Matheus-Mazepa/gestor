@@ -1,4 +1,4 @@
-# Disdigital
+# TCC
 
 ### Requisitos
 -   `docker`
@@ -6,13 +6,13 @@
 
 ### Instalação
 ```sh
-git clone https://github.com/Libertygeneration/DisDigitalApp.git
-cd disdigital/
+git clone https://github.com/Matheus-Mazepa/tcc.git
+cd tcc/
 make setup
 ```
 
 ### Acessando a área administrativa
 Para acessar basta abrir o navegador em `http://localhost` com o acesso abaixo:
 
-* email: admin@letsgrow.com.br
+* email: admin@admin.com.br
 * senha: 123456
