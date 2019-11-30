@@ -17,46 +17,9 @@ return [
     ],
 
     'users' => [
-        'common' => [
-            'index' => 'Usuários',
-            'show' => 'Detalhes do Usuário',
-            'edit' => 'Editar Usuário',
-            'create' => 'Cadastrar Usuário'
-        ],
-
-        'admins' => [
-            'index' => 'Administradores',
-            'show' => 'Detalhes do Administrador',
-            'edit' => 'Editar Administrador',
-            'create' => 'Cadastrar Administrador'
-        ],
-
-        'clients' => [
-            'index' => 'Clientes',
-            'show' => 'Detalhes do Cliente',
-            'edit' => 'Editar Cliente',
-            'create' => 'Cadastrar Cliente',
-        ],
-    ],
-
-    'my_site' => [
-        'index' => 'Meu site',
-        'show' => 'Detalhes do site',
-        'edit' => 'Editar site',
-        'create' => 'Cadastrar site',
-    ],
-
-    'template_images' => [
-        'index' => 'Templates',
-        'show' => 'Detalhes do template',
-        'edit' => 'Editar template',
-        'create' => 'Cadastrar template',
-    ],
-
-    'domains' => [
-        'index' => 'Domínios',
-        'show' => 'Detalhes do domínio',
-        'edit' => 'Editar domínio',
-        'create' => 'Cadastrar domínio',
+        'index' => 'Usuários',
+        'show' => 'Detalhes do Usuário',
+        'edit' => 'Editar Usuário',
+        'create' => 'Cadastrar Usuário'
     ],
 ];

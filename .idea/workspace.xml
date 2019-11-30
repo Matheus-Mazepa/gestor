@@ -2,38 +2,97 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05704da5-7936-4c5c-b6a0-e78b602ab279" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/app/Http/Controllers/Client/UserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/app/Http/Requests/Admin/Users/ClientRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/app/Http/Resources/Admin/ClientResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/resources/views/client/users/_partials/_body.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/resources/views/client/users/_partials/_form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/resources/views/client/users/_partials/_head.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/resources/views/client/users/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/resources/views/client/users/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/resources/views/client/users/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/resources/views/client/users/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/Models/Company.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/Models/Product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/Models/Supplier.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/resources/assets/img/fREEXER.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/resources/assets/scss/custom.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/disdigital.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/disdigital.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Http/Controllers/Admin/Users/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Http/Controllers/Admin/Users/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Http/Controllers/Admin/Users/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Http/Controllers/Admin/Users/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Http/Requests/Admin/UserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Http/Requests/Admin/Users/AdminRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Http/Requests/Client/UserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Http/Requests/Client/UserRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Http/Resources/Admin/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Http/Resources/Admin/AdminResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Http/Resources/Client/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Http/Resources/Client/UserResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/app/Http/Controllers/Admin/TemplateImageController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/app/Http/Controllers/Admin/Users/AdminController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/app/Http/Controllers/Admin/Users/ClientController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/app/Http/Controllers/Client/TemplateImageController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/app/Http/Controllers/Client/UserController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/app/Models/TemplateImage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Providers/RouteServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/config/permissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/config/permissions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/config/profile-permissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/config/profile-permissions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/template-images/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/admin/template-images/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/template-images/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/admin/template-images/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/_partials/_tabs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/admin/users/_partials/_tabs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/admin/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/admin/users/admin/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/client/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/admin/users/client/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/client/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/admin/users/client/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/client/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/admin/users/client/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/client/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/admin/users/client/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/views/layouts/_partials/sidebar/sidebar-admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/layouts/_partials/sidebar/sidebar-admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/views/layouts/_partials/sidebar/sidebar-client.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/layouts/_partials/sidebar/sidebar-client.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/routes/web/admin/pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/routes/web/admin/pagination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/routes/web/client/authenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/routes/web/client/authenticated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/routes/web/client/pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/routes/web/client/pagination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/js/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/assets/js/components.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/js/components/ChooseTemplate/ChooseTemplate.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/js/components/ChooseTemplate/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/js/components/Editor/Editor.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/js/components/Editor/EditorComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/js/components/Editor/EditorContent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/js/components/Editor/EditorFooter.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/js/components/Editor/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/js/editor/editor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/js/editor/jquery-ui.min-custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/assets/scss/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/scss/template/auth.scss" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/assets/scss/template/auth.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/scss/template/config.scss" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/assets/scss/template/config.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/scss/template/variable.scss" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/assets/scss/template/variable.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/lang/pt-br/buttons.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/lang/pt-br/buttons.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/lang/pt-br/headings.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/lang/pt-br/headings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/lang/pt-br/links.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/lang/pt-br/links.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/template-images/_partials/_body.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/template-images/_partials/_head.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/template-images/create.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/template-images/edit.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/template-images/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/template-images/show.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/_partials/_tabs.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/admin/_partials/_body.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/users/_partials/_body.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/admin/_partials/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/users/_partials/_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/admin/_partials/_head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/users/_partials/_head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/admin/create.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/admin/edit.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/admin/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/admin/show.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/client/_partials/_body.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/client/_partials/_form.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/client/_partials/_head.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/client/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/users/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/client/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/client/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/admin/users/client/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/users/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/client/template-images/edit.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/client/template-images/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/client/template-images/partials/_body.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/client/template-images/partials/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Models/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/client/template-images/partials/_head.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/client/template-images/partials/buttons-actions.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/client/template-images/show.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/client/users/_partials/_body.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/client/users/_partials/_form.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/client/users/_partials/_head.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/client/users/create.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/client/users/edit.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/client/users/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/client/users/show.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/layouts/_partials/sidebar/sidebar-admin.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/layouts/_partials/sidebar/sidebar-client.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/layouts/_partials/sidebar/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/layouts/_partials/sidebar/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/routes/web/admin/ajax.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/routes/web/admin/authenticated.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/routes/web/admin/pagination.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/routes/web/client/ajax.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/routes/web/client/authenticated.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/routes/web/client/pagination.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/routes/web/shared/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/routes/web/ajax.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/routes/web/shared/authenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/routes/web/authenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/routes/web/shared/pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/routes/web/pagination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/routes/web/shared/unauthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/routes/web/unauthenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/webpack.mix.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +105,63 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="tcc@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="tcc@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="tcc@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="tcc: database" type="162271b6:PgImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="tcc@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="tcc: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="tcc@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="tcc: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="tcc@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="tcc: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="tcc1" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -157,6 +273,8 @@
   </component>
   <component name="ProjectId" id="1QN56HxKOOQemKyM1zT9GRCJaxX" />
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -172,13 +290,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project/routes/web" />
+      <recent name="$PROJECT_DIR$/project/resources/views" />
       <recent name="$PROJECT_DIR$/project/resources/assets/js/components/SelectBox" />
       <recent name="$PROJECT_DIR$/project/resources/assets/js/components/DataList" />
       <recent name="$PROJECT_DIR$/project/resources/assets/js/components/Breadcrumb" />
-      <recent name="$PROJECT_DIR$/project/resources/assets/js" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/project" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/project/resources/views/users" />
+      <recent name="$PROJECT_DIR$/project/app/Http/Controllers" />
+      <recent name="$PROJECT_DIR$/project/app/Models" />
+      <recent name="$PROJECT_DIR$/project/resources/assets/img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -200,7 +323,7 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1466ff3d" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4d78caeb" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -221,6 +344,17 @@
       <workItem from="1567598038178" duration="7183000" />
       <workItem from="1568034252299" duration="1766000" />
       <workItem from="1570122610700" duration="322000" />
+      <workItem from="1571002142862" duration="364000" />
+      <workItem from="1572003370596" duration="13000" />
+      <workItem from="1573090003296" duration="598000" />
+      <workItem from="1573508150197" duration="1142000" />
+      <workItem from="1573509667320" duration="383000" />
+      <workItem from="1573579363291" duration="1167000" />
+      <workItem from="1573604879084" duration="3282000" />
+      <workItem from="1573785578560" duration="3006000" />
+      <workItem from="1574186885179" duration="5518000" />
+      <workItem from="1575071105816" duration="726000" />
+      <workItem from="1575072205371" duration="162000" />
     </task>
     <servers />
   </component>
@@ -239,5 +373,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/project/resources/views/layouts/_partials/sidebar/sidebar.blade.php</url>
+          <line>34</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

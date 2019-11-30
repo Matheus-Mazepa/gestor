@@ -18,8 +18,6 @@ class HomeController extends Controller
 
     public function index()
     {
-        return (current_user()->hasRole(UserRolesEnum::ADMIN))
-            ? redirect()->route('admin.users.admin.index')
-            : redirect()->route('client.users.index');
+        return view('home');
     }
 }

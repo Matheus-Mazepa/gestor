@@ -1,11 +1,11 @@
 @extends('layouts.auth')
 
 @section('content')
+    <div class="row img-login">
+        <img src="/assets/img/fREEXER.png" alt="homepage" class="m-auto" style="height: 70px; transform: scale(1.8);">
+    </div>
     <div class="card card-signin my-5">
         <div class="card-body">
-            <h5 class="card-title text-center">
-                @lang('headings.auth.sign_in')
-            </h5>
             <form class="form-signin" method="POST" action="{{ route('login') }}">
                 @csrf
 
@@ -45,7 +45,7 @@
                     </div>
                 </div>
 
-                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">
+                <button class="btn btn-lg btn-secondary btn-block text-uppercase" type="submit">
                     @lang('buttons.auth.sign_in')
                 </button>
 

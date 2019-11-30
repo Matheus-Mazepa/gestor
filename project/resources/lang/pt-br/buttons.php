@@ -12,6 +12,7 @@ return [
         'edit' => 'Editar',
         'save_editions' => 'Salvar alterações',
         'show' => 'Visualizar',
+        'create_new' => 'Criar novo',
         'document' => 'Documentos',
         'destroy' => 'Excluir',
         'save' => 'Salvar',
@@ -23,8 +24,4 @@ return [
         'edit' => 'Editar usuário',
         'create' => 'Cadastrar novo usuário',
     ],
-
-    'template_images' => [
-        'create' => 'Criar template'
-    ]
 ];

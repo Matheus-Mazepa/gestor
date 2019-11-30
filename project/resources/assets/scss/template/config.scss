@@ -2445,15 +2445,15 @@ fieldset:disabled a.btn {
   border-color: $secondary; }
 .btn-secondary:hover {
   color: #fff;
-  background-color: #19F26F;
-  border-color: #19F26F; }
+  background-color: #515151;
+  border-color: #3f3f3f; }
 .btn-secondary:focus, .btn-secondary.focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
   box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5); }
 .btn-secondary.disabled, .btn-secondary:disabled {
   color: #fff;
-  background-color: #23F297;
-  border-color: #23F297; }
+  background-color: #59595a;
+  border-color: #59595a; }
 .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active,
 .show > .btn-secondary.dropdown-toggle {
   color: #fff;

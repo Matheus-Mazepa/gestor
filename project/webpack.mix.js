@@ -17,7 +17,6 @@ mix.copyDirectory('resources/assets/img', 'public/assets/img');
 // Compiling assets
 mix
     .js('resources/assets/js/app.js', 'public/assets/js')
-    .js('resources/assets/js/editor/editor.js', 'public/assets/js')
     .sass('resources/assets/scss/app.scss', 'public/assets/css')
     .sass('resources/assets/scss/auth.scss', 'public/assets/css')
     .sass('resources/assets/scss/editor/editor.scss', 'public/assets/css')

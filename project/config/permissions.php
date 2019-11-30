@@ -7,11 +7,4 @@ return [
         'update',
         'delete',
     ],
-
-    'client' => [
-        'view',
-        'create',
-        'update',
-        'delete',
-    ],
 ];

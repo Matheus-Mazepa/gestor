@@ -1,6 +1,5 @@
 require('./bootstrap.js');
 require('./commons.js');
-require('./editor/jquery-ui.min-custom.js');
 
 window.Vue = require('vue');
 

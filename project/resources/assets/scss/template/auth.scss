@@ -1,6 +1,6 @@
 body {
   background: $themecolor;
-  background: linear-gradient(to right, $themecolor2, $themecolor);
+  background: linear-gradient(to right, #822d35, #2f1f20);
   font-size: 0.875rem !important;
 }
 
@@ -41,8 +41,8 @@ body {
 }
 
 .form-signin .btn:focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(116, 96, 238, 0.5);
-  box-shadow: 0 0 0 0.2rem rgba(116, 96, 238, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(94, 94, 94);
+  box-shadow:  0 0 0 0.2rem rgba(94, 94, 94);
 }
 
 .form-label-group {
@@ -106,4 +106,8 @@ body {
 
 .form-control {
   font-size: 0.875rem !important;
+}
+
+.img-login {
+  margin-top: 20px;
 }
