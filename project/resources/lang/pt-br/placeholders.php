@@ -12,8 +12,13 @@ return [
         'name' => 'Insira seu nome'
     ],
 
-    'template_images' => [
+    'products' => [
         'title' => 'Insira um título',
-        'html' => 'Insira um template no formato HTML'
+        'description' => 'Insira uma descrição',
+        'ncm' => 'Insira o NCM',
+        'code' => 'Insira um código',
+        'price_nfe' => 'Insira o preço nota fiscal eletrônica',
+        'commercial_unit' => 'Insira uma unidade comercial',
     ]
+
 ];

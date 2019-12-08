@@ -29,7 +29,7 @@ $(function() {
             $("#main-wrapper").attr("data-sidebartype", "full");
         }
     };
-    $(window).ready(setsidebartype);
+    // $(window).ready(setsidebartype);
     $(window).on("resize", setsidebartype);
 
 });

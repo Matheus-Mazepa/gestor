@@ -16,7 +16,7 @@ class Supplier
 
 
     protected $fillable = [
-        'name', 'cnpj'
+        'name', 'cnpj', 'email', 'phone', 'company_id'
     ];
 
     protected static $logAttributes = [

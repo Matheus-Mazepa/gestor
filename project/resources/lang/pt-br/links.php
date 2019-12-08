@@ -15,9 +15,10 @@
             'my_profile' => 'Meu perfil',
             'dashboard' => 'Dashboard',
             'products' => 'Produtos',
-            'orders' => 'Produtos',
+            'orders' => 'Pedidos',
             'clients' => 'Clientes',
             'create_new' => 'Criar novo',
-            'users' => 'Usuários'
+            'users' => 'Usuários',
+            'financial_schedule' => 'Agenda financeira'
         ],
     ];

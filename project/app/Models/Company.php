@@ -11,15 +11,22 @@ class Company
     use Notifiable, HasRoles, SearchScope;
 
     protected $searchBy = [
-        'name', 'cnpj'
+        'name', 'cpf_cnpj'
     ];
 
 
     protected $fillable = [
-        'name', 'cnpj'
+        'name',
+        'cpf_cnpj',
+        'corporate_name',
+        'phone',
+        'ie_municipal',
+        'ie_estadual',
+        'is_legal_person',
+        'address_id',
     ];
 
     protected static $logAttributes = [
-        'name', 'cnpj'
+        'name', 'cpf_cnpj'
     ];
 }

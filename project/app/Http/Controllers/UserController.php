@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Builders\PaginationBuilder;
 use App\Models\User;
+use App\Repositories\Criterias\Common\Where;
 
 class UserController extends Controller
 {
@@ -29,6 +30,9 @@ class UserController extends Controller
 
 //        $pagination->repository($this->repository)
 //            ->defaultOrderBy('name')
+//            ->criterias([
+//                new Where('name', 'ilike','josa'),
+//            ])
 //            ->resource($this->resource);
 
         $users = [
@@ -49,5 +53,16 @@ class UserController extends Controller
         $pagination->collection(collect($users))
             ->defaultOrderBy('name');
         return $pagination->build();
+    }
+
+    /**
+     * Configura a paginação.
+     *
+     * @param PaginationBuilder $pagination
+     * @return void
+     */
+    protected function getPagination($pagination)
+    {
+        // TODO: Implement getPagination() method.
     }
 }

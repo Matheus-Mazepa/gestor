@@ -31,7 +31,6 @@ abstract class Repository implements CriteriaContract
     protected $skipCriteria = false;
 
     /**
-     * @param Collection $criterias
      * @throws RepositoryException
      */
     public function __construct()

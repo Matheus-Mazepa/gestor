@@ -9180,7 +9180,9 @@ sidebar navigation
 .sidebar-nav ul {
   /*******************
          Small cap
-         ******************/ }
+         ******************/
+overflow: hidden;
+}
 .sidebar-nav ul .sidebar-item {
   width: 250px;
   /*******************

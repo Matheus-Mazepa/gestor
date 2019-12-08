@@ -98,6 +98,10 @@ sidebar navigation
 /*******************
  common m-p removed
 ******************/
+#sidebarnav {
+    overflow: hidden;
+}
+
 .sidebar-nav{
     ul {
         margin: 0px;

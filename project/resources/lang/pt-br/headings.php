@@ -22,4 +22,9 @@ return [
         'edit' => 'Editar Usuário',
         'create' => 'Cadastrar Usuário'
     ],
+
+    'products' => [
+        'index' => 'Produtos',
+        'create' => 'Cadstrar produto',
+    ]
 ];

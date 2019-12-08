@@ -11,15 +11,22 @@ class Client
     use Notifiable, HasRoles, SearchScope;
 
     protected $searchBy = [
-        'name', 'cnpj/cpf', 'incricao_municipal', 'incricao_estadual'
+        'name',
     ];
 
 
     protected $fillable = [
-        'name', 'cnpj/cpf', 'incricao_municipal', 'incricao_estadual'
+        'name',
+        'cpf_cnpj',
+        'phone',
+        'ie_municipal',
+        'ie_estadual',
+        'is_legal_person',
+        'company_id',
+        'address_id',
     ];
 
     protected static $logAttributes = [
-        'name', 'cnpj/cpf', 'incricao_municipal', 'incricao_estadual'
+        'name',
     ];
 }

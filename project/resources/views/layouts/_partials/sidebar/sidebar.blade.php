@@ -12,19 +12,21 @@
                     </a>
                 </li>
 
+                @if (current_user()->can('orders view'))
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect"
-                       href="{{route('user.index')}}">
+                       href="{{route('users.index')}}">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="hide-menu">
                             @lang('links.common.orders')
                         </span>
                     </a>
                 </li>
+                @endif
 
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect"
-                       href="{{route('user.index')}}">
+                       href="{{route('products.index')}}">
                         <i class=" fas fa-shopping-basket"></i>
                         <span class="hide-menu">
                             @lang('links.common.products')
@@ -34,7 +36,7 @@
 
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect"
-                       href="{{route('user.index')}}">
+                       href="{{route('users.index')}}">
                         <i class="fas fa-users"></i>
                         <span class="hide-menu">
                             @lang('links.common.clients')
@@ -44,10 +46,20 @@
 
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect"
-                       href="{{route('user.index')}}">
+                       href="{{route('users.index')}}">
                         <i class="fas fa-user"></i>
                         <span class="hide-menu">
                             @lang('links.common.users')
+                        </span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect"
+                       href="{{route('users.index')}}">
+                        <i class=" fas fa-calendar-alt"></i>
+                        <span class="hide-menu">
+                            @lang('links.common.financial_schedule')
                         </span>
                     </a>
                 </li>

@@ -6,3 +6,4 @@
  */
 
 Route::get('users', 'UserController@pagination')->name('pagination.users');
+Route::get('products', 'ProductController@pagination')->name('pagination.products');

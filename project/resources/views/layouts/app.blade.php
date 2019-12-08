@@ -32,12 +32,16 @@
     @include('layouts.flash-messages')
 
     <div id="main-wrapper"
+         data-theme="light"
          data-layout="vertical"
-         data-navbarbg="skin5"
-         data-sidebartype="full"
-         data-sidebar-position="absolute"
-         data-header-position="absolute"
-         data-boxed-layout="full">
+         data-navbarbg="skin6"
+{{--         data-sidebartype="full"--}}
+         data-sidebartype="mini-sidebar"
+         data-sidebar-position="fixed"
+         data-header-position="fixed"
+         data-boxed-layout="full"
+         class="mini-sidebar">
+
         @include('layouts._partials.navbar.navbar')
         @include('layouts._partials.sidebar.sidebar')
 

@@ -19,11 +19,13 @@ return [
         'actions' => 'Ações'
     ],
 
-    'template_images' => [
-        'preview' => 'Visualizar',
+    'products' => [
         'title' => 'Título',
-        'html' => 'Template HTML',
-        'created_at' => 'Criado em',
-        'updated_at' => 'Editado em'
+        'description' => 'Descrição',
+        'ncm' => 'NCM',
+        'code' => 'Código',
+        'price_nfe' => 'Preço nota fiscal eletrônica',
+        'commercial_unit' => 'Unidade comercial',
     ]
+
 ];

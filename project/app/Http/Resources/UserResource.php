@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Admin;
+namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\Resource;
 
-class ClientResource extends Resource
+class UserResource extends Resource
 {
     public function toArray($request)
     {
@@ -15,9 +15,9 @@ class ClientResource extends Resource
             'updated_at' => format_date($this->updated_at),
 
             'links' => [
-                'edit' => $this->when(true, route('admin.users.client.edit', $this->id)),
-                'show' => $this->when(true, route('admin.users.client.show', $this->id)),
-                'destroy' => $this->when(true, route('admin.users.client.destroy', $this->id)),
+                'edit' => $this->when(true, route('users.edit', $this->id)),
+                'show' => $this->when(true, route('users.show', $this->id)),
+                'destroy' => $this->when(true, route('users.destroy', $this->id)),
             ],
         ];
     }

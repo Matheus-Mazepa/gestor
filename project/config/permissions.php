@@ -7,4 +7,11 @@ return [
         'update',
         'delete',
     ],
+
+    'orders' => [
+        'view',
+        'create',
+        'update',
+        'delete',
+    ],
 ];
