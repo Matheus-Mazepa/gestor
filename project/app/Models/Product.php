@@ -37,4 +37,14 @@ class Product extends Model
     protected static $logAttributes = [
         'title', 'description', 'ncm', 'code', 'price_nfe', 'commercial_unit'
     ];
+
+    public function company()
+    {
+        return $this->hasOne(Company::class, 'company_id', 'id');
+    }
+
+    public function supplier()
+    {
+        return $this->belongsTo(Supplier::class, 'supplier_id', 'id');
+    }
 }

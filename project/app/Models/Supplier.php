@@ -22,4 +22,9 @@ class Supplier
     protected static $logAttributes = [
         'name', 'cnpj'
     ];
+
+    public function company()
+    {
+        return $this->hasOne(Company::class, 'company_id', 'id');
+    }
 }
