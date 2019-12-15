@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 use App\Scopes\Search as SearchScope;
 
 class Product extends Model
 {
-    use Notifiable, HasRoles, SearchScope;
+    use Notifiable, HasRoles, SearchScope, SoftDeletes;
 
     protected $searchBy = [
         'code',

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTemplateImagesTable extends Migration
+class ChangeTableProductSoftDeletes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateTemplateImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('template_images', function (Blueprint $table) {
-            $table->increments('id');
-
-            $table->string('title');
-            $table->string('path_content');
-            $table->timestamps();
+        Schema::table('products', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 
@@ -29,6 +25,8 @@ class CreateTemplateImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('template_images');
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
     }
 }

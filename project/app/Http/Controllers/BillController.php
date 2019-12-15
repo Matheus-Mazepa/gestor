@@ -3,17 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Builders\PaginationBuilder;
-use App\Http\Resources\ProductResource;
-use App\Repositories\ProductRepository;
+use App\Repositories\BillRepository;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class BillController extends Controller
 {
-    /**
-     * Show the application products.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function __construct()
     {
         $this->middleware('auth');
@@ -21,31 +15,30 @@ class ProductController extends Controller
 
     public function index()
     {
-        return view('products.index');
+        return view('bills.index');
     }
 
     public function create()
     {
-        return view('products.create');
+        return view('bills.create');
     }
 
     public function store(Request $request)
     {
         $data = $request->all();
-        $productRepository = new ProductRepository();
-        $productRepository->create($data);
-        return $this->chooseReturn('success', 'Produto criado com sucesso', 'products.index');
+        $billRepository = new BillRepository();
+        $billRepository->create($data);
+        return $this->chooseReturn('success', 'Conta criado com sucesso', 'bills.index');
     }
 
     public function pagination()
     {
         $pagination = new PaginationBuilder();
 
-        $productRepository = ProductRepository::getInstance();
+        $billRepository = new BillRepository();
 
-        $pagination->repository($productRepository)
-            ->defaultOrderBy('title')
-            ->resource(ProductResource::class);
+        $pagination->repository($billRepository)
+            ->defaultOrderBy('title');
 
         return $pagination->build();
     }

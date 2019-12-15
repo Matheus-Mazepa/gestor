@@ -56,7 +56,7 @@
 
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect"
-                       href="{{route('users.index')}}">
+                       href="{{route('bills.index')}}">
                         <i class=" fas fa-calendar-alt"></i>
                         <span class="hide-menu">
                             @lang('links.common.financial_schedule')

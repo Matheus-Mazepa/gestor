@@ -23,6 +23,14 @@ return [
         'create' => 'Cadastrar Usuário'
     ],
 
+    'financial_schedule' => [
+        'index' => 'Agenda financeira',
+    ],
+
+    'bills' => [
+        'create' => 'Cadastrar conta',
+    ],
+
     'products' => [
         'index' => 'Produtos',
         'create' => 'Cadstrar produto',

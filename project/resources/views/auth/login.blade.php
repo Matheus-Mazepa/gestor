@@ -1,11 +1,11 @@
 @extends('layouts.auth')
 
 @section('content')
-    <div class="row img-login">
-        <img src="/assets/img/fREEXER.png" alt="homepage" class="m-auto" style="height: 70px; transform: scale(1.8);">
-    </div>
     <div class="card card-signin my-5">
         <div class="card-body">
+            <div class="row img-login">
+                <img src="/assets/img/fREEXER.png" alt="homepage" class="m-auto" style="height: 70px; transform: scale(1.8);">
+            </div>
             <form class="form-signin" method="POST" action="{{ route('login') }}">
                 @csrf
 
