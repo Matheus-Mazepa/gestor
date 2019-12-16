@@ -2,31 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05704da5-7936-4c5c-b6a0-e78b602ab279" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/app/Http/Controllers/BillController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/app/Repositories/BillRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/database/seeds/PaymentFormsTableSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/resources/views/bills/_partials/_body.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/resources/views/bills/_partials/_form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/resources/views/bills/_partials/_head.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/resources/views/bills/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/resources/views/bills/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/resources/views/bills/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/resources/views/bills/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/resources/assets/js/components/Calendar/Calendar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/resources/assets/js/components/Calendar/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/resources/assets/js/locale/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/resources/assets/js/locale/pt-br.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/resources/assets/js/locales.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Models/Bills.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Models/Bill.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Models/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Models/Company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Models/PaymentForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Models/PaymentForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/database/migrations/2019_09_12_192241_create_template_images_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/assets/scss/template/auth.scss" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/assets/scss/template/auth.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/lang/pt-br/headings.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/lang/pt-br/headings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/views/layouts/_partials/sidebar/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/layouts/_partials/sidebar/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/routes/web/authenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/routes/web/authenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/js/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/assets/js/components.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/assets/scss/editor/editor.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resources/views/bills/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/resources/views/bills/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/webpack.mix.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -210,7 +198,7 @@
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/project/database/seeds" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/project/resources/assets/js/locale" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -224,19 +212,19 @@
     <property name="settings.editor.selected.configurable" value="DockerRegistry" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/project/database/seeds" />
-      <recent name="$PROJECT_DIR$/project/resources/views" />
-      <recent name="$PROJECT_DIR$/project/app/Repositories" />
-      <recent name="$PROJECT_DIR$/project/app/Http/Controllers" />
-      <recent name="$PROJECT_DIR$/project/app/Models" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/project/resources/assets/img" />
       <recent name="$PROJECT_DIR$/project/routes/web" />
       <recent name="$PROJECT_DIR$/project/resources/views" />
       <recent name="$PROJECT_DIR$/project/resources/assets/js/components/SelectBox" />
       <recent name="$PROJECT_DIR$/project/resources/assets/js/components/DataList" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project/resources/assets/js/locale" />
+      <recent name="$PROJECT_DIR$/project/resources/assets/js/components/Calendar" />
+      <recent name="$PROJECT_DIR$/project/database/seeds" />
+      <recent name="$PROJECT_DIR$/project/resources/views" />
+      <recent name="$PROJECT_DIR$/project/app/Repositories" />
     </key>
   </component>
   <component name="RunDashboard">

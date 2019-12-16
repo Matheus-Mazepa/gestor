@@ -1,0 +1,23 @@
+export default {
+  "generic": {
+    'loading': "Carregando",
+    'previous': "Anterior",
+    'next': "Próximo",
+    'calender': "Calendário financeiro",
+    'today': "Hoje",
+    'week': "Semana",
+    'add_event': "Add Evento",
+    'delete_event': "Deletar Evento",
+    'select_language': "Seleciona a linguagem",
+    'event_title': "Título do evento",
+    'event_color': "Cor evento",
+    'event_description': "Descrição",
+    'cancel': "Cancelar",
+    'color_grey': "Cinza",
+    'color_blue': "Azul",
+    'color_lightblue': "Azul claro",
+    'color_green': "Verde",
+    'color_orange': "Laranja",
+    'color_red': "Vermelho",
+  },
+}

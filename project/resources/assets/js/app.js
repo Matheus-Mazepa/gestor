@@ -4,6 +4,17 @@ require('./commons.js');
 window.Vue = require('vue');
 
 import Snotify, { SnotifyPosition } from 'vue-snotify';
+import VueI18n from 'vue-i18n'
+
+import {messages} from './locales';
+// import {messages} from 'vue-bootstrap4-calendar'; // you can include your own translation here if you want!
+
+Vue.use(VueI18n);
+
+window.i18n = new VueI18n({
+  locale: 'pt-br',
+  messages
+});
 
 const snotify_options = {
   toast: {
@@ -12,12 +23,13 @@ const snotify_options = {
     position: SnotifyPosition.rightTop
   }
 };
-
+const i18nLocal = window.i18n;
 Vue.use(Snotify, snotify_options);
 
 require('./components');
 const app = new Vue({
   el: '#app',
+  i18n,
   props: ['flashMessages'],
 
   data: {

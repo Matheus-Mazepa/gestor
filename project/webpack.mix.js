@@ -19,7 +19,6 @@ mix
     .js('resources/assets/js/app.js', 'public/assets/js')
     .sass('resources/assets/scss/app.scss', 'public/assets/css')
     .sass('resources/assets/scss/auth.scss', 'public/assets/css')
-    .sass('resources/assets/scss/editor/editor.scss', 'public/assets/css')
     .options({
         processCssUrls: false
     })

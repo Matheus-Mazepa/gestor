@@ -15,12 +15,7 @@
 @section('content')
     <div class="row mt-3">
         <div class="col-md-12">
-            <data-list
-                    data-source="{{ route('pagination.products') }}"
-                    delete-message="@lang('phrases.common.delete')"
-                    url-create="{{ route('bills.create') }}"
-                    l label-create="@lang('buttons.common.create_new')"
-            ></data-list>
+            <my-calendar></my-calendar>
         </div>
     </div>
 @endsection
