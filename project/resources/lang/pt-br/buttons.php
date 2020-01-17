@@ -12,6 +12,7 @@ return [
         'edit' => 'Editar',
         'save_editions' => 'Salvar alterações',
         'show' => 'Visualizar',
+        'create' => 'Criar',
         'create_new' => 'Criar novo',
         'document' => 'Documentos',
         'destroy' => 'Excluir',

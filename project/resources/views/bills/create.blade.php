@@ -17,7 +17,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('bills.store') }}">
+                    <form method="POST" action="{{ route('bills.store') }}">
                         @include('bills._partials._form')
                         <button class="btn btn-success" type="submit">
                             @lang('buttons.common.save')

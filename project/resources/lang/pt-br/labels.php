@@ -16,11 +16,12 @@ return [
         'name' => 'Nome',
         'created_at' => 'Criado em',
         'updated_at' => 'Atualizado em',
-        'actions' => 'Ações'
+        'actions' => 'Ações',
+        'title' => 'Título',
+        'description' => 'Descrição',
     ],
 
     'products' => [
-        'title' => 'Título',
         'description' => 'Descrição',
         'ncm' => 'NCM',
         'code' => 'Código',

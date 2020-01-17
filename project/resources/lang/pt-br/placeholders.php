@@ -9,7 +9,8 @@ return [
     ],
 
     'common' => [
-        'name' => 'Insira seu nome'
+        'name' => 'Insira seu nome',
+        'description' => 'Insira uma descrição',
     ],
 
     'products' => [

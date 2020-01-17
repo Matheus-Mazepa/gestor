@@ -1,7 +1,7 @@
 @csrf
 <div class="form-group">
     <label for="title">
-        @lang('labels.products.title')
+        @lang('labels.common.title')
     </label>
     <input
             type="text"
