@@ -4,7 +4,7 @@ return [
         'send_password_reset' => 'Enviar link de recuperação',
         'reset_password' => 'Salvar nova senha',
         'recover' => 'Enviar link de recuperação',
-        'sign_in' => 'Login'
+        'sign_in' => 'Entrar'
     ],
 
     'common' => [

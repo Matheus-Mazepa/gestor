@@ -17,6 +17,7 @@
     <!-- Styles -->
     <link href="{{ mix('assets/css/app.css') }}" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
     @yield('header')
 </head>
 
@@ -31,16 +32,7 @@
 
     @include('layouts.flash-messages')
 
-    <div id="main-wrapper"
-         data-theme="light"
-         data-layout="vertical"
-         data-navbarbg="skin6"
-{{--         data-sidebartype="full"--}}
-         data-sidebartype="mini-sidebar"
-         data-sidebar-position="fixed"
-         data-header-position="fixed"
-         data-boxed-layout="full"
-         class="mini-sidebar">
+    <div id="main-wrapper">
 
         @include('layouts._partials.navbar.navbar')
         @include('layouts._partials.sidebar.sidebar')

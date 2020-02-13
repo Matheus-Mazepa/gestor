@@ -11,18 +11,13 @@ let mix = require('laravel-mix');
  |
  */
 
-// Copy images and fonts from 'resources/' to 'public/'
+//Copy images and fonts from 'resources/' to 'public/'
 mix.copyDirectory('resources/assets/img', 'public/assets/img');
+mix.copyDirectory('resources/assets/fonts', 'public/assets/fonts');
 
-// Compiling assets
-mix
-    .js('resources/assets/js/app.js', 'public/assets/js')
-    .sass('resources/assets/scss/app.scss', 'public/assets/css')
-    .sass('resources/assets/scss/auth.scss', 'public/assets/css')
-    .options({
-        processCssUrls: false
-    })
-    .copy('node_modules/@fortawesome/fontawesome-free/webfonts', 'public/fonts');
+//Compiling assets
+mix.js('resources/assets/js/app.js', 'public/assets/js')
+    .sass('resources/assets/sass/app.scss', 'public/assets/css');
 
 // Third party libraries in vendor.js
 mix.extract([
@@ -33,7 +28,7 @@ mix.extract([
     'popper.js',
     'bootstrap',
     'vue-snotify',
-    'jquery-mask-plugin'
+    'jquery-mask-plugin',
 ]);
 
 // Versioning assets when production

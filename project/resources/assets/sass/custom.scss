@@ -1,0 +1,24 @@
+.order-arrow {
+    margin: 0 0 0 5px;
+}
+
+#flash-messages-container {
+    display: none;
+}
+
+.error-block > span {
+    color: red;
+    font-weight: lighter;
+}
+
+.page-wrapper {
+    padding: 15px;
+}
+
+.bg-primary {
+    background: linear-gradient(to right, #822d35, #2f1f20)!important;
+}
+
+.navbar-light {
+    background-color: #eaeaea;
+}

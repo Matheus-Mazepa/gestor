@@ -41,7 +41,7 @@ class ProductController extends Controller
     {
         $pagination = new PaginationBuilder();
 
-        $productRepository = ProductRepository::getInstance();
+        $productRepository = new ProductRepository();
 
         $pagination->repository($productRepository)
             ->defaultOrderBy('title')

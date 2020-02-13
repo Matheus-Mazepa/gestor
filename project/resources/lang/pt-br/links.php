@@ -1,24 +1,24 @@
 <?php
-    /**
-     * Descrições de botões e hyperlinks
-     */
+/**
+ * Descrições de botões e hyperlinks
+ */
 
-    return [
-        'auth' => [
-            'logout' => 'Sair',
-            'forgot_password' => 'Esqueceu a senha?',
-            'back_to_login_page' => 'Retornar a tela de login',
-            'register' => 'Cadastre-se',
-        ],
+return [
+    'auth' => [
+        'logout' => 'Sair',
+        'forgot_password' => 'Esqueceu a senha?',
+        'back_to_login_page' => 'Retornar a tela de login',
+        'register' => 'Cadastre-se',
+    ],
 
-        'common' => [
-            'my_profile' => 'Meu perfil',
-            'dashboard' => 'Dashboard',
-            'products' => 'Produtos',
-            'orders' => 'Pedidos',
-            'clients' => 'Clientes',
-            'create_new' => 'Criar novo',
-            'users' => 'Usuários',
-            'financial_schedule' => 'Agenda financeira'
-        ],
-    ];
+    'common' => [
+        'my_profile' => 'Meu perfil',
+        'dashboard' => 'Dashboard',
+        'products' => 'Produtos',
+        'orders' => 'Pedidos',
+        'clients' => 'Clientes',
+        'create_new' => 'Criar novo',
+        'users' => 'Usuários',
+        'financial_schedule' => 'Agenda financeira'
+    ],
+];

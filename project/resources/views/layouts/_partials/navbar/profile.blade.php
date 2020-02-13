@@ -4,8 +4,8 @@
        data-toggle="dropdown"
        aria-haspopup="true"
        aria-expanded="false">
-        <span class="text-light mr-2">{{ current_user()->name }}</span>
-        <img src="{{ asset('assets/img/users/1-old.jpg') }}" alt="user" class="rounded-circle" width="31">
+        <span class="text-dark mr-2">{{ current_user()->name }}</span>
+        <img src="{{ asset('assets/img/avatar.jpg') }}" alt="user" class="rounded-circle" width="31">
     </a>
 
     <div class="dropdown-menu dropdown-menu-right user-dd animated">

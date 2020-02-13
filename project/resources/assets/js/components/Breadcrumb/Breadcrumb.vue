@@ -1,7 +1,7 @@
 <template>
   <div class="page-breadcrumb">
     <div class="row align-items-center">
-      <div class="col-sm-9">
+      <div>
         <h4 class="page-title">{{ header }}</h4>
         <div class="align-items-center">
           <nav aria-label="breadcrumb">
@@ -41,3 +41,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  .page-breadcrumb {
+    padding-left: 30px;
+  }
+</style>
