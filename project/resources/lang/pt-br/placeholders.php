@@ -20,6 +20,11 @@ return [
         'code' => 'Insira um código',
         'price_nfe' => 'Insira o preço nota fiscal eletrônica',
         'commercial_unit' => 'Insira uma unidade comercial',
+        'price_nfc' => 'Insira o preço da nota fiscal do consumidor',
+        'taxable_unit' => 'Insira a unidade tributável',
+        'cfop_nfc' => 'Insira o CFOP nota fiscal do consumidor',
+        'cfop_nfe' => 'Insira o CFOP nota fiscal eletrônica',
+        'taxable_quantity' => 'Insira a quantidade tributável',
     ]
 
 ];

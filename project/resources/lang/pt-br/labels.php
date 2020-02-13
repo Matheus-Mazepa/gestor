@@ -26,7 +26,12 @@ return [
         'ncm' => 'NCM',
         'code' => 'Código',
         'price_nfe' => 'Preço nota fiscal eletrônica',
+        'price_nfc' => 'Preço nota fiscal do consumidor',
         'commercial_unit' => 'Unidade comercial',
+        'taxable_unit' => 'Unidade tributável',
+        'cfop_nfc' => 'CFOP nota fiscal do consumidor',
+        'cfop_nfe' => 'CFOP nota fiscal eletrônica',
+        'taxable_quantity' => 'Quantidade tributável',
     ]
 
 ];

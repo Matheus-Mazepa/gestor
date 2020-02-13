@@ -14,13 +14,13 @@ class Product extends Model
 
     protected $searchBy = [
         'code',
-        'name',
+        'title',
         ];
 
 
     protected $fillable = [
         'code',
-        'name',
+        'title',
         'price_nfe',
         'ncm',
         'price_nfc',
