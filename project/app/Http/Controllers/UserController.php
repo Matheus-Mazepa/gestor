@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Builders\PaginationBuilder;
 use App\Models\User;
 use App\Repositories\Criterias\Common\Where;
+use App\Repositories\UserRepository;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -23,6 +25,18 @@ class UserController extends Controller
         return view('users.index');
     }
 
+    public function create()
+    {
+        return view('users.create');
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->all();
+        $userRepository = new UserRepository();
+        $userRepository->create($data);
+        return $this->chooseReturn('success', 'Usuario criado com sucesso', 'users.index');
+    }
 
     public function pagination()
     {
