@@ -3,8 +3,9 @@
 namespace App\Http\Requests\Admin\Users;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Models\UserInfo;
 
-class AdminRequest extends FormRequest
+class UserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -30,7 +31,7 @@ class AdminRequest extends FormRequest
         ];
 
         if (in_array($this->method(), ['PUT', 'PATCH'])) {
-            $rules['email'] .= ",{$this->admin}";
+            $rules['email'] .= ",{$this->client}";
             $rules['password'] = data_get($this, 'password', '') ? $rules['password'] : '';
         }
 

@@ -12,7 +12,6 @@ class ProductController extends Controller
     /**
      * Show the application products.
      *
-     * @return \Illuminate\Http\Response
      */
     public function __construct()
     {
@@ -37,27 +36,19 @@ class ProductController extends Controller
         return $this->chooseReturn('success', 'Produto criado com sucesso', 'products.index');
     }
 
-    public function pagination()
-    {
-        $pagination = new PaginationBuilder();
-
-        $productRepository = new ProductRepository();
-
-        $pagination->repository($productRepository)
-            ->defaultOrderBy('title')
-            ->resource(ProductResource::class);
-
-        return $pagination->build();
-    }
-
     /**
      * Configura a paginação.
      *
      * @param PaginationBuilder $pagination
      * @return void
+     * @throws \App\Exceptions\Repositories\RepositoryException
      */
     protected function getPagination($pagination)
     {
-        // TODO: Implement getPagination() method.
+        $productRepository = new ProductRepository();
+
+        $pagination->repository($productRepository)
+            ->defaultOrderBy('title')
+            ->resource(ProductResource::class);
     }
 }
