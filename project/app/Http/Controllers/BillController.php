@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Builders\PaginationBuilder;
+use App\Http\Controllers\Controller;
 use App\Repositories\BillRepository;
 use Illuminate\Http\Request;
 

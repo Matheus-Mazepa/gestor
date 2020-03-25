@@ -29,46 +29,65 @@
                         </li>
                     @endif
 
-
-                    <li class="nav-item ">
-                        <a class="nav-link"
-                           href="{{route('products.index')}}">
-                            <i class=" fa fa-shopping-basket"></i>
-                            <span class="hide-menu">
+                    @if (current_user()->can('products view'))
+                        <li class="nav-item ">
+                            <a class="nav-link"
+                               href="{{route('products.index')}}">
+                                <i class=" fa fa-shopping-basket"></i>
+                                <span class="hide-menu">
                                     @lang('links.common.products')
                                 </span>
-                        </a>
-                    </li>
+                            </a>
+                        </li>
+                    @endif
 
-                    <li class="nav-item ">
-                        <a class="nav-link"
-                           href="{{route('users.index')}}">
-                            <i class="fa fa-users"></i>
-                            <span class="hide-menu">
+                    @if (current_user()->can('products view'))
+                        <li class="nav-item ">
+                            <a class="nav-link"
+                               href="{{route('products.index')}}">
+                                <i class=" fa fa-shopping-basket"></i>
+                                <span class="hide-menu">
+                                    @lang('links.common.products')
+                                </span>
+                            </a>
+                        </li>
+                    @endif
+
+                    @if (current_user()->can('clients view'))
+                        <li class="nav-item ">
+                            <a class="nav-link"
+                               href="{{route('users.index')}}">
+                                <i class="fa fa-users"></i>
+                                <span class="hide-menu">
                                     @lang('links.common.clients')
                                 </span>
-                        </a>
-                    </li>
+                            </a>
+                        </li>
+                    @endif
 
-                    <li class="nav-item ">
-                        <a class="nav-link"
-                           href="{{route('users.index')}}">
-                            <i class="fa fa-user"></i>
-                            <span class="hide-menu">
+                    @if (current_user()->can('users view'))
+                        <li class="nav-item ">
+                            <a class="nav-link"
+                               href="{{route('users.index')}}">
+                                <i class="fa fa-user"></i>
+                                <span class="hide-menu">
                                     @lang('links.common.users')
                                 </span>
-                        </a>
-                    </li>
+                            </a>
+                        </li>
+                    @endif
 
-                    <li class="nav-item ">
-                        <a class="nav-link"
-                           href="{{route('bills.index')}}">
-                            <i class=" fa fa-calendar"></i>
-                            <span class="hide-menu">
+                    @if (current_user()->can('financial_schedule view'))
+                        <li class="nav-item ">
+                            <a class="nav-link"
+                               href="{{route('bills.index')}}">
+                                <i class=" fa fa-calendar"></i>
+                                <span class="hide-menu">
                                     @lang('links.common.financial_schedule')
                                 </span>
-                        </a>
-                    </li>
+                            </a>
+                        </li>
+                    @endif
                 </ul>
 
                 <ul class="navbar-nav float-right">

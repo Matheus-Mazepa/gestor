@@ -25,6 +25,7 @@ return [
         'cfop_nfc' => 'Insira o CFOP nota fiscal do consumidor',
         'cfop_nfe' => 'Insira o CFOP nota fiscal eletrônica',
         'taxable_quantity' => 'Insira a quantidade tributável',
+        'minimal_quantity' => 'Insira a quantidade mínima para o produto em estoque',
     ]
 
 ];

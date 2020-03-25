@@ -339,6 +339,11 @@ function remove_mask_money($value, $fromMoneyFormat = 'BRL')
     return App\Support\MoneyHelper::removeMaskMoney($value, $fromMoneyFormat);
 }
 
+function remove_mask_moneyAndChangeToCent($value, $fromMoneyFormat = 'BRL')
+{
+    return App\Support\MoneyHelper::removeMaskMoney($value, $fromMoneyFormat) * 100;
+}
+
 function parse_decimal($value)
 {
     return number_format($value, 2, '.', '');

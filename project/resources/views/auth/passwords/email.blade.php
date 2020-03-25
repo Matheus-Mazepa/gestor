@@ -17,7 +17,7 @@
                 @csrf
 
                 <div class="form-label-group">
-                    <label for="email">Email address</label>
+                    <label for="email">@lang('labels.auth.email')</label>
                     <input
                         type="email"
                         id="email"

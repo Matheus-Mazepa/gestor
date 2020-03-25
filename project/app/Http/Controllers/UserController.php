@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Builders\PaginationBuilder;
-use App\Models\User;
-use App\Repositories\Criterias\Common\Where;
-use App\Repositories\UserRepository;
+use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
+
+use App\Builders\PaginationBuilder;
+use App\Repositories\UserRepository;
 
 class UserController extends Controller
 {
@@ -38,37 +38,6 @@ class UserController extends Controller
         return $this->chooseReturn('success', 'Usuario criado com sucesso', 'users.index');
     }
 
-    public function pagination()
-    {
-        $pagination = new PaginationBuilder();
-
-//        $pagination->repository($this->repository)
-//            ->defaultOrderBy('name')
-//            ->criterias([
-//                new Where('name', 'ilike','josa'),
-//            ])
-//            ->resource($this->resource);
-
-        $users = [
-          new User([
-              'name' => 'José da silva',
-              'email' => 'jose@silva.com',
-              'created_at' => now(),
-              'updated_at' => now(),
-          ]),
-
-            new User([
-                'name' => 'Tiago Francisco',
-                'email' => 'ti@ago.com',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ])
-        ];
-        $pagination->collection(collect($users))
-            ->defaultOrderBy('name');
-        return $pagination->build();
-    }
-
     /**
      * Configura a paginação.
      *
@@ -77,6 +46,9 @@ class UserController extends Controller
      */
     protected function getPagination($pagination)
     {
-        // TODO: Implement getPagination() method.
+        $pagination->repository(new UserRepository())
+            ->defaultOrderBy('name')
+            ->resource(UserResource::class);
+
     }
 }

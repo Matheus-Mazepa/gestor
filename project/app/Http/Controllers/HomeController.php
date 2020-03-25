@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Enums\UserRolesEnum;
-
 class HomeController extends Controller
 {
     /**

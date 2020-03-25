@@ -37,7 +37,7 @@
         <input
                 type="text"
                 name="ncm"
-                class="form-control {{ has_error_class('ncm') }}"
+                class="form-control mask-number {{ has_error_class('ncm') }}"
                 id="ncm"
                 placeholder="@lang('placeholders.products.ncm')"
                 value="{{old('ncm') ?? $product->ncm ?? ''}}">
@@ -64,13 +64,18 @@
         <label for="price_nfe">
             @lang('labels.products.price_nfe')
         </label>
-        <input
-                type="text"
-                name="price_nfe"
-                class="form-control {{ has_error_class('price_nfe') }}"
-                id="price_nfe"
-                placeholder="@lang('placeholders.products.price_nfe')"
-                value="{{old('price_nfe') ?? $product->price_nfe ?? ''}}">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">R$</span>
+            </div>
+            <input
+                    type="text"
+                    name="price_nfe"
+                    class="form-control mask-money  {{ has_error_class('price_nfe') }}"
+                    id="price_nfe"
+                    placeholder="@lang('placeholders.products.price_nfe')"
+                    value="{{old('price_nfe') ?? $product->price_nfe ?? ''}}">
+        </div>
         @errorblock('price_nfe')
     </div>
 
@@ -78,13 +83,18 @@
         <label for="price_nfc">
             @lang('labels.products.price_nfc')
         </label>
-        <input
-                type="text"
-                name="price_nfc"
-                class="form-control {{ has_error_class('price_nfc') }}"
-                id="price_nfc"
-                placeholder="@lang('placeholders.products.price_nfc')"
-                value="{{old('price_nfc') ?? $product->price_nfc ?? ''}}">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">R$</span>
+            </div>
+            <input
+                    type="text"
+                    name="price_nfc"
+                    class="form-control mask-money  {{ has_error_class('price_nfc') }}"
+                    id="price_nfc"
+                    placeholder="@lang('placeholders.products.price_nfc')"
+                    value="{{old('price_nfc') ?? $product->price_nfc ?? ''}}">
+        </div>
         @errorblock('price_nfc')
     </div>
 </div>
@@ -97,7 +107,7 @@
         <input
                 type="text"
                 name="cfop_nfe"
-                class="form-control {{ has_error_class('cfop_nfe') }}"
+                class="form-control mask-number {{ has_error_class('cfop_nfe') }}"
                 id="cfop_nfe"
                 placeholder="@lang('placeholders.products.cfop_nfe')"
                 value="{{old('cfop_nfe') ?? $product->cfop_nfe ?? ''}}">
@@ -111,7 +121,7 @@
         <input
                 type="text"
                 name="cfop_nfc"
-                class="form-control {{ has_error_class('cfop_nfc') }}"
+                class="form-control mask-number {{ has_error_class('cfop_nfc') }}"
                 id="cfop_nfc"
                 placeholder="@lang('placeholders.products.cfop_nfc')"
                 value="{{old('cfop_nfc') ?? $product->cfop_nfc ?? ''}}">
@@ -120,12 +130,26 @@
 </div>
 
 <div class="row">
-    <div class="form-group col-sm-12 col-md-4">
+    <div class="form-group col-sm-12 col-md-6">
+        <label for="cfop_nfe">
+            @lang('labels.products.minimal_quantity')
+        </label>
+        <input
+                type="text"
+                name="minimal_quantity"
+                class="form-control mask-number {{ has_error_class('minimal_quantity') }}"
+                id="minimal_quantity"
+                placeholder="@lang('placeholders.products.minimal_quantity')"
+                value="{{old('minimal_quantity') ?? $product->minimal_quantity ?? ''}}">
+        @errorblock('minimal_quantity')
+    </div>
+
+    <div class="form-group col-sm-12 col-md-6">
         <label for="taxable_quantity">
             @lang('labels.products.taxable_quantity')
         </label>
         <input
-                type="text"
+                type="number"
                 name="taxable_quantity"
                 class="form-control {{ has_error_class('taxable_quantity') }}"
                 id="taxable_quantity"
@@ -134,7 +158,10 @@
         @errorblock('taxable_quantity')
     </div>
 
-    <div class="form-group col-sm-12 col-md-4">
+</div>
+
+<div class="row">
+    <div class="form-group col-sm-12 col-md-6">
         <label for="commercial_unit">
             @lang('labels.products.commercial_unit')
         </label>
@@ -148,7 +175,7 @@
         @errorblock('commercial_unit')
     </div>
 
-    <div class="form-group col-sm-12 col-md-4">
+    <div class="form-group col-sm-12 col-md-6">
         <label for="taxable_unit">
             @lang('labels.products.taxable_unit')
         </label>

@@ -4,6 +4,8 @@ $(function() {
     $('.mask-cellphone').mask(MaskBehaviors.nineDigitsBehavior, MaskBehaviors.nineDigitsOptions);
     $('.mask-money').mask("#.##0,00", {reverse: true});
 
+    $('.mask-number').mask("#", {reverse: true});
+
     $('.mask-phone').mask('(00) 00000-0000');
 
     $(".mask-cep").mask('00000-000', {

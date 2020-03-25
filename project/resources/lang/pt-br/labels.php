@@ -32,6 +32,7 @@ return [
         'cfop_nfc' => 'CFOP nota fiscal do consumidor',
         'cfop_nfe' => 'CFOP nota fiscal eletrônica',
         'taxable_quantity' => 'Quantidade tributável',
+        'minimal_quantity' => 'Quantidade mínima',
     ]
 
 ];

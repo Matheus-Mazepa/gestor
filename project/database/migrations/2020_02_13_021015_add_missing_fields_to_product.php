@@ -15,10 +15,10 @@ class AddMissingFieldsToProduct extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             $table->integer('price_nfc');
-            $table->integer('taxable_unit');
+            $table->string('taxable_unit');
             $table->integer('cfop_nfc');
             $table->integer('cfop_nfe');
-            $table->integer('quantity');
+            $table->integer('quantity')->default(0);
             $table->integer('minimal_quantity');
             $table->integer('taxable_quantity');
             $table->integer('company_id');

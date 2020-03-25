@@ -31,6 +31,8 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $data['price_nfc'] = remove_mask_moneyAndChangeToCent($data['price_nfc']);
+        $data['price_nfe'] = remove_mask_moneyAndChangeToCent($data['price_nfe']);
         $productRepository = new ProductRepository();
         $productRepository->create($data);
         return $this->chooseReturn('success', 'Produto criado com sucesso', 'products.index');
