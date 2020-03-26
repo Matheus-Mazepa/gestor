@@ -28,6 +28,18 @@
                             </a>
                         </li>
                     @endif
+
+                    @if (current_user()->can('companies view'))
+                        <li class="nav-item ">
+                            <a class="nav-link"
+                               href="{{route('admin.companies.index')}}">
+                                <i class="fa fa-building"></i>
+                                <span class="hide-menu">
+                                    @lang('links.common.companies')
+                                </span>
+                            </a>
+                        </li>
+                    @endif
                 </ul>
 
                 <ul class="navbar-nav float-right">

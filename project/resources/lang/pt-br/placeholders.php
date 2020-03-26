@@ -26,6 +26,10 @@ return [
         'cfop_nfe' => 'Insira o CFOP nota fiscal eletrônica',
         'taxable_quantity' => 'Insira a quantidade tributável',
         'minimal_quantity' => 'Insira a quantidade mínima para o produto em estoque',
-    ]
+    ],
 
+    'companies' => [
+        'name' => 'Insira o nome fantasia',
+        'corporate_name' => 'Insira a razão social',
+    ],
 ];

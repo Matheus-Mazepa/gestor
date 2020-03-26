@@ -43,5 +43,10 @@ return [
     'products' => [
         'index' => 'Produtos',
         'create' => 'Cadstrar produto',
+    ],
+
+    'companies' => [
+        'index' => 'Empresas',
+        'create' => 'Cadstrar empresa',
     ]
 ];

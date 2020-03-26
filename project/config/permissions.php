@@ -8,6 +8,13 @@ return [
         'delete',
     ],
 
+    'companies' => [
+        'view',
+        'create',
+        'update',
+        'delete',
+    ],
+
     'dashboard' => [
         'view',
     ],

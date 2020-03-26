@@ -4,14 +4,17 @@ namespace App\Http\Controllers\Admin;
 
 use App\Actions\Admin\CreateUserAdminAction;
 use App\Http\Requests\Admin\Users\UserAdminRequest;
-use App\Http\Resources\Client\UserResource;
+use App\Http\Resources\Admin\CompanyResource;
+use App\Repositories\CompanyRepository;
 use App\Repositories\Criterias\Common\Where;
+use Illuminate\Http\Request;
 
 use App\Builders\PaginationBuilder;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use App\Repositories\UserRepository;
 
-class UserAdminController extends Controller
+class CompanyController extends Controller
 {
     /**
      * Show the application dashboard.
@@ -21,27 +24,27 @@ class UserAdminController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('permission:users_admin view')->only(['index', 'show']);
-        $this->middleware('permission:users_admin create')->only(['create', 'store']);
-        $this->middleware('permission:users_admin update')->only(['edit', 'update']);
-        $this->middleware('permission:users_admin delete')->only('destroy');
+        $this->middleware('permission:companies view')->only(['index', 'show']);
+        $this->middleware('permission:companies create')->only(['create', 'store']);
+        $this->middleware('permission:companies update')->only(['edit', 'update']);
+        $this->middleware('permission:companies delete')->only('destroy');
     }
 
     public function index()
     {
-        return view('admin.users_admin.index');
+        return view('admin.companies.index');
     }
 
     public function create()
     {
-        return view('admin.users_admin.create');
+        return view('admin.companies.create');
     }
 
     public function store(CreateUserAdminAction $createUserAdminAction, UserAdminRequest $request)
     {
         $data = $request->validated();
         $createUserAdminAction->execute($data);
-        return $this->chooseReturn('success', 'Usuario criado com sucesso', 'admin.users-admin.index');
+        return $this->chooseReturn('success', 'Empresa criado com sucesso', 'admin.companies.index');
     }
 
     /**
@@ -53,10 +56,9 @@ class UserAdminController extends Controller
      */
     protected function getPagination($pagination)
     {
-        $pagination->repository(new UserRepository())
-            ->criterias(new Where('is_admin', true))
+        $pagination->repository(new CompanyRepository())
             ->defaultOrderBy('name')
-            ->resource(UserResource::class);
+            ->resource(CompanyResource::class);
 
     }
 }

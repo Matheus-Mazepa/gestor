@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Http\Requests\Client\Users\UserRequest;
+use App\Http\Resources\Client\UserResource;
 use App\Repositories\Criterias\Common\Where;
-use Illuminate\Http\Request;
 
 use App\Builders\PaginationBuilder;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\UserResource;
 use App\Repositories\UserRepository;
 
 class UserController extends Controller
@@ -36,9 +36,9 @@ class UserController extends Controller
         return view('client.users.create');
     }
 
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $userRepository = new UserRepository();
         $userRepository->create($data);
         return $this->chooseReturn('success', 'Usuario criado com sucesso', 'client.users.index');

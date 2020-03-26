@@ -20,6 +20,7 @@ return [
         'create_new' => 'Criar novo',
         'users' => 'Usuários',
         'users_admin' => 'Usuários Administradors',
+        'companies' => 'Empresas',
         'financial_schedule' => 'Agenda financeira'
     ],
 ];

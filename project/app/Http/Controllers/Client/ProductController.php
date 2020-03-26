@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Client;
 
 use App\Builders\PaginationBuilder;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\ProductResource;
+use App\Http\Resources\Client\ProductResource;
 use App\Repositories\ProductRepository;
 use Illuminate\Http\Request;
 

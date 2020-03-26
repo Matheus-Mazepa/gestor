@@ -7,3 +7,4 @@
  */
 
 Route::get('users-admin', 'UserAdminController@pagination')->name('users-admin');
+Route::get('companies', 'CompanyController@pagination')->name('companies');

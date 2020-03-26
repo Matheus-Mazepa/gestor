@@ -20,6 +20,7 @@ class UsersTableSeeder extends Seeder
         $user->fill([
             'name' => 'Administrador',
             'email' => 'admin@admin.com.br',
+            'is_admin' => true,
             'password' => \Hash::make('123456'),
         ]);
 

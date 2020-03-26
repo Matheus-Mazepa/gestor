@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Requests\Admin\Users;
+namespace App\Http\Requests\Client;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\UserInfo;
 
 class ProductRequest extends FormRequest
 {
