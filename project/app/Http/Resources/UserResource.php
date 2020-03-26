@@ -15,9 +15,9 @@ class UserResource extends Resource
             'updated_at' => format_date($this->updated_at),
 
             'links' => [
-                'edit' => $this->when(true, route('users.edit', $this->id)),
-                'show' => $this->when(true, route('users.show', $this->id)),
-                'destroy' => $this->when(true, route('users.destroy', $this->id)),
+                'edit' => $this->when(true, route('client.users.edit', $this->id)),
+                'show' => $this->when(true, route('client.users.show', $this->id)),
+                'destroy' => $this->when(true, route('client.users.destroy', $this->id)),
             ],
         ];
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Client;
 
 use App\Builders\PaginationBuilder;
 use App\Http\Controllers\Controller;
@@ -16,12 +16,12 @@ class BillController extends Controller
 
     public function index()
     {
-        return view('bills.index');
+        return view('client.bills.index');
     }
 
     public function create()
     {
-        return view('bills.create');
+        return view('client.bills.create');
     }
 
     public function store(Request $request)
@@ -29,7 +29,7 @@ class BillController extends Controller
         $data = $request->all();
         $billRepository = new BillRepository();
         $billRepository->create($data);
-        return $this->chooseReturn('success', 'Conta criado com sucesso', 'bills.index');
+        return $this->chooseReturn('success', 'Conta criado com sucesso', 'client.bills.index');
     }
 
     public function pagination()

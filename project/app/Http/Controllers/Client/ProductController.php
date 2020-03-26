@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Client;
 
 use App\Builders\PaginationBuilder;
+use App\Http\Controllers\Controller;
 use App\Http\Resources\ProductResource;
 use App\Repositories\ProductRepository;
 use Illuminate\Http\Request;
@@ -16,16 +17,20 @@ class ProductController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('permission:products view')->only(['index', 'show']);
+        $this->middleware('permission:products create')->only(['create', 'store']);
+        $this->middleware('permission:products update')->only(['edit', 'update']);
+        $this->middleware('permission:products delete')->only('destroy');
     }
 
     public function index()
     {
-        return view('products.index');
+        return view('client.products.index');
     }
 
     public function create()
     {
-        return view('products.create');
+        return view('client.products.create');
     }
 
     public function store(Request $request)
@@ -35,7 +40,7 @@ class ProductController extends Controller
         $data['price_nfe'] = remove_mask_moneyAndChangeToCent($data['price_nfe']);
         $productRepository = new ProductRepository();
         $productRepository->create($data);
-        return $this->chooseReturn('success', 'Produto criado com sucesso', 'products.index');
+        return $this->chooseReturn('success', 'Produto criado com sucesso', 'client.products.index');
     }
 
     /**

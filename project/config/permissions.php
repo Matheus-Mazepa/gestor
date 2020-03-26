@@ -8,7 +8,11 @@ return [
         'delete',
     ],
 
-    'admin_users' => [
+    'dashboard' => [
+        'view',
+    ],
+
+    'users_admin' => [
         'view',
         'create',
         'update',

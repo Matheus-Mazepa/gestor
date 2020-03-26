@@ -18,7 +18,7 @@ class User extends Authenticatable
 
 
     protected $fillable = [
-        'name', 'email', 'password', 'company_id',
+        'name', 'email', 'password', 'is_admin', 'company_id',
     ];
 
     protected static $logAttributes = [

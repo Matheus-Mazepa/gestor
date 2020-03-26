@@ -14,6 +14,7 @@ return [
 
     'common' => [
         'home' => 'Home',
+        'dashboard' => 'Dashboard',
     ],
 
     'users' => [
@@ -23,8 +24,16 @@ return [
         'create' => 'Cadastrar Usuário'
     ],
 
+    'users_admin' => [
+        'index' => 'Usuários Administradores',
+        'show' => 'Detalhes do Usuário Adiministrador',
+        'edit' => 'Editar Usuário Adiministrador',
+        'create' => 'Cadastrar Usuário Adiministrador'
+    ],
+
     'financial_schedule' => [
         'index' => 'Agenda financeira',
+        'create' => 'Cadastrar nova conta',
     ],
 
     'bills' => [

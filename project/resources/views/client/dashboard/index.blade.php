@@ -9,17 +9,23 @@
 @endsection
 
 @section('content')
-    <div class="row">
-        <div class="col-md-12">
-            @include('admin.dashboard._partials._tabs')
-            @can('dashboard view')
-                <general
-                        top-users-url="{{ route('ajax.admin.dashboards.get-top-users') }}"
-                        templates-most-used-url="{{ route('ajax.admin.dashboards.get-template-most-used')}}"
-                        users-per-month-url="{{ route('ajax.admin.dashboards.get-users-per-month')}}"
-                        users-has-users-groups-url="{{ route('admin.dashboards.pagination.users-and-user-groups') }}"
-                ></general>
-            @endcan
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-header">Dashboard</div>
+
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+
+                        You are logged in!
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

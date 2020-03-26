@@ -11,7 +11,7 @@ class SearchResolvedByUrlCriteria extends Criteria
     public function apply($queryBuilder, Repository $repository)
     {
         $params = Input::all();
-        if (!array_get($params, 'query')) {
+        if (!data_get($params, 'query')) {
             return $queryBuilder;
         }
 

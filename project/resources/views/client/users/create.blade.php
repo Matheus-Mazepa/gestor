@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('breadcrumb')
-    <breadcrumb header="@lang('headings.users.create')" url-back="{{ route('users.index') }}">
+    <breadcrumb header="@lang('headings.users.create')" url-back="{{ route('client.users.index') }}">
         <breadcrumb-item href="{{ route('home') }}">
             @lang('headings.common.home')
         </breadcrumb-item>
@@ -17,8 +17,8 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('users.store') }}">
-                        @include('users._partials._form')
+                    <form class="form-horizontal" method="POST" action="{{ route('client.users.store') }}">
+                        @include('client.users._partials._form')
                         <button class="btn btn-success" type="submit">
                             @lang('buttons.common.save')
                         </button>

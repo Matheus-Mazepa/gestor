@@ -53,7 +53,50 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapUnauthenticatedWebRoutes();
         $this->mapPaginationRoutes();
         $this->mapAjaxRoutes();
+
+        $this->mapAdminRoutes();
+        $this->mapClientRoutes();
     }
+
+    protected function mapAdminRoutes()
+    {
+        Route::namespace($this->namespace . '\Admin')
+            ->middleware(['web', 'auth', 'user-type:' . UserRolesEnum::ADMIN])
+            ->group(function () {
+
+                Route::name('ajax.admin.')
+                    ->prefix('ajax/admin')
+                    ->group(base_path('routes/web/admin/ajax.php'));
+
+                Route::name('admin.')
+                    ->prefix('admin')
+                    ->group(base_path('routes/web/admin/authenticated.php'));
+
+                Route::name('admin.pagination.')
+                    ->prefix('pagination/admin')
+                    ->group(base_path('routes/web/admin/pagination.php'));
+            });
+    }
+
+    protected function mapClientRoutes()
+    {
+        Route::namespace($this->namespace . '\Client')
+            ->middleware(['web', 'auth'])
+            ->group(function () {
+                Route::name('ajax.client.')
+                    ->prefix('ajax/client')
+                    ->group(base_path('routes/web/client/ajax.php'));
+
+                Route::name('client.')
+                    ->prefix('client')
+                    ->group(base_path('routes/web/client/authenticated.php'));
+
+                Route::name('client.pagination.')
+                    ->prefix('pagination/client')
+                    ->group(base_path('routes/web/client/pagination.php'));
+            });
+    }
+
 
     protected function mapDefaultWebRoutes()
     {
@@ -66,14 +109,14 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::middleware(['web', 'auth'])
             ->namespace($this->namespace)
-            ->group(base_path('routes/web/authenticated.php'));
+            ->group(base_path('routes/web/shared/authenticated.php'));
     }
 
     protected function mapUnauthenticatedWebRoutes()
     {
         Route::middleware('web')
             ->namespace($this->namespace)
-            ->group(base_path('routes/web/unauthenticated.php'));
+            ->group(base_path('routes/web/shared/unauthenticated.php'));
     }
 
     protected function mapPaginationRoutes()
@@ -81,7 +124,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware(['web', 'auth'])
             ->namespace($this->namespace)
             ->prefix('pagination')
-            ->group(base_path('routes/web/pagination.php'));
+            ->group(base_path('routes/web/shared/pagination.php'));
     }
 
     protected function mapAjaxRoutes()
@@ -89,7 +132,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware(['web', 'auth'])
             ->namespace($this->namespace)
             ->prefix('ajax')
-            ->group(base_path('routes/web/ajax.php'));
+            ->group(base_path('routes/web/shared/ajax.php'));
     }
 
     /**

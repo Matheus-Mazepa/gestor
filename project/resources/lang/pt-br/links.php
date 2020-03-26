@@ -19,6 +19,7 @@ return [
         'clients' => 'Clientes',
         'create_new' => 'Criar novo',
         'users' => 'Usuários',
+        'users_admin' => 'Usuários Administradors',
         'financial_schedule' => 'Agenda financeira'
     ],
 ];

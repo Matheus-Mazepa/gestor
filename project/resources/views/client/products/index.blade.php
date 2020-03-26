@@ -16,9 +16,9 @@
     <div class="row mt-3">
         <div class="col-md-12">
             <data-list
-                    data-source="{{ route('pagination.products') }}"
+                    data-source="{{ route('client.pagination.products') }}"
                     delete-message="@lang('phrases.common.delete')"
-                    url-create="{{ route('products.create') }}"
+                    url-create="{{ route('client.products.create') }}"
                     l label-create="@lang('buttons.common.create_new')"
             ></data-list>
         </div>
@@ -51,12 +51,12 @@
                                 <table class="table table-hover">
                                     <thead>
                                     <tr>
-                                        @include('products._partials._head')
+                                        @include('client.products._partials._head')
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr v-for="(item, index) in items" :key="index">
-                                        @include('products._partials._body')
+                                        @include('client.products._partials._body')
                                         <td>@include('shared.partials._buttons_actions')</td>
                                     </tr>
                                     </tbody>

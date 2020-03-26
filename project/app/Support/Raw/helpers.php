@@ -22,6 +22,11 @@ function is_user_type($type)
     return current_user()->hasRole($type);
 }
 
+function is_user_admin()
+{
+    return current_user()->is_admin;
+}
+
 function separe_by_comma($array, $lastGlue = ', ')
 {
     if (sizeof($array) != 1) {

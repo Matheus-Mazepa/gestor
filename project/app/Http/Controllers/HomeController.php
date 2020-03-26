@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Client;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 
@@ -18,6 +18,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('home');
+        return (current_user()->is_admin)
+            ? redirect()->route('admin.dashboard.index')
+            : redirect()->route('client.dashboard.index');
     }
 }

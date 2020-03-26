@@ -20,7 +20,7 @@
                     @if (current_user()->can('orders view'))
                         <li class="nav-item ">
                             <a class="nav-link"
-                               href="{{route('users.index')}}">
+                               href="{{route('client.users.index')}}">
                                 <i class="fa fa-shopping-cart"></i>
                                 <span class="hide-menu">
                                     @lang('links.common.orders')
@@ -32,19 +32,7 @@
                     @if (current_user()->can('products view'))
                         <li class="nav-item ">
                             <a class="nav-link"
-                               href="{{route('products.index')}}">
-                                <i class=" fa fa-shopping-basket"></i>
-                                <span class="hide-menu">
-                                    @lang('links.common.products')
-                                </span>
-                            </a>
-                        </li>
-                    @endif
-
-                    @if (current_user()->can('products view'))
-                        <li class="nav-item ">
-                            <a class="nav-link"
-                               href="{{route('products.index')}}">
+                               href="{{route('client.products.index')}}">
                                 <i class=" fa fa-shopping-basket"></i>
                                 <span class="hide-menu">
                                     @lang('links.common.products')
@@ -56,7 +44,7 @@
                     @if (current_user()->can('clients view'))
                         <li class="nav-item ">
                             <a class="nav-link"
-                               href="{{route('users.index')}}">
+                               href="{{route('client.users.index')}}">
                                 <i class="fa fa-users"></i>
                                 <span class="hide-menu">
                                     @lang('links.common.clients')
@@ -68,7 +56,7 @@
                     @if (current_user()->can('users view'))
                         <li class="nav-item ">
                             <a class="nav-link"
-                               href="{{route('users.index')}}">
+                               href="{{route('client.users.index')}}">
                                 <i class="fa fa-user"></i>
                                 <span class="hide-menu">
                                     @lang('links.common.users')
@@ -80,7 +68,7 @@
                     @if (current_user()->can('financial_schedule view'))
                         <li class="nav-item ">
                             <a class="nav-link"
-                               href="{{route('bills.index')}}">
+                               href="{{route('client.bills.index')}}">
                                 <i class=" fa fa-calendar"></i>
                                 <span class="hide-menu">
                                     @lang('links.common.financial_schedule')

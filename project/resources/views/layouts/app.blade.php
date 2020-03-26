@@ -35,7 +35,11 @@
     <div id="main-wrapper">
 
         @include('layouts._partials.navbar.navbar')
-        @include('layouts._partials.sidebar.sidebar')
+        @if (is_user_admin())
+            @include('layouts._partials.sidebar.sidebar_admin')
+        @else
+            @include('layouts._partials.sidebar.sidebar_client')
+        @endif
 
         <div class="page-wrapper">
             @include('layouts._partials.breadcrumb.breadcrumb')

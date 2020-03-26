@@ -18,7 +18,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="col-sm-2 mt-3 ml-3">
-                        <a href="{{ route('bills.create') }}">
+                        <a href="{{ route('client.bills.create') }}">
                             <button class="btn btn-secondary mb-2">{{__('buttons.common.create')}}</button>
                         </a>
                     </div>

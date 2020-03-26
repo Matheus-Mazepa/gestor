@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('breadcrumb')
-    <breadcrumb header="@lang('headings.users.show')" url-back="{{ route('users.index') }}">
+    <breadcrumb header="@lang('headings.users.show')" url-back="{{ route('client.bills.index') }}">
         <breadcrumb-item href="{{ route('home') }}">
             @lang('headings.common.home')
         </breadcrumb-item>
 
         <breadcrumb-item active>
-            @lang('headings.users.clients.show')
+            @lang('headings.financial_schedule.show')
         </breadcrumb-item>
     </breadcrumb>
 @endsection

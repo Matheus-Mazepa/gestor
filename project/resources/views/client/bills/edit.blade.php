@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('breadcrumb')
-    <breadcrumb header="@lang('headings.users.clients.edit')" url-back="{{ route('users.index') }}">
+    <breadcrumb header="@lang('headings.users.clients.edit')" url-back="{{ route('client.bills.index') }}">
         <breadcrumb-item href="{{ route('home') }}">
             @lang('headings.common.home')
         </breadcrumb-item>
 
         <breadcrumb-item active>
-            @lang('headings.users.clients.edit')
+            @lang('headings.bills.edit')
         </breadcrumb-item>
     </breadcrumb>
 @endsection
@@ -22,7 +22,7 @@
                           action="{{ route('users.update', $user->id) }}">
 
                         @method('PUT')
-                        @include('users._partials._form')
+                        @include('client.users._partials._form')
 
                         <button class="btn btn-warning" type="submit">
                             @lang('buttons.common.save_editions')

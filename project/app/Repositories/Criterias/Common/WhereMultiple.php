@@ -2,8 +2,8 @@
 
 namespace App\Repositories\Criterias\Common;
 
-use App\Base\Criteria;
-use App\Base\Repository;
+use App\Repositories\Criterias\Criteria;
+use App\Repositories\Repository;
 
 class WhereMultiple extends Criteria
 {

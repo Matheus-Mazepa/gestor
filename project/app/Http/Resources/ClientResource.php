@@ -15,9 +15,9 @@ class ClientResource extends Resource
             'updated_at' => format_date($this->updated_at),
 
             'links' => [
-                'edit' => $this->when(true, route('clients.edit', $this->id)),
-                'show' => $this->when(true, route('clients.show', $this->id)),
-                'destroy' => $this->when(true, route('clients.destroy', $this->id)),
+                'edit' => $this->when(true, route('client.clients.edit', $this->id)),
+                'show' => $this->when(true, route('client.clients.show', $this->id)),
+                'destroy' => $this->when(true, route('client.clients.destroy', $this->id)),
             ],
         ];
     }

@@ -19,15 +19,9 @@ trait CustomAuthenticatesUsers
 
         if ($user)
         {
-            if ($user->hasAnyRole([UserRolesEnum::CLIENT, UserRolesEnum::ADMIN])) {
-                $this->guard()->attempt(
-                    $this->credentials($request), $request->filled('remember')
-                );
-            }
-
-            throw ValidationException::withMessages([
-                $this->username() => [trans('auth.invalid_role')],
-            ]);
+            $this->guard()->attempt(
+                $this->credentials($request), $request->filled('remember')
+            );
         }
 
         throw ValidationException::withMessages([

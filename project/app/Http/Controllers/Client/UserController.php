@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Client;
 
-use App\Http\Resources\UserResource;
+use App\Repositories\Criterias\Common\Where;
 use Illuminate\Http\Request;
 
 use App\Builders\PaginationBuilder;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use App\Repositories\UserRepository;
 
 class UserController extends Controller
@@ -18,16 +20,20 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('permission:users view')->only(['index', 'show']);
+        $this->middleware('permission:users create')->only(['create', 'store']);
+        $this->middleware('permission:users update')->only(['edit', 'update']);
+        $this->middleware('permission:users delete')->only('destroy');
     }
 
     public function index()
     {
-        return view('users.index');
+        return view('client.users.index');
     }
 
     public function create()
     {
-        return view('users.create');
+        return view('client.users.create');
     }
 
     public function store(Request $request)
@@ -35,7 +41,7 @@ class UserController extends Controller
         $data = $request->all();
         $userRepository = new UserRepository();
         $userRepository->create($data);
-        return $this->chooseReturn('success', 'Usuario criado com sucesso', 'users.index');
+        return $this->chooseReturn('success', 'Usuario criado com sucesso', 'client.users.index');
     }
 
     /**
@@ -48,6 +54,7 @@ class UserController extends Controller
     {
         $pagination->repository(new UserRepository())
             ->defaultOrderBy('name')
+            ->criterias(new Where('is_admin', false))
             ->resource(UserResource::class);
 
     }

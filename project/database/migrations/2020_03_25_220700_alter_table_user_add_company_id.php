@@ -18,6 +18,7 @@ class AlterTableUserAddCompanyId extends Migration
             $table->foreign('company_id')
                 ->references('id')
                 ->on('companies');
+            $table->boolean('is_admin')->default(false);
         });
     }
 
@@ -31,6 +32,7 @@ class AlterTableUserAddCompanyId extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropForeign(['company_id']);
             $table->dropColumn('company_id');
+            $table->dropColumn('is_admin');
         });
     }
 }
