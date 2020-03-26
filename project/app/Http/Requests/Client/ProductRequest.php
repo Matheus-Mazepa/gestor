@@ -26,14 +26,14 @@ class ProductRequest extends FormRequest
         return [
             'code' => 'required|max:255',
             'title' => 'required|max:255',
+            'description' => 'required|max:255',
+            'ncm' => 'required|numeric',
             'price_nfe' => 'required|max:255',
-            'ncm' => 'required|numeric|max:8',
-            'price_nfc' => 'required|max:10',
+            'price_nfc' => 'required|max:255',
             'commercial_unit' => 'required|max:255',
             'taxable_unit' => 'required|max:255',
             'cfop_nfc' => 'required|max:4',
             'cfop_nfe' => 'required|max:4',
-            'quantity' => 'required|max:255',
             'minimal_quantity' => 'required|max:255',
             'taxable_quantity' => 'required|numeric',
         ];

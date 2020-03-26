@@ -24,10 +24,14 @@ class Company
         'ie_municipal',
         'ie_estadual',
         'is_legal_person',
-        'address_id',
     ];
 
     protected static $logAttributes = [
         'name', 'cpf_cnpj'
     ];
+
+    public function addresses()
+    {
+        return $this->belongsTo('App\Models\Address');
+    }
 }

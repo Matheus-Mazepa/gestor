@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Actions\Client\CreateProductAction;
 use App\Builders\PaginationBuilder;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Client\ProductRequest;
 use App\Http\Resources\Client\ProductResource;
 use App\Repositories\ProductRepository;
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -33,13 +34,10 @@ class ProductController extends Controller
         return view('client.products.create');
     }
 
-    public function store(Request $request)
+    public function store(CreateProductAction $createProductAction, ProductRequest $request)
     {
-        $data = $request->all();
-        $data['price_nfc'] = remove_mask_moneyAndChangeToCent($data['price_nfc']);
-        $data['price_nfe'] = remove_mask_moneyAndChangeToCent($data['price_nfe']);
-        $productRepository = new ProductRepository();
-        $productRepository->create($data);
+        $data = $request->validated();
+        $createProductAction->execute($data);
         return $this->chooseReturn('success', 'Produto criado com sucesso', 'client.products.index');
     }
 
