@@ -45,6 +45,11 @@ return [
         'create' => 'Cadstrar produto',
     ],
 
+    'clients' => [
+        'index' => 'Clientes',
+        'create' => 'Cadstrar cliente',
+    ],
+
     'companies' => [
         'index' => 'Empresas',
         'create' => 'Cadstrar empresa',

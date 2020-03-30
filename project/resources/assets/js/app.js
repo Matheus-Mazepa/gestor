@@ -5,11 +5,13 @@ window.Vue = require('vue');
 
 import Snotify, { SnotifyPosition } from 'vue-snotify';
 import VueI18n from 'vue-i18n'
+import VueMask from 'v-mask';
 
 import {messages} from './locales';
 // import {messages} from 'vue-bootstrap4-calendar'; // you can include your own translation here if you want!
 
 Vue.use(VueI18n);
+Vue.use(VueMask);
 
 window.i18n = new VueI18n({
   locale: 'pt-br',

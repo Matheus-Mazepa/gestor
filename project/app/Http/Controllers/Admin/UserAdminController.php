@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Actions\Admin\CreateUserAdminAction;
-use App\Http\Requests\Admin\Users\UserAdminRequest;
+use App\Http\Requests\Admin\UserAdminRequest;
 use App\Http\Resources\Client\UserResource;
 use App\Repositories\Criterias\Common\Where;
 

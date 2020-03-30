@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Client;
 
-use App\Http\Requests\Client\Users\UserRequest;
+use App\Http\Requests\Client\UserRequest;
 use App\Http\Resources\Client\UserResource;
 use App\Repositories\Criterias\Common\Where;
 

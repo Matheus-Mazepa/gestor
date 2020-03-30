@@ -44,7 +44,7 @@
                     @if (current_user()->can('clients view'))
                         <li class="nav-item ">
                             <a class="nav-link"
-                               href="{{route('client.users.index')}}">
+                               href="{{route('client.clients.index')}}">
                                 <i class="fa fa-users"></i>
                                 <span class="hide-menu">
                                     @lang('links.common.clients')
