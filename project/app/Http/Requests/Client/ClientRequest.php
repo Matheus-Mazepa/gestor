@@ -25,8 +25,9 @@ class ClientRequest extends FormRequest
     {
         $rules = [
             'name' => 'required|max:255',
+            'email' => 'sometimes|max:255',
             'phone' => 'required|max:15',
-            'is_legal_person' => 'required|in:',
+            'is_legal_person' => 'required|in:cnpj,cpf',
             'cpf_cnpj'=> 'required',
             'ie_estadual' => 'sometimes',
             'ie_municipal' => 'sometimes',
@@ -34,8 +35,9 @@ class ClientRequest extends FormRequest
             'address.number' => 'required',
             'address.cep' => 'required|string',
             'address.state' => 'required|exists:states,abbr',
-            'address.streetAvenue' => 'required|string',
-            'address.city' => 'required|exists:cities,name',
+            'address.street_avenue' => 'required|string',
+            'address.district' => 'required|string',
+            'address.city_id' => 'required|exists:cities,id',
             'address.complement' => 'sometimes'
 
         ];

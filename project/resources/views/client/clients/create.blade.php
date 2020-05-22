@@ -19,8 +19,6 @@
                 <div class="card-body">
                     <form class="form-horizontal" method="POST" action="{{ route('client.clients.store') }}">
                         @csrf
-                        {{$errors}}
-
                         <client-form
                             :old='@json(old())'
                             :errors-bag='@json($errors)'

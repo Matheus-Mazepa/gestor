@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="row">
-            <div class="form-group col-sm-12 col-md-6">
+            <div class="form-group col-sm-12 col-md-4">
                 <label for="name">
                     Nome
                 </label>
@@ -11,7 +11,17 @@
                         name="name"
                         class="form-control">
             </div>
-            <div class="form-group col-sm-12 col-md-6">
+            <div class="form-group col-sm-12 col-md-4">
+                <label for="email">
+                    Email
+                </label>
+                <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="form-control">
+            </div>
+            <div class="form-group col-sm-12 col-md-4">
                 <label for="phone">
                     Telefone
                 </label>

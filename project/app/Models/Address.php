@@ -14,17 +14,25 @@ class Address extends Model
         'street_avenue',
         'type',
         'district',
-        'zip_code'
+        'cep'
     ];
 
     protected $fillable = [
-        'zip_code',
+        'cep',
         'number',
         'city_id',
+        'state_id',
         'district',
         'complement',
         'street_avenue',
+        'address_owner_type',
+        'address_owner_id'
     ];
+
+    public function address_owner()
+    {
+        return $this->morphTo();
+    }
 
     public function city()
     {

@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 use App\Scopes\Search as SearchScope;
 
-class Company
+class Company extends Model
 {
     use Notifiable, HasRoles, SearchScope, SoftDeletes;
 
@@ -32,6 +33,6 @@ class Company
 
     public function addresses()
     {
-        return $this->belongsTo('App\Models\Address');
+        return $this->morphMany(Address::class, 'address_owner');
     }
 }

@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 use App\Scopes\Search as SearchScope;
 
-class Supplier
+class Supplier extends Model
 {
     use Notifiable, HasRoles, SearchScope;
 

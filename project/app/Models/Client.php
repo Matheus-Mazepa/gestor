@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 use App\Scopes\Search as SearchScope;
 
-class Client
+class Client extends Model
 {
     use Notifiable, HasRoles, SearchScope;
 
@@ -14,19 +15,23 @@ class Client
         'name',
     ];
 
-
     protected $fillable = [
         'name',
+        'email',
         'cpf_cnpj',
         'phone',
         'ie_municipal',
         'ie_estadual',
         'is_legal_person',
         'company_id',
-        'address_id',
     ];
 
     protected static $logAttributes = [
         'name',
     ];
+
+    public function addresses()
+    {
+        return $this->morphMany(Address::class, 'address_owner');
+    }
 }

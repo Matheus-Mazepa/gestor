@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Client;
 
 use App\Actions\Client\CreateProductAction;
+use App\Actions\Client\UpdateProductAction;
 use App\Builders\PaginationBuilder;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Client\ProductRequest;
 use App\Http\Resources\Client\ProductResource;
+use App\Models\Product;
 use App\Repositories\ProductRepository;
 
 class ProductController extends Controller
@@ -29,6 +31,11 @@ class ProductController extends Controller
         return view('client.products.index');
     }
 
+    public function show(Product $product)
+    {
+        return view('client.products.show', compact('product'));
+    }
+
     public function create()
     {
         return view('client.products.create');
@@ -38,6 +45,18 @@ class ProductController extends Controller
     {
         $data = $request->validated();
         $createProductAction->execute($data);
+        return $this->chooseReturn('success', 'Produto criado com sucesso', 'client.products.index');
+    }
+
+    public function edit(Product $product)
+    {
+        return view('client.products.edit', compact('product'));
+    }
+
+    public function update(UpdateProductAction $updateProductAction, $id, ProductRequest $request)
+    {
+        $data = $request->validated();
+        $updateProductAction->execute($id, $data);
         return $this->chooseReturn('success', 'Produto criado com sucesso', 'client.products.index');
     }
 

@@ -42,6 +42,7 @@ return [
 
     'products' => [
         'index' => 'Produtos',
+        'show' => 'Visualização Produto',
         'create' => 'Cadstrar produto',
     ],
 

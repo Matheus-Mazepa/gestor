@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('breadcrumb')
-    <breadcrumb header="@lang('headings.users.show')" url-back="{{ route('users.index') }}">
+    <breadcrumb header="@lang('headings.users.show')" url-back="{{ route('client.products.index') }}">
         <breadcrumb-item href="{{ route('home') }}">
             @lang('headings.common.home')
         </breadcrumb-item>
 
         <breadcrumb-item active>
-            @lang('headings.users.clients.show')
+            @lang('headings.products.show')
         </breadcrumb-item>
     </breadcrumb>
 @endsection
@@ -22,7 +22,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="name">
-                                    @lang('labels.common.name')
+                                    @lang('labels.common.title')
                                 </label>
                                 <div class="input-group">
                                     <input
@@ -30,16 +30,17 @@
                                             name="name"
                                             id="name"
                                             class="form-control"
-                                            value="{{ $user->name ?? '' }}"
+                                            value="{{ $product->title ?? '' }}"
                                             disabled>
                                 </div>
                             </div>
                         </div>
 
+
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="email">
-                                    @lang('labels.auth.email')
+                                    @lang('labels.common.description')
                                 </label>
                                 <div class="input-group">
                                     <input
@@ -47,7 +48,7 @@
                                             name="email"
                                             id="email"
                                             class="form-control"
-                                            value="{{ $user->email ?? ''}}"
+                                            value="{{ $product->description }}"
                                             disabled>
                                 </div>
                             </div>

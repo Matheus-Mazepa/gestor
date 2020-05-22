@@ -39,6 +39,7 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         $data = $request->validated();
+        $data['company_id'] = current_user()->company_id;
         $userRepository = new UserRepository();
         $userRepository->create($data);
         return $this->chooseReturn('success', 'Usuario criado com sucesso', 'client.users.index');
@@ -54,7 +55,10 @@ class UserController extends Controller
     {
         $pagination->repository(new UserRepository())
             ->defaultOrderBy('name')
-            ->criterias(new Where('is_admin', false))
+            ->criterias([
+                new Where('is_admin', false),
+                new Where('company_id', current_user()->company_id)
+            ])
             ->resource(UserResource::class);
 
     }

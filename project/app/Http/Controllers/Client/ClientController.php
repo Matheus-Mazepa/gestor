@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Actions\Client\CreateClientAction;
 use App\Http\Requests\Client\ClientRequest;
 use App\Http\Resources\Client\ClientResource;
 use App\Repositories\ClientRepository;
@@ -35,12 +36,12 @@ class ClientController extends Controller
         return view('client.clients.create');
     }
 
-    public function store(ClientRequest $request)
+    public function store(ClientRequest $request, CreateClientAction $createClientAction)
     {
         $data = $request->validated();
-        dd($data);
-        $clientRepository = new ClientRepository();
-        $clientRepository->create($data);
+
+        $createClientAction->execute($data);
+
         return $this->chooseReturn('success', 'Cliente criado com sucesso', 'client.clients.index');
     }
 
