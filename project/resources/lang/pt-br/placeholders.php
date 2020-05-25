@@ -16,6 +16,7 @@ return [
     'products' => [
         'title' => 'Insira um título',
         'description' => 'Insira uma descrição',
+        'category' => 'Selecione a categoria',
         'ncm' => 'Insira o NCM',
         'code' => 'Insira um código',
         'price_nfe' => 'Insira o preço nota fiscal eletrônica',
@@ -26,6 +27,11 @@ return [
         'cfop_nfe' => 'Insira o CFOP nota fiscal eletrônica',
         'taxable_quantity' => 'Insira a quantidade tributável',
         'minimal_quantity' => 'Insira a quantidade mínima para o produto em estoque',
+    ],
+
+    'categories' => [
+        'name' => 'Nome da categoria',
+        'parent' => 'Selecione a categoria pai',
     ],
 
     'companies' => [

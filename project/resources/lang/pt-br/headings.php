@@ -46,6 +46,12 @@ return [
         'create' => 'Cadstrar produto',
     ],
 
+    'categories' => [
+        'index' => 'Categorias',
+        'show' => 'Visualização da categoria',
+        'create' => 'Cadastrar categoria',
+    ],
+
     'clients' => [
         'index' => 'Clientes',
         'create' => 'Cadstrar cliente',

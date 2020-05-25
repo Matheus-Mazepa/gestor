@@ -9,10 +9,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Client\ProductRequest;
 use App\Http\Resources\Client\ProductResource;
 use App\Models\Product;
-use App\Repositories\CategoryRepository;
 use App\Repositories\ProductRepository;
 
-class ProductController extends Controller
+class ProductStockController extends Controller
 {
     /**
      * Show the application products.
@@ -39,10 +38,7 @@ class ProductController extends Controller
 
     public function create()
     {
-        $categoryRepository = new CategoryRepository();
-        $categories = $categoryRepository->toVSelect();
-
-        return view('client.products.create', compact('categories'));
+        return view('client.products.create');
     }
 
     public function store(CreateProductAction $createProductAction, ProductRequest $request)

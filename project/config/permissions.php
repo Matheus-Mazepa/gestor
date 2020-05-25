@@ -47,6 +47,13 @@ return [
         'delete',
     ],
 
+    'categories' => [
+        'view',
+        'create',
+        'update',
+        'delete',
+    ],
+
     'clients' => [
         'view',
         'create',

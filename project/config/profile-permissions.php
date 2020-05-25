@@ -11,6 +11,7 @@ return [
 
     UserRolesEnum::CLIENT_ADMIN => [
         'dashboard' => ['view',],
+        'categories' => ['view', 'create', 'update', 'delete',],
         'users' => ['view', 'create', 'update', 'delete',],
         'orders' => ['view', 'create', 'update', 'delete'],
         'products' => ['view', 'create', 'update', 'delete',],

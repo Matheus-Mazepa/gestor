@@ -23,6 +23,7 @@ return [
 
     'products' => [
         'description' => 'Descrição',
+        'category' => 'Categoria',
         'ncm' => 'NCM',
         'code' => 'Código',
         'price_nfe' => 'Preço nota fiscal eletrônica',
@@ -40,4 +41,8 @@ return [
         'corporate_name' => 'Razão Social',
     ],
 
+    'categories' => [
+        'name' => 'Nome da categoria',
+        'category' => 'Categoria pai',
+    ]
 ];

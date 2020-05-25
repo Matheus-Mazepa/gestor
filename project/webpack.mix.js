@@ -28,6 +28,7 @@ mix.extract([
     'popper.js',
     'bootstrap',
     'vue-snotify',
+    'vue-select',
     'jquery-mask-plugin',
 ]);
 

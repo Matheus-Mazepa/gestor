@@ -21,6 +21,7 @@ return [
         'users' => 'Usuários',
         'users_admin' => 'Usuários Administradors',
         'companies' => 'Empresas',
+        'categories' => 'Categorias',
         'financial_schedule' => 'Agenda financeira'
     ],
 ];

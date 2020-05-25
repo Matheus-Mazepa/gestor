@@ -36,6 +36,7 @@ class ProductRequest extends FormRequest
             'cfop_nfe' => 'required|max:4',
             'minimal_quantity' => 'required|max:255',
             'taxable_quantity' => 'required|numeric',
+            'category_id' => 'required|numeric|exists:categories,id',
         ];
     }
 }

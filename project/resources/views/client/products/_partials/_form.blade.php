@@ -1,6 +1,6 @@
 @csrf
 <div class="row">
-    <div class="form-group col-sm-12 col-md-6">
+    <div class="form-group col-sm-12 col-md-4">
         <label for="title">
             @lang('labels.common.title')
         </label>
@@ -14,7 +14,24 @@
         @errorblock('title')
     </div>
 
-    <div class="form-group col-sm-12 col-md-6">
+    <div class="form-group col-sm-12 col-md-4">
+        <label for="permissions">
+            @lang('labels.products.category')
+        </label>
+        <custom-select
+                name="category_id"
+                class="form-group {{ has_error_class('category_id') }}"
+                :old='@json(old())'
+                @if (isset($product))
+                :selected="{{ $product->category_id }}"
+                @endif
+                placeholder="@lang('placeholders.products.category')"
+                :options="{{ collect($categories) }}"
+        ></custom-select>
+        @errorblock('category_id')
+    </div>
+
+    <div class="form-group col-sm-12 col-md-4">
         <label for="description">
             @lang('labels.products.description')
         </label>

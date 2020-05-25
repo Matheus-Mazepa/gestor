@@ -31,6 +31,7 @@ class Product extends Model
         'quantity',
         'minimal_quantity',
         'company_id',
+        'category_id',
         'taxable_quantity',
     ];
 

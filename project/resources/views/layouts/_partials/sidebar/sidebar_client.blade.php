@@ -1,7 +1,8 @@
 <aside class="left-sidebar" data-sidebarbg="skin6">
     <div class="scroll-sidebar">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -28,16 +29,26 @@
                             </a>
                         </li>
                     @endif
-
-                    @if (current_user()->can('products view'))
-                        <li class="nav-item ">
-                            <a class="nav-link"
-                               href="{{route('client.products.index')}}">
+                    @if (current_user()->can('products view') || current_user()->can('categories view'))
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="{{route('client.products.index')}}"
+                               id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">
                                 <i class=" fa fa-shopping-basket"></i>
                                 <span class="hide-menu">
                                     @lang('links.common.products')
                                 </span>
                             </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link"
+                                   href="{{route('client.products.index')}}">
+                                    @lang('links.common.products')
+                                </a>
+                                <a class="nav-link"
+                                   href="{{route('client.categories.index')}}">
+                                    @lang('links.common.categories')
+                                </a>
+                            </div>
                         </li>
                     @endif
 
