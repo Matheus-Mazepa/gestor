@@ -5,6 +5,7 @@
  * Prefix pagination
  */
 
+Route::get('orders', 'OrderController@pagination')->name('orders');
 Route::get('users', 'UserController@pagination')->name('users');
 Route::get('products', 'ProductController@pagination')->name('products');
 Route::get('categories', 'CategoryController@pagination')->name('categories');

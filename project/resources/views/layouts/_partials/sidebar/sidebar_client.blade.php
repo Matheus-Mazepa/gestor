@@ -21,7 +21,7 @@
                     @if (current_user()->can('orders view'))
                         <li class="nav-item ">
                             <a class="nav-link"
-                               href="{{route('client.users.index')}}">
+                               href="{{route('client.orders.index')}}">
                                 <i class="fa fa-shopping-cart"></i>
                                 <span class="hide-menu">
                                     @lang('links.common.orders')

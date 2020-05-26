@@ -60,5 +60,11 @@ return [
     'companies' => [
         'index' => 'Empresas',
         'create' => 'Cadstrar empresa',
+    ],
+
+    'orders' => [
+        'index' => 'Pedidos',
+        'show' => 'Visualização do Pedido',
+        'create' => 'Criar pedido',
     ]
 ];
