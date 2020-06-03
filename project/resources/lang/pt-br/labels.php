@@ -14,6 +14,7 @@ return [
 
     'common' => [
         'name' => 'Nome',
+        'observation' => 'Observação',
         'created_at' => 'Criado em',
         'updated_at' => 'Atualizado em',
         'actions' => 'Ações',
@@ -44,5 +45,10 @@ return [
     'categories' => [
         'name' => 'Nome da categoria',
         'category' => 'Categoria pai',
+    ],
+
+    'orders' => [
+        'client' => 'Cliente',
+        'payment_form' => 'Forma de pagamento',
     ]
 ];

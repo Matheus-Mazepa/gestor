@@ -56,6 +56,10 @@
         } else {
           this.data = [];
         }
+      },
+
+      data: function (data) {
+        this.$emit('input', data);
       }
     },
 

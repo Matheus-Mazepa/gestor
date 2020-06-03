@@ -11,9 +11,9 @@ class CategoryRepository extends Repository
         return Category::class;
     }
 
-    public function toVSelect()
+    public function toVSelect($criterias = [])
     {
-        $categories = $this->all(['id', 'name', 'parent_id']);
+        $categories = $this->pushCriteria($criterias)->all(['id', 'name', 'parent_id']);
 
         $categories = $categories->map(function ($category) {
             $label = ($category->parent)

@@ -10,9 +10,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Client\ProductRequest;
 use App\Http\Resources\Client\CategoryResource;
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
 use App\Repositories\CategoryRepository;
+use App\Repositories\ClientRepository;
 use App\Repositories\OrderRepository;
+use App\Repositories\PaymentFormRepository;
 
 class OrderController extends Controller
 {
@@ -34,17 +37,21 @@ class OrderController extends Controller
         return view('client.orders.index');
     }
 
-    public function show(Category $category)
+    public function show(Order $order)
     {
-        return view('client.orders.show', compact('category'));
+        return view('client.orders.show', compact('order'));
     }
 
     public function create()
     {
+        $clientRepository = new ClientRepository();
+        $paymentFormRepository = new PaymentFormRepository();
+        $clients = $clientRepository->toVSelect();
+        $paymentForms = $paymentFormRepository->toVSelect();
         $categoryRepository = new CategoryRepository();
-        $orders = $categoryRepository->toVSelect();
+        $categories = $categoryRepository->toVSelect();
 
-        return view('client.orders.create', compact('orders'));
+        return view('client.orders.create', compact('clients', 'paymentForms', 'categories'));
     }
 
     public function store(CreateProductAction $createProductAction, ProductRequest $request)

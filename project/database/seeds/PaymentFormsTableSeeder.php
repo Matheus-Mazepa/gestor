@@ -23,6 +23,10 @@ class PaymentFormsTableSeeder extends Seeder
                 "id"         => 4,
                 "name"       => "Boleto bancário",
             ],
+            [
+                "id"         => 5,
+                "name"       => "À vista",
+            ],
         ]);
     }
 }

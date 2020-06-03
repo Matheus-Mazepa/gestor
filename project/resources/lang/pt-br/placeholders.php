@@ -11,6 +11,7 @@ return [
     'common' => [
         'name' => 'Insira seu nome',
         'description' => 'Insira uma descrição',
+        'observation' => 'Insira uma observação',
     ],
 
     'products' => [
@@ -38,4 +39,9 @@ return [
         'name' => 'Insira o nome fantasia',
         'corporate_name' => 'Insira a razão social',
     ],
+
+    'orders' => [
+        'client' => 'Selecione o cliente',
+        'payment_form' => 'Selecione o cliente',
+    ]
 ];

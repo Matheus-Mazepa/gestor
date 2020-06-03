@@ -10,6 +10,7 @@ use App\Http\Requests\Client\ProductRequest;
 use App\Http\Resources\Client\ProductResource;
 use App\Models\Product;
 use App\Repositories\CategoryRepository;
+use App\Repositories\Criterias\Common\Where;
 use App\Repositories\ProductRepository;
 
 class ProductController extends Controller
@@ -62,6 +63,19 @@ class ProductController extends Controller
         $data = $request->validated();
         $updateProductAction->execute($id, $data);
         return $this->chooseReturn('success', 'Produto criado com sucesso', 'client.products.index');
+    }
+
+    public function getProductsByCategoryId($categoryId)
+    {
+        $productRepository = new ProductRepository();
+        $products = $productRepository->pushCriteria(new Where('category_id', $categoryId))->all();
+
+        $products = $products->map(function ($product) {
+            return ['label' => $product->title, 'id' => $product->id];
+        });
+
+        $products = $products->sortBy('label')->values();
+        return $products;
     }
 
     /**

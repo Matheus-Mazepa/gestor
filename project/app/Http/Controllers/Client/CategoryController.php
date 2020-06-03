@@ -11,6 +11,7 @@ use App\Http\Resources\Client\CategoryResource;
 use App\Models\Category;
 use App\Models\Product;
 use App\Repositories\CategoryRepository;
+use App\Repositories\Criterias\Common\Where;
 
 class CategoryController extends Controller
 {
@@ -40,7 +41,7 @@ class CategoryController extends Controller
     public function create()
     {
         $categoryRepository = new CategoryRepository();
-        $categories = $categoryRepository->toVSelect();
+        $categories = $categoryRepository->toVSelect(new Where('parent_id', null));
 
         return view('client.categories.create', compact('categories'));
     }
