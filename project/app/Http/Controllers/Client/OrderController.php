@@ -16,6 +16,7 @@ use App\Repositories\CategoryRepository;
 use App\Repositories\ClientRepository;
 use App\Repositories\OrderRepository;
 use App\Repositories\PaymentFormRepository;
+use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
@@ -54,10 +55,10 @@ class OrderController extends Controller
         return view('client.orders.create', compact('clients', 'paymentForms', 'categories'));
     }
 
-    public function store(CreateProductAction $createProductAction, ProductRequest $request)
+    public function store(Request $request)
     {
-        $data = $request->validated();
-        $createProductAction->execute($data);
+        $data = $request->all();
+        dd($data);
         return $this->chooseReturn('success', 'Pedido cadastrado com sucesso', 'client.orders.index');
     }
 

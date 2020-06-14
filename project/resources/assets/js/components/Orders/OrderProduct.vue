@@ -1,7 +1,7 @@
 <template>
     <div class="col-12 product-div">
         <div class="row">
-            <div class="form-group col-sm-12 col-md-4">
+            <div class="form-group col-sm-12 col-md-3">
                 <label>
                     Categoria
                 </label>
@@ -19,10 +19,11 @@
                 <custom-select
                         name="products"
                         class="form-group"
+                        v-model="product"
                         :options="products"
                 ></custom-select>
             </div>
-            <div class="form-group col-sm-12 col-md-4">
+            <div class="form-group col-sm-12 col-md-2">
                 <label>
                     Quantidade
                 </label>
@@ -33,6 +34,18 @@
                         type="number"
                         placeholder="Insira uma observação"
                         class="form-control">
+            </div>
+            <div class="form-group col-sm-12 col-md-3">
+                <label>
+                    Valor unitário
+                </label>
+                <input
+                        id="value"
+                        v-model="value"
+                        name="value"
+                        type="text"
+                        placeholder="Insira um valor"
+                        class="form-control mask-money">
             </div>
         </div>
         <div class="row">
@@ -61,9 +74,10 @@
 
     data() {
       return {
+        value: '',
         category: '',
         products: [],
-        select: ''
+        product: ''
       }
     },
 
@@ -72,6 +86,11 @@
         axios.get('/ajax/client/categories/' + category.id + '/products').then((response) => {
           this.products = response.data;
         });
+      },
+
+      product: function (product) {
+        this.value = product.value;
+        $('.mask-money').mask("#.##0,00", {reverse: true});
       }
     }
   }

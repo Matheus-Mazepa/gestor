@@ -54,7 +54,8 @@ return [
 
     'clients' => [
         'index' => 'Clientes',
-        'create' => 'Cadstrar cliente',
+        'create' => 'Cadastrar cliente',
+        'edit' => 'Editar cliente',
     ],
 
     'companies' => [

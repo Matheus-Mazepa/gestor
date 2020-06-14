@@ -19,7 +19,7 @@
                 <div class="card-body">
                     <form class="form-horizontal"
                           method="POST"
-                          action="{{ route('client.categories.update', $product->id) }}">
+                          action="{{ route('client.categories.update', $category->id) }}">
 
                         @method('PUT')
                         @include('client.categories._partials._form')

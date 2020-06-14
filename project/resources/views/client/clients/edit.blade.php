@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('breadcrumb')
-    <breadcrumb header="@lang('headings.clients.clients.edit')" url-back="{{ route('client.clients.index') }}">
+    <breadcrumb header="@lang('headings.clients.edit')" url-back="{{ route('client.clients.index') }}">
         <breadcrumb-item href="{{ route('home') }}">
             @lang('headings.common.home')
         </breadcrumb-item>
 
         <breadcrumb-item active>
-            @lang('headings.clients.clients.edit')
+            @lang('headings.clients.edit')
         </breadcrumb-item>
     </breadcrumb>
 @endsection
@@ -19,11 +19,14 @@
                 <div class="card-body">
                     <form class="form-horizontal"
                           method="POST"
-                          action="{{ route('client.clients.update', $user->id) }}">
+                          action="{{ route('client.clients.update', $client->id) }}">
 
                         @method('PUT')
-                        @include('client.clients._partials._form')
-
+                        <client-form
+                                :old='@json(old())'
+                                :client='@json($client)'
+                                :errors-bag='@json($errors)'
+                        ></client-form>
                         <button class="btn btn-warning" type="submit">
                             @lang('buttons.common.save_editions')
                         </button>

@@ -22,7 +22,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="name">
-                                    @lang('labels.common.title')
+                                    @lang('labels.common.name')
                                 </label>
                                 <div class="input-group">
                                     <input
@@ -30,7 +30,7 @@
                                             name="name"
                                             id="name"
                                             class="form-control"
-                                            value="{{ $product->title ?? '' }}"
+                                            value="{{ $category->name ?? '' }}"
                                             disabled>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="email">
-                                    @lang('labels.common.description')
+                                    @lang('labels.categories.category')
                                 </label>
                                 <div class="input-group">
                                     <input
@@ -48,7 +48,7 @@
                                             name="email"
                                             id="email"
                                             class="form-control"
-                                            value="{{ $product->description }}"
+                                            value="{{ optional($category->parent)->name }}"
                                             disabled>
                                 </div>
                             </div>

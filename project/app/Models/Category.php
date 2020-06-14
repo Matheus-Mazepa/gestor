@@ -9,6 +9,8 @@ class Category extends Model
 {
     use SearchScope;
 
+    protected $table = 'categories';
+
     protected $searchBy = [
         'name',
     ];

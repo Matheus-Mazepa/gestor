@@ -117,7 +117,9 @@ return [
     */
 
     'attributes' => [
-        'password' => 'senha'
+        'password' => 'senha',
+        'name' => 'nome',
+        'parent_id' => 'categoria pai',
     ],
 
 ];
