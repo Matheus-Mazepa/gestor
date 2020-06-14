@@ -6,7 +6,7 @@
                     Categoria
                 </label>
                 <custom-select
-                        name="products"
+                        name="category"
                         class="form-group"
                         v-model="category"
                         :options="categories"
@@ -17,7 +17,7 @@
                     Produto
                 </label>
                 <custom-select
-                        name="products"
+                        :name="getFieldName('product_id')"
                         class="form-group"
                         v-model="product"
                         :options="products"
@@ -30,9 +30,9 @@
                 <input
                         id="quantity"
                         inputmode="numeric"
-                        name="description"
+                        :name="getFieldName('quantity')"
                         type="number"
-                        placeholder="Insira uma observação"
+                        placeholder="Insira a quantidade"
                         class="form-control">
             </div>
             <div class="form-group col-sm-12 col-md-3">
@@ -42,7 +42,7 @@
                 <input
                         id="value"
                         v-model="value"
-                        name="value"
+                        :name="getFieldName('value')"
                         type="text"
                         placeholder="Insira um valor"
                         class="form-control mask-money">
@@ -54,10 +54,10 @@
                    Observação
                 </label>
                 <textarea
-                        id="description"
-                        name="description"
+                        id="observation"
+                        :name="getFieldName('observation')"
                         rows="2"
-                        placeholder="Insira a quantidade"
+                        placeholder="Insira uma observação"
                         class="form-control"></textarea>
             </div>
         </div>
@@ -69,7 +69,8 @@
     name: 'order-product',
 
     props: {
-      categories: Array
+      categories: Array,
+      index: Number
     },
 
     data() {
@@ -92,6 +93,12 @@
         this.value = product.value;
         $('.mask-money').mask("#.##0,00", {reverse: true});
       }
+    },
+
+    methods: {
+      getFieldName(name) {
+        return `products[${this.index}][${name}]`;
+      },
     }
   }
 </script>

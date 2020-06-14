@@ -23,6 +23,12 @@
         categories: Array
       },
 
+      data() {
+        return {
+          indexComponents: 0
+        }
+      },
+
       methods: {
         addProduct() {
           const vm = this;
@@ -30,12 +36,14 @@
           let newInstance = new newFile({
             propsData: {
               categories: vm.categories,
+              index: vm.indexComponents
             }
           });
 
           newInstance.$mount();
-
           this.$refs.container.appendChild(newInstance.$el);
+
+          this.indexComponents++;
         }
       }
     }

@@ -7,6 +7,7 @@ use App\Actions\Client\UpdateProductAction;
 use App\Builders\PaginationBuilder;
 use App\Exceptions\Repositories\RepositoryException;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Client\OrderRequest;
 use App\Http\Requests\Client\ProductRequest;
 use App\Http\Resources\Client\CategoryResource;
 use App\Models\Category;
@@ -55,9 +56,9 @@ class OrderController extends Controller
         return view('client.orders.create', compact('clients', 'paymentForms', 'categories'));
     }
 
-    public function store(Request $request)
+    public function store(OrderRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
         dd($data);
         return $this->chooseReturn('success', 'Pedido cadastrado com sucesso', 'client.orders.index');
     }
