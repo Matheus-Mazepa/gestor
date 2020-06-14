@@ -26,11 +26,16 @@ class CreateProductItem extends Migration
                 ->references('id')
                 ->on('payment_forms');
 
+            $table->text('observation')->nullable();
+
+            $table->string('status');
+
             $table->timestamps();
         });
 
-        Schema::create('product_item', function (Blueprint $table) {
+        Schema::create('product_items', function (Blueprint $table) {
             $table->bigIncrements('id');
+
             $table->integer('order_id');
             $table->foreign('order_id')
                 ->references('id')
@@ -41,7 +46,11 @@ class CreateProductItem extends Migration
                 ->references('id')
                 ->on('products');
 
+            $table->text('observation')->nullable();
+
             $table->integer('quantity')->default(1);
+
+            $table->integer('value_cents');
         });
     }
 
@@ -52,6 +61,7 @@ class CreateProductItem extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_item');
+        Schema::dropIfExists('product_items');
+        Schema::dropIfExists('orders');
     }
 }

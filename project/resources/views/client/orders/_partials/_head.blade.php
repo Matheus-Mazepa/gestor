@@ -1,8 +1,11 @@
-<th sortable @click="orderBy('title', $event)">
-    @lang('labels.common.title')
+<th>
+    @lang('labels.orders.client')
 </th>
-<th sortable @click="orderBy('description', $event)">
-    @lang('labels.products.description')
+<th>
+    @lang('labels.orders.payment_form')
+</th>
+<th sortable @click="orderBy('status', $event)">
+    @lang('labels.orders.status')
 </th>
 <th sortable @click="orderBy('created_at', $event)">
     @lang('labels.common.created_at')

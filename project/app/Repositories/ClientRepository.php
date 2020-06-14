@@ -15,7 +15,7 @@ class ClientRepository extends Repository
         $clients = $this->all(['id', 'name']);
 
         $clients = $clients->map(function ($client) {
-            $address = $client->addresses()->first();
+            $address = $client->address;
             $label = $client->name . ' - ' . $address->format_address;
 
             return ['label' => $label, 'id' => $client->id];

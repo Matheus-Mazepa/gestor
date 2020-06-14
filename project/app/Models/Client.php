@@ -30,8 +30,8 @@ class Client extends Model
         'name',
     ];
 
-    public function addresses()
+    public function address()
     {
-        return $this->morphMany(Address::class, 'address_owner');
+        return $this->morphOne(Address::class, 'address_owner');
     }
 }

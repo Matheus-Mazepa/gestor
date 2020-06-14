@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Actions\Client\CreateOrderAction;
 use App\Actions\Client\CreateProductAction;
 use App\Actions\Client\UpdateProductAction;
 use App\Builders\PaginationBuilder;
@@ -10,6 +11,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Client\OrderRequest;
 use App\Http\Requests\Client\ProductRequest;
 use App\Http\Resources\Client\CategoryResource;
+use App\Http\Resources\Client\OrderResource;
 use App\Models\Category;
 use App\Models\Order;
 use App\Models\Product;
@@ -56,23 +58,11 @@ class OrderController extends Controller
         return view('client.orders.create', compact('clients', 'paymentForms', 'categories'));
     }
 
-    public function store(OrderRequest $request)
+    public function store(CreateOrderAction $createOrderAction, OrderRequest $request)
     {
         $data = $request->validated();
-        dd($data);
+        $createOrderAction->execute($data);
         return $this->chooseReturn('success', 'Pedido cadastrado com sucesso', 'client.orders.index');
-    }
-
-    public function edit(Product $product)
-    {
-        return view('client.orders.edit', compact('product'));
-    }
-
-    public function update(UpdateProductAction $updateProductAction, $id, ProductRequest $request)
-    {
-        $data = $request->validated();
-        $updateProductAction->execute($id, $data);
-        return $this->chooseReturn('success', 'Pedido criado com sucesso', 'client.orders.index');
     }
 
     /**
@@ -85,7 +75,7 @@ class OrderController extends Controller
     protected function getPagination($pagination)
     {
         $pagination->repository(new OrderRepository())
-            ->defaultOrderBy('name')
-            ->resource(CategoryResource::class);
+            ->defaultOrderBy('status')
+            ->resource(OrderResource::class);
     }
 }

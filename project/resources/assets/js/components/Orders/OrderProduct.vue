@@ -41,6 +41,7 @@
                 </label>
                 <input
                         id="value"
+                        inputmode="numeric"
                         v-model="value"
                         :name="getFieldName('value')"
                         type="text"
@@ -90,7 +91,8 @@
       },
 
       product: function (product) {
-        this.value = product.value;
+        console.log(product);
+        this.value = product.price_nfe;
         $('.mask-money').mask("#.##0,00", {reverse: true});
       }
     },

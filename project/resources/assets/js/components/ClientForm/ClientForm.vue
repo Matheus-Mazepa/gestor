@@ -142,7 +142,7 @@
         this.oldAddress = this.old;
       } else {
         if (this.client) {
-          this.oldAddress = this.client.addresses[0];
+          this.oldAddress = this.client.address;
         }
       }
 

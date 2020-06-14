@@ -20,6 +20,7 @@ class Product extends Model
         'code',
         'title',
         'description',
+        'price_nfc',
         'price_nfe',
         'ncm',
         'price_nfc',
@@ -47,5 +48,15 @@ class Product extends Model
     public function supplier()
     {
         return $this->belongsTo(Supplier::class, 'supplier_id', 'id');
+    }
+
+    public function getFormattedPriceNfeAttribute()
+    {
+        return  number_format($this->price_nfe / 100, 2, ',', '.');
+    }
+
+    public function getFormattedPriceNfcAttribute()
+    {
+        return  number_format($this->price_nfc / 100, 2, ',', '.');
     }
 }

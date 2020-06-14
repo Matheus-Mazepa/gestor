@@ -71,7 +71,7 @@ class ProductController extends Controller
         $products = $productRepository->pushCriteria(new Where('category_id', $categoryId))->all();
 
         $products = $products->map(function ($product) {
-            return ['label' => $product->title, 'id' => $product->id];
+            return ['label' => $product->title, 'id' => $product->id, 'price_nfe' => $product->formatted_price_nfe];
         });
 
         $products = $products->sortBy('label')->values();

@@ -22,7 +22,7 @@ class CreateClientAction
 
         $clientRepository = new ClientRepository();
         $client = $clientRepository->create($data);
-        $client->addresses()->create($addressData);
+        $client->address()->create($addressData);
 
         return $client;
     }

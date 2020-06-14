@@ -50,5 +50,6 @@ return [
     'orders' => [
         'client' => 'Cliente',
         'payment_form' => 'Forma de pagamento',
+        'status' => 'Status'
     ]
 ];

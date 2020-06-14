@@ -1,4 +1,5 @@
 @csrf
+{{$errors}}
 <div class="row">
     <div class="form-group col-sm-12 col-md-6">
         <label for="client_id">
@@ -36,12 +37,12 @@
 </div>
 <div class="row">
     <div class="form-group col-sm-12">
-        <label for="payment_form_id">
+        <label for="observation">
             @lang('labels.common.observation')
         </label>
         <textarea
-                id="description"
-                name="description"
+                id="observation"
+                name="observation"
                 placeholder="@lang('placeholders.common.observation')"
                 class="form-control {{ has_error_class('observation') }}"
                 rows="5">{{old('observation') ?? $order->observation ?? ''}}</textarea>
