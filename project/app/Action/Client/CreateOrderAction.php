@@ -3,16 +3,15 @@
 namespace App\Actions\Client;
 
 use App\Enums\OrderStatusEnum;
-use App\Models\Client;
 use App\Models\Order;
 use App\Repositories\ClientRepository;
 use App\Repositories\OrderRepository;
-use App\Repositories\StatesRepository;
 
 class CreateOrderAction
 {
     public function execute($data) : Order
     {
+        $data['company_id'] = current_user()->company_id;
         $orderRepository = new OrderRepository();
 
         $clientRepository = new ClientRepository();

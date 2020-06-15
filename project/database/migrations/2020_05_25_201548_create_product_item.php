@@ -26,6 +26,11 @@ class CreateProductItem extends Migration
                 ->references('id')
                 ->on('payment_forms');
 
+            $table->integer('company_id')->nullable();
+            $table->foreign('company_id')
+                ->references('id')
+                ->on('companies');
+
             $table->text('observation')->nullable();
 
             $table->string('status');

@@ -57,7 +57,7 @@
                                     <tbody>
                                     <tr v-for="(item, index) in items" :key="index">
                                         @include('client.orders._partials._body')
-                                        <td>@include('shared.partials._buttons_actions')</td>
+                                        <td>@include('client.orders._partials._buttons_actions')</td>
                                     </tr>
                                     </tbody>
                                 </table>

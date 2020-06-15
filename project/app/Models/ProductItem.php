@@ -25,4 +25,9 @@ class ProductItem extends Model
     {
         return $this->belongsTo(Product::class, 'product_id', 'id');
     }
+
+    public function getTotalAttribute() {
+        $total = $this->value_cents * $this->quantity;
+        return $total;
+    }
 }

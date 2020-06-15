@@ -65,6 +65,11 @@ class OrderController extends Controller
         return $this->chooseReturn('success', 'Pedido cadastrado com sucesso', 'client.orders.index');
     }
 
+    public function print(Order $order)
+    {
+        return view('client.orders.print-order', compact('order'));
+    }
+
     /**
      * Configura a paginação.
      *

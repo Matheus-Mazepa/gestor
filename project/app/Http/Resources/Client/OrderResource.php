@@ -17,6 +17,7 @@ class OrderResource extends Resource
             'updated_at' => format_date($this->updated_at),
 
             'links' => [
+                'print' => route('client.order.print', $this->id)
 //                'edit' => $this->when(true, route('client.clients.edit', $this->id)),
 //                'show' => $this->when(true, route('client.clients.show', $this->id)),
 //                'destroy' => $this->when(true, route('client.clients.destroy', $this->id)),

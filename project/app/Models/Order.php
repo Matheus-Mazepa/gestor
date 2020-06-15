@@ -10,6 +10,7 @@ class Order extends Model
         'client_id',
         'payment_form_id',
         'observation',
+        'company_id',
         'status',
     ];
 
@@ -31,5 +32,18 @@ class Order extends Model
     public function paymentForm()
     {
         return $this->belongsTo(PaymentForm::class, 'payment_form_id', 'id');
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class, 'company_id', 'id');
+    }
+
+    public function getTotalAttribute() {
+        $total = 0;
+        foreach ($this->productItems as $productItem) {
+            $total += $productItem->total;
+        }
+        return $total;
     }
 }
