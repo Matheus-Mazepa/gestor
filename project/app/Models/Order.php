@@ -2,10 +2,18 @@
 
 namespace App\Models;
 
+use App\Scopes\Search;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    use Search;
+
+    protected $searchBy = [
+        'status',
+        'updated_at',
+    ];
+
     protected $fillable = [
         'client_id',
         'payment_form_id',

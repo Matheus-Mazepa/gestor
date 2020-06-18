@@ -19,7 +19,7 @@
                 <div class="card-body">
                     <form class="form-horizontal" method="POST" action="{{ route('client.orders.store') }}">
                         @include('client.orders._partials._form')
-                        <button class="btn btn-success" type="submit">
+                        <button class="btn btn-success col-12" type="submit">
                             @lang('buttons.common.save')
                         </button>
                     </form>

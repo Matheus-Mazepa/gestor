@@ -80,7 +80,7 @@ class OrderController extends Controller
     protected function getPagination($pagination)
     {
         $pagination->repository(new OrderRepository())
-            ->defaultOrderBy('status')
+            ->defaultOrderBy('updated_at', 'desc')
             ->resource(OrderResource::class);
     }
 }

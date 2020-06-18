@@ -1,6 +1,6 @@
 class SortIcon {
     constructor() {
-        this.order = 'asc';
+        this.order = 'desc';
     }
 
     getArrowUpClass() {
