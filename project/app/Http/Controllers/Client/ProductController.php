@@ -55,7 +55,9 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        return view('client.products.edit', compact('product'));
+        $categoryRepository = new CategoryRepository();
+        $categories = $categoryRepository->toVSelect();
+        return view('client.products.edit', compact('product', 'categories'));
     }
 
     public function update(UpdateProductAction $updateProductAction, $id, ProductRequest $request)

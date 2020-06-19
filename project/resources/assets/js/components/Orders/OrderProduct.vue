@@ -75,6 +75,7 @@
 
     props: {
       categories: Array,
+      productToEdit: Object
     },
 
     directives: {
@@ -105,6 +106,12 @@
             this.products = response.data;
           });
         }
+      },
+
+      productToEdit(productToEdit) {
+        this.observation = productToEdit.observation;
+        this.quantity = +productToEdit.quantity;
+        this.value = productToEdit.value;
       },
 
       product: function (product) {

@@ -1,5 +1,4 @@
 @csrf
-
 <div class="row">
     <div class="form-group col-sm-12 col-md-6">
         <label for="client_id">
@@ -9,9 +8,13 @@
                 name="client_id"
                 class="form-group {{ has_error_class('client_id') }}"
                 :old='@json(old())'
-                @if (isset($order))
-                :selected="{{ $order->client_id }}"
+                field="client_id"
+                @if (old('client_id'))
+                selected="{{old('client_id')}}"
                 @endif
+{{--                @if (isset($order))--}}
+{{--                :selected="{{ $order->client_id }}"--}}
+{{--                @endif--}}
                 placeholder="@lang('placeholders.orders.client')"
                 :options="{{ collect($clients) }}"
         ></custom-select>
@@ -26,9 +29,12 @@
                 name="payment_form_id"
                 class="form-group {{ has_error_class('payment_form_id') }}"
                 :old='@json(old())'
-                @if (isset($order))
-                :selected="{{ $order->payment_form_id }}"
+                @if (old('payment_form_id'))
+                selected="{{old('payment_form_id')}}"
                 @endif
+                {{--                @if (isset($order))--}}
+{{--                :selected="{{ $order->payment_form_id }}"--}}
+{{--                @endif--}}
                 placeholder="@lang('placeholders.orders.payment_form')"
                 :options="{{ collect($paymentForms) }}"
         ></custom-select>
@@ -49,4 +55,4 @@
         @errorblock('observation')
     </div>
 </div>
-<create-order :categories='@json($categories)'></create-order>
+<create-order :old='@json(old())' :categories='@json($categories)'></create-order>

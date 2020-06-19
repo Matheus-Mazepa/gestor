@@ -25,8 +25,9 @@ class OrderRequest extends FormRequest
     {
         $rules = [
             'client_id' => 'required|numeric|exists:clients,id',
-            'payment_form_id' => 'sometimes',
+            'payment_form_id' => 'required|numeric|exists:payment_forms,id',
             'observation' => 'sometimes',
+            'products' => 'required',
             'products.*.product_id' => 'required|exists:products,id',
             'products.*.quantity' => 'required|numeric',
             'products.*.value' => 'required',

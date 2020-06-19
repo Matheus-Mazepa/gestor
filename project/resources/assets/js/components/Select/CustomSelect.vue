@@ -33,6 +33,11 @@
         required: false
       },
 
+      field: {
+        type: String,
+        required: false
+      },
+
       old: {
         required: false
       },
@@ -68,8 +73,8 @@
         this.getSelected(this.selected);
       }
 
-      if (!!this.old && this.old.permission_id) {
-        this.getSelected(this.old.permission_id);
+      if (!!this.old) {
+        this.getSelected(this.old['field']);
       }
     },
 
