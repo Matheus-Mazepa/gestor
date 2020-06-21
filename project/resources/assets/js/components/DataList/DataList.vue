@@ -338,6 +338,19 @@ export default {
       });
     },
 
+    confirmAndPost(link, title, message) {
+      this.$snotify.confirm(message, title, {
+        timeout: 5000,
+        showProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        buttons: [
+          {text: 'Sim', action: () => this.handlePost(link), bold: false},
+          {text: 'Não'},
+        ]
+      });
+    },
+
     confirmActivateDeactivate(link, action, message = undefined) {
       let title = 'Ativar';
       if (message == undefined) {

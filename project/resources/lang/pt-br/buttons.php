@@ -19,6 +19,11 @@ return [
         'save' => 'Salvar',
     ],
 
+    'order' => [
+        'print' => 'Imprimir pedido',
+        'set_delivered' => 'Definir como entregue',
+    ],
+
     'users' => [
         'index' => 'Usuários',
         'show' => 'Detalhes do usuário',

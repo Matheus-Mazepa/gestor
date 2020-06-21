@@ -6,6 +6,10 @@
             @lang('headings.common.home')
         </breadcrumb-item>
 
+        <breadcrumb-item href="{{ route('client.orders.index') }}">
+            @lang('headings.orders.index')
+        </breadcrumb-item>
+
         <breadcrumb-item active>
             @lang('headings.orders.create')
         </breadcrumb-item>

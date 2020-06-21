@@ -2,24 +2,18 @@
 
 namespace App\Http\Controllers\Client;
 
-use App\Actions\Client\CreateOrderAction;
-use App\Actions\Client\CreateProductAction;
-use App\Actions\Client\UpdateProductAction;
-use App\Builders\PaginationBuilder;
-use App\Exceptions\Repositories\RepositoryException;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Client\OrderRequest;
-use App\Http\Requests\Client\ProductRequest;
-use App\Http\Resources\Client\CategoryResource;
-use App\Http\Resources\Client\OrderResource;
-use App\Models\Category;
 use App\Models\Order;
-use App\Models\Product;
-use App\Repositories\CategoryRepository;
-use App\Repositories\ClientRepository;
+use App\Enums\OrderStatusEnum;
+use App\Builders\PaginationBuilder;
+use App\Http\Controllers\Controller;
 use App\Repositories\OrderRepository;
+use App\Repositories\ClientRepository;
+use App\Repositories\CategoryRepository;
+use App\Actions\Client\CreateOrderAction;
 use App\Repositories\PaymentFormRepository;
-use Illuminate\Http\Request;
+use App\Http\Requests\Client\OrderRequest;
+use App\Http\Resources\Client\OrderResource;
+use App\Exceptions\Repositories\RepositoryException;
 
 class OrderController extends Controller
 {
@@ -68,6 +62,13 @@ class OrderController extends Controller
     public function print(Order $order)
     {
         return view('client.orders.print-order', compact('order'));
+    }
+
+    public function setDelivered(Order $order)
+    {
+        $order->status = OrderStatusEnum::DELIVERED;
+        $order->save();
+        return $this->chooseReturn('success', 'Alteração no pedido realizada com sucesso!');
     }
 
     /**

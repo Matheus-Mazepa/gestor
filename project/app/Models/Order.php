@@ -16,6 +16,7 @@ class Order extends Model
 
     protected $fillable = [
         'client_id',
+        'seller_id',
         'payment_form_id',
         'observation',
         'company_id',
@@ -45,6 +46,11 @@ class Order extends Model
     public function company()
     {
         return $this->belongsTo(Company::class, 'company_id', 'id');
+    }
+
+    public function seller()
+    {
+        return $this->belongsTo(User::class, 'seller_id', 'id');
     }
 
     public function getTotalAttribute() {

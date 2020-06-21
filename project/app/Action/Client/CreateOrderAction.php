@@ -12,6 +12,7 @@ class CreateOrderAction
     public function execute($data) : Order
     {
         $data['company_id'] = current_user()->company_id;
+        $data['seller_id'] = current_user()->id;
         $orderRepository = new OrderRepository();
 
         $clientRepository = new ClientRepository();

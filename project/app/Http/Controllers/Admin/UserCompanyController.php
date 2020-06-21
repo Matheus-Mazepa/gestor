@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Actions\Admin\CreateUserCompanyAction;
+use App\Actions\Admin\EditUserCompanyAction;
 use App\Exceptions\Repositories\RepositoryException;
 use App\Http\Requests\Admin\UserRequest;
 use App\Http\Resources\Admin\UserResource;
@@ -37,13 +39,15 @@ class UserCompanyController extends Controller
         return view('admin.company_users.create', compact('company'));
     }
 
-    public function store($companyId, UserRequest $request)
+    public function store($companyId, CreateUserCompanyAction $createUserCompanyAction, UserRequest $request)
     {
-        $data = $request->validated();
-        $data['company_id'] = $companyId;
-        $userRepository = new UserRepository();
-        $userRepository->createUser($data);
-        return $this->chooseReturn('success', 'Usuario criado com sucesso', 'admin.users.index', $companyId);
+        try {
+            $data = $request->validated();
+            $createUserCompanyAction->execute($data, $companyId);
+            return $this->chooseReturn('success', 'Usuario criado com sucesso', 'admin.users.index', $companyId);
+        } catch (\Exception $exception) {
+            return $this->chooseReturn('error', 'Houve um erro ao criar o usuário', 'admin.users.index', $companyId);
+        }
     }
 
     public function edit(Company $company)
@@ -51,13 +55,15 @@ class UserCompanyController extends Controller
         return view('admin.company_users.edit', compact('company'));
     }
 
-    public function update($companyId, $userId, UserRequest $request)
+    public function update($companyId, $userId, EditUserCompanyAction $editUserCompanyAction, UserRequest $request)
     {
-        $data = $request->validated();
-        $data['company_id'] = $companyId;
-        $userRepository = new UserRepository();
-        $userRepository->updateUser($userId, $data);
-        return $this->chooseReturn('success', 'Usuario criado com sucesso', 'admin.users.index', $companyId);
+        try {
+            $data = $request->validated();
+            $editUserCompanyAction->execute($data, $companyId, $userId);
+            return $this->chooseReturn('success', 'Usuário editado com sucesso', 'admin.users.index', $companyId);
+        } catch (\Exception $exception) {
+            return $this->chooseReturn('error', 'Houve um erro ao editar usuário', 'admin.users.index', $companyId);
+        }
     }
 
     /**

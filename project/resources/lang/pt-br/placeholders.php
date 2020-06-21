@@ -42,6 +42,6 @@ return [
 
     'orders' => [
         'client' => 'Selecione o cliente',
-        'payment_form' => 'Selecione o cliente',
+        'payment_form' => 'Selecione a forma de pagamento',
     ]
 ];

@@ -10,6 +10,17 @@
         <i class="fa fa-print"></i>
     </a>
 
+    <a v-if="item.links.set_delivered" href="#"
+       @click="confirmAndPost(item.links.set_delivered, 'Definir como entregue', 'Tem certeza que deseja definir este pedido como entregue?')"
+       target="_blank"
+       class="btn btn-sm btn-success text-white"
+       title="@lang('buttons.order.set_delivered')"
+       data-toggle="tooltip"
+       data-placement="top"
+       role="button">
+        <i class="fa fa-motorcycle"></i>
+    </a>
+
     <a v-if="item.links.show" :href="item.links.show"
        class="btn btn-sm btn-primary"
        title="@lang('buttons.common.show')"
