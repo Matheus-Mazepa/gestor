@@ -6,6 +6,7 @@ return [
     UserRolesEnum::ADMIN => [
         'dashboard' => ['view',],
         'users_admin' => ['view', 'create', 'update', 'delete',],
+        'users_company' => ['view', 'create', 'update', 'delete',],
         'companies' => ['view', 'create', 'update', 'delete',],
     ],
 

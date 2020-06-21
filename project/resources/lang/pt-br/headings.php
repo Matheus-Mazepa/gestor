@@ -59,6 +59,9 @@ return [
     ],
 
     'companies' => [
+        'users' => [
+            'index' => 'Usuários da empresa'
+        ],
         'index' => 'Empresas',
         'create' => 'Cadstrar empresa',
     ],

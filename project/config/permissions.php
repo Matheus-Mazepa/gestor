@@ -15,6 +15,13 @@ return [
         'delete',
     ],
 
+    'users_company' => [
+        'view',
+        'create',
+        'update',
+        'delete',
+    ],
+
     'dashboard' => [
         'view',
     ],
