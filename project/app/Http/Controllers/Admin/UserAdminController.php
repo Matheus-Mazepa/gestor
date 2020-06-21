@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Actions\Admin\CreateUserAdminAction;
 use App\Http\Requests\Admin\UserAdminRequest;
-use App\Http\Resources\Client\UserResource;
+use App\Http\Resources\Admin\UserResource;
 use App\Repositories\Criterias\Common\Where;
 
 use App\Builders\PaginationBuilder;

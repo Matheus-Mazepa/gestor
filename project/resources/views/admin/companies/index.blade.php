@@ -19,11 +19,23 @@
                     data-source="{{ route('admin.pagination.companies') }}"
                     delete-message="@lang('phrases.common.delete')"
                     url-create="{{ route('admin.companies.create') }}"
-                    l label-create="@lang('buttons.common.create_new')"
+                    label-create="@lang('buttons.common.create_new')"
             ></data-list>
         </div>
     </div>
 @endsection
+
+@section('button-actions')
+    <a v-if="item.links.company_users" :href="item.links.company_users"
+       class="btn btn-sm btn-primary"
+       title="@lang('buttons.common.show')"
+       data-toggle="tooltip"
+       data-placement="top"
+       role="button">
+        <i class="fa fa-users"></i>
+    </a>
+@endsection
+
 
 @section('custom-template')
     <template id="data-list" slot-scope="modelScope">

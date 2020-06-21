@@ -60,7 +60,9 @@ return [
 
     'companies' => [
         'users' => [
-            'index' => 'Usuários da empresa'
+            'index' => 'Usuários da empresa',
+            'create' => 'Criar usuários da empresa',
+            'edit' => 'Editar usuários da empresa',
         ],
         'index' => 'Empresas',
         'create' => 'Cadstrar empresa',

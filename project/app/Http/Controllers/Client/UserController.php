@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Exceptions\Repositories\RepositoryException;
 use App\Http\Requests\Client\UserRequest;
 use App\Http\Resources\Client\UserResource;
 use App\Repositories\Criterias\Common\Where;
@@ -41,7 +42,7 @@ class UserController extends Controller
         $data = $request->validated();
         $data['company_id'] = current_user()->company_id;
         $userRepository = new UserRepository();
-        $userRepository->create($data);
+        $userRepository->createUser($data);
         return $this->chooseReturn('success', 'Usuario criado com sucesso', 'client.users.index');
     }
 
@@ -50,6 +51,7 @@ class UserController extends Controller
      *
      * @param PaginationBuilder $pagination
      * @return void
+     * @throws RepositoryException
      */
     protected function getPagination($pagination)
     {

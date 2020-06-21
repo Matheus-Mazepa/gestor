@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Exceptions\Repositories\RepositoryException;
+use App\Http\Requests\Admin\UserRequest;
 use App\Http\Resources\Admin\UserResource;
 use App\Models\Company;
 use App\Repositories\Criterias\Common\Where;
@@ -31,18 +32,32 @@ class UserCompanyController extends Controller
         return view('admin.company_users.index', compact('company'));
     }
 
-    public function create()
+    public function create(Company $company)
     {
-        return view('admin.company_users.create');
+        return view('admin.company_users.create', compact('company'));
     }
 
-    public function store(UserRequest $request)
+    public function store($companyId, UserRequest $request)
     {
         $data = $request->validated();
-        $data['company_id'] = current_user()->company_id;
+        $data['company_id'] = $companyId;
         $userRepository = new UserRepository();
-        $userRepository->create($data);
-        return $this->chooseReturn('success', 'Usuario criado com sucesso', 'admin.company_users.index');
+        $userRepository->createUser($data);
+        return $this->chooseReturn('success', 'Usuario criado com sucesso', 'admin.users.index', $companyId);
+    }
+
+    public function edit(Company $company)
+    {
+        return view('admin.company_users.edit', compact('company'));
+    }
+
+    public function update($companyId, $userId, UserRequest $request)
+    {
+        $data = $request->validated();
+        $data['company_id'] = $companyId;
+        $userRepository = new UserRepository();
+        $userRepository->updateUser($userId, $data);
+        return $this->chooseReturn('success', 'Usuario criado com sucesso', 'admin.users.index', $companyId);
     }
 
     /**

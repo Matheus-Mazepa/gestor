@@ -1,13 +1,21 @@
 @extends('layouts.app')
 
 @section('breadcrumb')
-    <breadcrumb header="@lang('headings.admin.edit')" url-back="{{ route('admin.users_admin.index') }}">
+    <breadcrumb header="@lang('headings.companies.users.create') {{$company->name}}" url-back="{{ route('admin.users.index', $company->id) }}">
         <breadcrumb-item href="{{ route('home') }}">
             @lang('headings.common.home')
         </breadcrumb-item>
 
+        <breadcrumb-item href="{{ route('admin.companies.index') }}">
+            @lang('headings.companies.index')
+        </breadcrumb-item>
+
+        <breadcrumb-item href="{{ route('admin.users.index', $company->id) }}">
+            @lang('headings.companies.users.index')
+        </breadcrumb-item>
+
         <breadcrumb-item active>
-            @lang('headings.users_admin.edit')
+            @lang('headings.companies.users.create') {{$company->name}}
         </breadcrumb-item>
     </breadcrumb>
 @endsection
@@ -19,7 +27,7 @@
                 <div class="card-body">
                     <form class="form-horizontal"
                           method="POST"
-                          action="{{ route('admin.users_admin.update', $user->id) }}">
+                          action="{{ route('admin.users.update', $user->id) }}">
 
                         @method('PUT')
                         @include('client.users_admin._partials._form')

@@ -6,6 +6,10 @@
             @lang('headings.common.home')
         </breadcrumb-item>
 
+        <breadcrumb-item href="{{ route('admin.companies.index') }}">
+            @lang('headings.companies.index')
+        </breadcrumb-item>
+
         <breadcrumb-item active>
             @lang('headings.companies.users.index') {{$company->name}}
         </breadcrumb-item>
@@ -18,7 +22,8 @@
             <data-list
                     data-source="{{ route('admin.pagination.companies.users', $company->id) }}"
                     delete-message="@lang('phrases.common.delete')"
-                    l label-create="@lang('buttons.common.create_new')"
+                    url-create="{{ route('admin.users.create',  $company->id) }}"
+                    label-create="@lang('buttons.common.create_new')"
             ></data-list>
         </div>
     </div>

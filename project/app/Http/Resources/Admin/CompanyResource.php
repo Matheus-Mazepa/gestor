@@ -15,7 +15,7 @@ class CompanyResource extends Resource
             'updated_at' => format_date($this->updated_at),
 
             'links' => [
-                'company-users' => route('admin.users.index', $this->id)
+                'company_users' => route('admin.users.index', $this->id)
 //                'edit' => $this->when(true, route('admin.users.edit', $this->id)),
 //                'show' => $this->when(true, route('admin.users.show', $this->id)),
 //                'destroy' => $this->when(true, route('admin.users.destroy', $this->id)),
