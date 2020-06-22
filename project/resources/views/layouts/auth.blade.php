@@ -15,8 +15,8 @@
     <title>{{ config('app.name') }}</title>
 
     <!-- Styles -->
-{{--    <link href="{{ mix('assets/css/auth.css') }}" rel="stylesheet">--}}
-    <link href="/assets/css/auth.css" rel="stylesheet">
+    <link href="{{ asset('assets/css/auth.css') }}" rel="stylesheet">
+{{--    <link href="/assets/css/auth.css" rel="stylesheet">--}}
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     @yield('header')
 </head>
