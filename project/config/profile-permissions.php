@@ -15,7 +15,7 @@ return [
         'categories' => ['view', 'create', 'update', 'delete',],
         'users' => ['view', 'create', 'update', 'delete',],
         'orders' => ['view', 'create', 'update', 'delete'],
-        'products' => ['view', 'create', 'update', 'delete',],
+        'products' => ['view', 'create', 'update', 'delete', 'update_stock',],
         'clients' => ['view', 'create', 'update', 'delete',],
         'financial_schedule' => ['view', 'create', 'update', 'delete',],
     ],

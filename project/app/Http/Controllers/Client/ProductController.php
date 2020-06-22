@@ -25,6 +25,7 @@ class ProductController extends Controller
         $this->middleware('permission:products view')->only(['index', 'show']);
         $this->middleware('permission:products create')->only(['create', 'store']);
         $this->middleware('permission:products update')->only(['edit', 'update']);
+        $this->middleware('permission:products update_stock')->only(['updateStock']);
         $this->middleware('permission:products delete')->only('destroy');
     }
 
@@ -61,6 +62,18 @@ class ProductController extends Controller
     }
 
     public function update(UpdateProductAction $updateProductAction, $id, ProductRequest $request)
+    {
+        $data = $request->validated();
+        $updateProductAction->execute($id, $data);
+        return $this->chooseReturn('success', 'Produto criado com sucesso', 'client.products.index');
+    }
+
+    public function editStock(Product $product)
+    {
+        return view('client.products.edit-stock', compact('product'));
+    }
+
+    public function updateStock(UpdateProductAction $updateProductAction, $id, ProductRequest $request)
     {
         $data = $request->validated();
         $updateProductAction->execute($id, $data);

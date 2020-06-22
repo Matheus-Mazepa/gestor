@@ -19,6 +19,7 @@ return [
         'clients' => 'Clientes',
         'create_new' => 'Criar novo',
         'users' => 'Usuários',
+        'stock' => 'Estoque',
         'users_admin' => 'Usuários Administradors',
         'companies' => 'Empresas',
         'categories' => 'Categorias',

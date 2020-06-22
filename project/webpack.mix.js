@@ -17,7 +17,8 @@ mix.copyDirectory('resources/assets/fonts', 'public/assets/fonts');
 
 //Compiling assets
 mix.js('resources/assets/js/app.js', 'public/assets/js')
-    .sass('resources/assets/sass/app.scss', 'public/assets/css');
+    .sass('resources/assets/sass/app.scss', 'public/assets/css')
+    .sass('resources/assets/sass/auth.scss', 'public/assets/css');
 
 // Third party libraries in vendor.js
 mix.extract([

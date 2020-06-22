@@ -1,13 +1,6 @@
 <?php
 
 return [
-    'users' => [
-        'view',
-        'create',
-        'update',
-        'delete',
-    ],
-
     'companies' => [
         'view',
         'create',
@@ -15,7 +8,14 @@ return [
         'delete',
     ],
 
-    'users_company' => [
+    'categories' => [
+        'view',
+        'create',
+        'update',
+        'delete',
+    ],
+
+    'clients' => [
         'view',
         'create',
         'update',
@@ -24,13 +24,6 @@ return [
 
     'dashboard' => [
         'view',
-    ],
-
-    'users_admin' => [
-        'view',
-        'create',
-        'update',
-        'delete',
     ],
 
     'financial_schedule' => [
@@ -51,17 +44,25 @@ return [
         'view',
         'create',
         'update',
+        'update_stock',
         'delete',
     ],
 
-    'categories' => [
+    'users' => [
         'view',
         'create',
         'update',
         'delete',
     ],
 
-    'clients' => [
+    'users_company' => [
+        'view',
+        'create',
+        'update',
+        'delete',
+    ],
+
+    'users_admin' => [
         'view',
         'create',
         'update',
