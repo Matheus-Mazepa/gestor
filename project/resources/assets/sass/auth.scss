@@ -1,6 +1,9 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
+// Variables
+@import "variables";
+
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
@@ -20,3 +23,18 @@ $fa-font-path: "/fonts";
 
 // Font Montserrat
 @import '~typeface-montserrat';
+
+.btn-auth {
+  background: black;
+  border-color: black;
+  font-weight: 900;
+  margin-top: 10px;
+
+  &:hover {
+    background: #323232;
+  }
+}
+
+.checkbox-remember-me {
+  margin-top: 10px;
+}

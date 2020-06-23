@@ -29,7 +29,7 @@
                     @errorblock('email')
                 </div>
 
-                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">
+                <button class="btn btn-lg btn-primary btn-block text-uppercase btn-auth" type="submit">
                     @lang('buttons.auth.recover')
                 </button>
 

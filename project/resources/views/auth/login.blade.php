@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="form-label-group">
-                    <div class="custom-control custom-checkbox">
+                    <div class="custom-control custom-checkbox checkbox-remember-me">
                         <input type="checkbox" class="custom-control-input" id="customCheckbox">
                         <label class="custom-control-label" for="customCheckbox">
                             @lang('phrases.auth.remember_me')
@@ -45,7 +45,7 @@
                     </div>
                 </div>
 
-                <button class="btn btn-lg btn-secondary btn-block text-uppercase" type="submit">
+                <button class="btn btn-lg btn-secondary btn-block text-uppercase btn-auth" type="submit">
                     @lang('buttons.auth.sign_in')
                 </button>
 

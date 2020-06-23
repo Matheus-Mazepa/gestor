@@ -16,12 +16,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('assets/css/auth.css') }}" rel="stylesheet">
-{{--    <link href="/assets/css/auth.css" rel="stylesheet">--}}
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     @yield('header')
 </head>
 
-<body>
+<body class="bg-primary">
 <div id="app">
     <div class="preloader">
         <div class="lds-ripple">
