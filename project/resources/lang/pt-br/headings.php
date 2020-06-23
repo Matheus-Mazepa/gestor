@@ -43,7 +43,8 @@ return [
     'products' => [
         'index' => 'Produtos',
         'show' => 'Visualização Produto',
-        'create' => 'Cadstrar produto',
+        'create' => 'Cadastrar produto',
+        'edit' => 'Editar produto',
     ],
 
     'categories' => [
