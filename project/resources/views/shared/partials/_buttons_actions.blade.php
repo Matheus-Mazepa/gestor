@@ -12,7 +12,7 @@
     </a>
 
     <a v-if="item.links.edit" :href="item.links.edit"
-       class="btn btn-sm btn-warning"
+       class="btn btn-sm btn-warning text-white"
        title="@lang('buttons.common.edit')"
        data-toggle="tooltip"
        data-placement="top"
