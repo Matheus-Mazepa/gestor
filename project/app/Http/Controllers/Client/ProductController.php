@@ -68,6 +68,13 @@ class ProductController extends Controller
         return $this->chooseReturn('success', 'Produto criado com sucesso', 'client.products.index');
     }
 
+    public function duplicate(Product $product)
+    {
+        $productDuplicated = $product->replicate();
+        $productDuplicated->save();
+        return $this->chooseReturn('success', 'Produto duplicado com sucesso', 'client.products.index');
+    }
+
     public function editStock(Product $product)
     {
         return view('client.products.edit-stock', compact('product'));

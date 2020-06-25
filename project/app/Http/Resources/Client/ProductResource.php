@@ -15,6 +15,7 @@ class ProductResource extends Resource
             'updated_at' => format_date($this->updated_at),
 
             'links' => [
+                'duplicate' => $this->when(true, route('client.product.duplicate', $this->id)),
                 'edit' => $this->when(true, route('client.products.edit', $this->id)),
                 'show' => $this->when(true, route('client.products.show', $this->id)),
                 'destroy' => $this->when(true, route('client.products.destroy', $this->id)),

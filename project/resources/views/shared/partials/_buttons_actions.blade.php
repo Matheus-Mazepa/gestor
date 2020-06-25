@@ -2,6 +2,16 @@
 
     @yield('button-actions')
 
+    <a v-if="item.links.duplicate" href="#"
+       @click="confirmAndPost(item.links.duplicate, 'Duplicar', 'Tem certeza que deseja duplicar o produto?')"
+       class="btn btn-sm btn-success text-white"
+       title="@lang('buttons.common.show')"
+       data-toggle="tooltip"
+       data-placement="top"
+       role="button">
+        <i class="fa fa-clone" aria-hidden="true"></i>
+    </a>
+
     <a v-if="item.links.show" :href="item.links.show"
        class="btn btn-sm btn-primary"
        title="@lang('buttons.common.show')"
