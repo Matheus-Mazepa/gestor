@@ -112,7 +112,7 @@ class ProductController extends Controller
         $productRepository = new ProductRepository();
 
         $pagination->repository($productRepository)
-            ->defaultOrderBy('title')
+            ->defaultOrderBy('updated_at')
             ->resource(ProductResource::class);
     }
 }
