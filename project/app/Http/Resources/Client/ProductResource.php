@@ -9,8 +9,10 @@ class ProductResource extends Resource
     public function toArray($request)
     {
         return [
+            'code' => $this->code,
             'title' => $this->title,
             'description' => $this->description,
+            'category_name' => $this->category->name,
             'created_at' => format_date($this->created_at),
             'updated_at' => format_date($this->updated_at),
 

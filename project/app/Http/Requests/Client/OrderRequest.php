@@ -26,13 +26,12 @@ class OrderRequest extends FormRequest
         $rules = [
             'client_id' => 'required|numeric|exists:clients,id',
             'payment_form_id' => 'required|numeric|exists:payment_forms,id',
-            'observation' => 'sometimes',
+            'observation' => 'sometimes|max:255',
             'products' => 'required',
             'products.*.product_id' => 'required|exists:products,id',
             'products.*.quantity' => 'required|numeric',
             'products.*.value' => 'required',
-            'products.*.observation' => 'sometimes',
-
+            'products.*.observation' => 'sometimes|max:255',
         ];
 
         return $rules;

@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use App\Scopes\Search as SearchScope;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Scopes\Search as SearchScope;
 
 class Product extends Model
 {
@@ -13,8 +13,13 @@ class Product extends Model
     protected $searchBy = [
         'code',
         'title',
-        ];
+    ];
 
+    protected $searchByRelationship = [
+        'category' => [
+            'name',
+        ],
+    ];
 
     protected $fillable = [
         'code',
@@ -28,7 +33,6 @@ class Product extends Model
         'taxable_unit',
         'cfop_nfc',
         'cfop_nfe',
-        'supplier_id',
         'quantity',
         'minimal_quantity',
         'company_id',
@@ -45,18 +49,18 @@ class Product extends Model
         return $this->belongsTo(Company::class, 'company_id', 'id');
     }
 
-    public function supplier()
+    public function category()
     {
-        return $this->belongsTo(Supplier::class, 'supplier_id', 'id');
+        return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
     public function getFormattedPriceNfeAttribute()
     {
-        return  number_format($this->price_nfe / 100, 2, ',', '.');
+        return number_format($this->price_nfe / 100, 2, ',', '.');
     }
 
     public function getFormattedPriceNfcAttribute()
     {
-        return  number_format($this->price_nfc / 100, 2, ',', '.');
+        return number_format($this->price_nfc / 100, 2, ',', '.');
     }
 }
