@@ -105,7 +105,6 @@ class ProductController extends Controller
      *
      * @param PaginationBuilder $pagination
      * @return void
-     * @throws \App\Exceptions\Repositories\RepositoryException
      */
     protected function getPagination($pagination)
     {

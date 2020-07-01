@@ -119,7 +119,10 @@ return [
     'attributes' => [
         'password' => 'senha',
         'name' => 'nome',
+        'code' => 'código',
         'parent_id' => 'categoria pai',
+        'price_nfe' => 'preço nota fiscal eletrônica',
+        'price_nfc' => 'preço nota fiscal do consumidor',
     ],
 
 ];

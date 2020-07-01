@@ -7,8 +7,10 @@ import {CreateOrder} from './components/Orders';
 import {ClientForm} from './components/ClientForm';
 import {RegisterAddressComponent} from './components/RegisterAddress';
 import { CustomSelect } from "./components/Select";
+import { BundleProduct } from './components/Products'
 import vSelect from 'vue-select'
 
+Vue.component('bundle-product', BundleProduct);
 Vue.component('create-order', CreateOrder);
 Vue.component('v-select', vSelect);
 Vue.component("custom-select", CustomSelect);

@@ -38,6 +38,7 @@ class Product extends Model
         'company_id',
         'category_id',
         'taxable_quantity',
+        'is_bundle_product',
     ];
 
     protected static $logAttributes = [
@@ -52,6 +53,11 @@ class Product extends Model
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id', 'id');
+    }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'product_has_bundle_products', 'bundle_id', 'product_id');
     }
 
     public function getFormattedPriceNfeAttribute()

@@ -206,3 +206,6 @@
         @errorblock('taxable_unit')
     </div>
 </div>
+{{$errors}}
+
+<bundle-product :old='@json(old())' :categories='@json($categories)'></bundle-product>

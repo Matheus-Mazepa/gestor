@@ -15,7 +15,10 @@ class CreateProductAction
         $data['price_nfc'] = remove_mask_moneyAndChangeToCent($data['price_nfc']);
         $data['price_nfe'] = remove_mask_moneyAndChangeToCent($data['price_nfe']);
 
-        $productRepository = $productRepository->create($data);
-        return $productRepository;
+        $product = $productRepository->create($data);
+        $bundleProducts = data_get($data, 'products', []);
+        $product->products()->sync($bundleProducts);
+
+        return $product;
     }
 }
