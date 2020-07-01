@@ -13,6 +13,10 @@ class CreateProductHasBundleProducts extends Migration
      */
     public function up()
     {
+        Schema::table('products', function (Blueprint $table) {
+            $table->boolean('is_bundle_product')->default(false);
+        });
+
         Schema::create('product_has_bundle_products', function (Blueprint $table) {
             $table->integer('bundle_id')->nullable();
             $table->foreign('bundle_id')
@@ -33,6 +37,10 @@ class CreateProductHasBundleProducts extends Migration
      */
     public function down()
     {
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropColumn('is_bundle_product');
+        });
+
         Schema::dropIfExists('product_has_bundle_products');
     }
 }

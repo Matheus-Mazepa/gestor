@@ -1,7 +1,7 @@
 <template>
     <div class="mb-2">
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" v-model="isBundleProduct" name="bundle-product" id="bundle-product">
+            <input class="form-check-input" type="checkbox" v-model="isBundleProduct" name="bundle_product" id="bundle-product">
             <label class="form-check-label" for="bundle-product">
                 É produto agrupador
             </label>

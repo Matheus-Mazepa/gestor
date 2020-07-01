@@ -38,7 +38,7 @@ class ProductRequest extends FormRequest
             'taxable_quantity' => 'required|numeric',
             'category_id' => 'required|numeric|exists:categories,id',
             'products' => 'sometimes',
-            'bundle-product' => 'sometimes',
+            'bundle_product' => 'sometimes',
         ];
     }
 }

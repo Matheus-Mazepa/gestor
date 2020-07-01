@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Client;
 
-use App\Actions\Client\CreateProductAction;
-use App\Actions\Client\UpdateProductAction;
+use App\Action\Client\CreateProductAction;
+use App\Action\Client\UpdateProductAction;
 use App\Builders\PaginationBuilder;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Client\ProductRequest;

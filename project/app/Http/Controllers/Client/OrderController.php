@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Repositories\OrderRepository;
 use App\Repositories\ClientRepository;
 use App\Repositories\CategoryRepository;
-use App\Actions\Client\CreateOrderAction;
+use App\Action\Client\CreateOrderAction;
 use App\Repositories\PaymentFormRepository;
 use App\Http\Requests\Client\OrderRequest;
 use App\Http\Resources\Client\OrderResource;

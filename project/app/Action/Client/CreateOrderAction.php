@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Actions\Client;
+namespace App\Action\Client;
 
 use App\Enums\OrderStatusEnum;
 use App\Models\Order;
 use App\Repositories\ClientRepository;
 use App\Repositories\OrderRepository;
+use App\Repositories\ProductRepository;
 
 class CreateOrderAction
 {
@@ -27,13 +28,38 @@ class CreateOrderAction
         $orderAddress->save();
 
         $productItems = data_get($data, 'products');
+        $productRepository = new ProductRepository();
+
         foreach ($productItems as $productItem) {
+            $product = $productRepository->find($productItem['product_id']);
             $valueCents = remove_mask_money($productItem['value']) * 100;
             $valueCents = intval($valueCents);
             $productItem['value_cents'] = $valueCents;
 
-            $order->productItems() ->create($productItem);
+            if ($product->is_bundle_product) {
+                $this->createBundleProductItems($productItem, $product, $order);
+            } else {
+                $order->productItems()->create($productItem);
+            }
         }
         return $order;
+    }
+
+    private function createBundleProductItems($productItem, $product, $order) {
+        $quantity = intval($productItem['quantity']);
+        $bundleProducts = $product->products;
+        $quantityPerProduct = intdiv($quantity , $bundleProducts->count());
+        $bundleProducts->each(function ($product) use ($order, $productItem, &$quantity, $quantityPerProduct) {
+            $productItem['product_id'] = $product->id;
+
+            if (($quantity - $quantityPerProduct) > $quantityPerProduct) {
+                $productItem['quantity'] = $quantityPerProduct;
+                $quantity -= $quantityPerProduct;
+            } else {
+                $productItem['quantity'] = $quantity;
+            }
+
+            $order->productItems()->create($productItem);
+        });
     }
 }
