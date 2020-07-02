@@ -10,6 +10,7 @@ use App\Http\Requests\Client\ProductRequest;
 use App\Http\Resources\Client\ProductResource;
 use App\Models\Product;
 use App\Repositories\CategoryRepository;
+use App\Repositories\Criterias\Common\OrderBy;
 use App\Repositories\Criterias\Common\Where;
 use App\Repositories\ProductRepository;
 
@@ -90,13 +91,15 @@ class ProductController extends Controller
     public function getProductsByCategoryId($categoryId)
     {
         $productRepository = new ProductRepository();
-        $products = $productRepository->pushCriteria(new Where('category_id', $categoryId))->all();
+        $products = $productRepository->pushCriteria([
+            new Where('category_id', $categoryId),
+            new OrderBy('is_bundle_product', 'desc')
+        ])->all();
 
         $products = $products->map(function ($product) {
             return ['label' => $product->title, 'id' => $product->id, 'price_nfe' => $product->formatted_price_nfe];
         });
 
-        $products = $products->sortBy('label')->values();
         return $products;
     }
 
