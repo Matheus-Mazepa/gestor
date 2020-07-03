@@ -44,7 +44,7 @@
                         <label class="custom-control-label" for="cpf">CPF</label>
                     </div>
 
-                    <div class="custom-control-inline custom-radio">
+                    <div class="custom-control-inline custom-radio col-sm-4">
                         <input v-model="typeClient" type="radio" value="cnpj" class="custom-control-input" id="cnpj"
                                name="is_legal_person">
                         <label class="custom-control-label" for="cnpj">CNPJ</label>
