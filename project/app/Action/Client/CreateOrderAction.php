@@ -52,7 +52,7 @@ class CreateOrderAction
         $bundleProducts->each(function ($product) use ($order, $productItem, &$quantity, $quantityPerProduct) {
             $productItem['product_id'] = $product->id;
 
-            if (($quantity - $quantityPerProduct) > $quantityPerProduct) {
+            if (($quantity - $quantityPerProduct) >= $quantityPerProduct) {
                 $productItem['quantity'] = $quantityPerProduct;
                 $quantity -= $quantityPerProduct;
             } else {

@@ -33,11 +33,11 @@ return [
 
     'financial_schedule' => [
         'index' => 'Agenda financeira',
-        'create' => 'Cadastrar nova conta',
+        'create' => 'Cadastrar nova cobrança',
     ],
 
     'bills' => [
-        'create' => 'Cadastrar conta',
+        'create' => 'Cadastrar cobrança',
     ],
 
     'products' => [

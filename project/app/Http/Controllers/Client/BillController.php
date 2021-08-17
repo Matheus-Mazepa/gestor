@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Client;
 use App\Builders\PaginationBuilder;
 use App\Http\Controllers\Controller;
 use App\Repositories\BillRepository;
+use App\Repositories\PaymentFormRepository;
+use App\Repositories\Repository;
 use Illuminate\Http\Request;
 
 class BillController extends Controller
@@ -21,7 +23,8 @@ class BillController extends Controller
 
     public function create()
     {
-        return view('client.bills.create');
+        $paymentForms = (new PaymentFormRepository())->toVSelect();
+        return view('client.bills.create', compact('paymentForms'));
     }
 
     public function store(Request $request)
