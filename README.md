@@ -1,4 +1,4 @@
-# TCC
+# Gestor empresarial
 
 ### Requisitos
 -   `docker`
