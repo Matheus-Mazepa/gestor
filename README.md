@@ -6,8 +6,8 @@
 
 ### Instalação
 ```sh
-git clone https://github.com/Matheus-Mazepa/tcc.git
-cd tcc/
+git clone https://github.com/Matheus-Mazepa/gestor.git
+cd gestor/
 make setup
 ```
 
