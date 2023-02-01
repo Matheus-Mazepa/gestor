@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Actions\Admin\CreateUserCompanyAction;
+use App\Action\Admin\CreateUserCompanyAction;
 use App\Actions\Admin\EditUserCompanyAction;
 use App\Exceptions\Repositories\RepositoryException;
 use App\Http\Requests\Admin\UserRequest;

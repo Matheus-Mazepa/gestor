@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Actions\Admin\CreateUserAdminAction;
-use App\Http\Requests\Admin\Users\UserAdminRequest;
+use App\Action\Admin\CreateUserAdminAction;
+use App\Http\Requests\Admin\UserAdminRequest;
 use App\Http\Resources\Admin\CompanyResource;
+use App\Models\Company;
 use App\Repositories\CompanyRepository;
 use App\Repositories\Criterias\Common\Where;
 use Illuminate\Http\Request;
 
 use App\Builders\PaginationBuilder;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\UserResource;
+use App\Http\Resources\Admin\UserResource;
 use App\Repositories\UserRepository;
 
 class CompanyController extends Controller
@@ -37,6 +38,15 @@ class CompanyController extends Controller
 
     public function create()
     {
+        $company = new Company([
+            'name' => 'teste',
+            'cpf_cnpj'  => 'teste',
+            'corporate_name' => 'teste',
+            'phone' => 'teste',
+            'ie_municipal' => 'teste',
+            'ie_estadual' => 'teste',
+            'is_legal_person'  => true,
+        ]);
         return view('admin.companies.create');
     }
 
